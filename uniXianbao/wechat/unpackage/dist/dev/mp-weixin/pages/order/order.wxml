@@ -1,0 +1,1 @@
+<view class="order"><order-list vue-id="3c50aaa2-1" orderState="{{orderState}}" bind:__l="__l"></order-list></view>

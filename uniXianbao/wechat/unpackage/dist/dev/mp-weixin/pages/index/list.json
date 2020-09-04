@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "uni-load-more": "/components/uni-load-more/uni-load-more",
+    "parser": "/components/Parser/index",
+    "tip-score": "/pages/user/tip_score",
+    "check-login-page": "/pages/login/check-login"
+  }
+}

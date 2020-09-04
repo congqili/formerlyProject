@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "易线报",
+  "usingComponents": {
+    "ms-tabs": "/components/ms-tabs/ms-tabs",
+    "goods-list": "/pages/rank/goods-list",
+    "to-about": "/pages/user/about"
+  }
+}

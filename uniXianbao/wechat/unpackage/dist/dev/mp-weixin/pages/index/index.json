@@ -1,0 +1,13 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "易线报",
+  "usingComponents": {
+    "ms-tabs": "/components/ms-tabs/ms-tabs",
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "article-list": "/pages/index/list",
+    "to-about": "/pages/user/about",
+    "tip-collect": "/pages/user/tip_collect",
+    "uni-popup-dialog": "/components/uni-popup/uni-popup-dialog",
+    "tab-bar": "/components/tarbbar/tabbar"
+  }
+}

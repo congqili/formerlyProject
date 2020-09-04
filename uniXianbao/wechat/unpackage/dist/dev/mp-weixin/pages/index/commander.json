@@ -1,0 +1,12 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "团长推荐",
+  "usingComponents": {
+    "ms-tabs": "/components/ms-tabs/ms-tabs",
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "article-list": "/pages/index/comlist",
+    "to-about": "/pages/user/about",
+    "tip-collect": "/pages/user/tip_collect",
+    "tab-bar": "/components/tarbbar/tabbar"
+  }
+}

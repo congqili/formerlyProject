@@ -1,0 +1,405 @@
+.share .bg.data-v-69245246 {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
+.share .message.data-v-69245246 {
+  margin-top: 930rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.share .message > image.data-v-69245246 {
+  float: left;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  margin: 0 19rpx 0 50rpx;
+}
+.share .message > view.data-v-69245246 {
+  float: left;
+}
+.share .message .text.data-v-69245246 {
+  width: 242rpx;
+  color: #82352f;
+  margin-right: 80rpx;
+}
+.share .message .text view.data-v-69245246:first-child {
+  font-size: 42rpx;
+}
+.share .message .text view.data-v-69245246:last-child {
+  font-size: 26rpx;
+}
+.share .message .code.data-v-69245246 {
+  width: 180rpx;
+  height: 180rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.3);
+  border-radius: 5rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.share .message .code image.data-v-69245246 {
+  width: 164rpx;
+  height: 164rpx;
+}
+.share .bottom-btn.data-v-69245246 {
+  background: #FFF;
+  margin-top: 128rpx;
+  overflow: hidden;
+}
+.share .bottom-btn button.data-v-69245246 {
+  width: 406rpx;
+  height: 77rpx;
+  background: #ea6a5a;
+  color: #fee400;
+  text-align: center;
+  line-height: 77rpx;
+  font-weight: bold;
+  border-radius: 10rpx;
+  margin: 50rpx auto;
+}
+
+page {
+  background: #f8afa7;
+}
+.boost {
+  overflow: hidden;
+}
+.boost .log {
+  width: 200rpx;
+  left: calc(50% - 100rpx);
+  position: absolute;
+  top: 20rpx;
+}
+.boost .rule {
+  color: #FFF;
+  font-size: 26rpx;
+  position: absolute;
+  right: 44rpx;
+  top: 40rpx;
+}
+.boost .rule-mask {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+}
+.boost .rule-mask .close {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  color: #FFF;
+  font-size: 100rpx;
+}
+.boost .rule-mask .rule-content {
+  width: 526rpx;
+  height: 718rpx;
+  background: #FFF;
+  border-radius: 30rpx;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  top: calc(50% - 359rpx);
+  left: calc(50% - 263rpx);
+}
+.boost .rule-mask .rule-content view:first-child {
+  text-align: center;
+  color: 32rpx;
+  margin: 58rpx 0 30rpx 10rpx;
+}
+.boost .rule-mask .rule-content rich-text {
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  font-size: 24rpx;
+  padding: 0 40rpx;
+}
+.boost .mask {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+}
+.boost .mask .close {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  color: #FFF;
+  font-size: 100rpx;
+}
+.boost .mask .qr-code {
+  width: 432rpx;
+  height: 620rpx;
+  position: absolute;
+  left: calc(50% - 216rpx);
+  top: calc(50% - 310rpx);
+}
+.boost .mask .qr-code view {
+  text-align: center;
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+}
+.boost .mask .qr-code view:first-child {
+  color: #595959;
+  font-size: 33rpx;
+  top: 66rpx;
+}
+.boost .mask .qr-code .code {
+  width: 182rpx;
+  height: 182rpx;
+  position: absolute;
+  z-index: 50;
+  left: calc(50% - 91rpx);
+  top: 144rpx;
+}
+.boost .mask .qr-code view:nth-child(2) {
+  font-size: 24rpx;
+  color: #595959;
+  top: 360rpx;
+}
+.boost .mask .qr-code .code-btn {
+  width: 252rpx;
+  height: 74rpx;
+  font-size: 43rpx;
+  color: #FFF;
+  line-height: 74rpx;
+  border-radius: 5rpx;
+  background: #ffce00;
+  bottom: 52rpx;
+  left: calc(50% - 126rpx);
+}
+.boost .mask .qr-code image:last-child {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.boost .bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+.boost .todo {
+  width: 520rpx;
+  height: 56rpx;
+  color: #fdf353;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 28rpx;
+  margin: 394rpx auto 0;
+}
+.boost .todo view {
+  font-style: italic;
+  background: -webkit-linear-gradient(bottom, #ffff38, #FFFFFa);
+  background: linear-gradient(to top, #ffff38, #FFFFFa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.boost .todo view:first-child {
+  font-size: 34rpx;
+  letter-spacing: 12rpx;
+}
+.boost .todo view:last-child {
+  font-size: 44rpx;
+  letter-spacing: 4rpx;
+}
+.boost .todo view:last-child text {
+  font-size: 60rpx;
+  vertical-align: top;
+}
+.boost .text {
+  margin-top: 320rpx;
+  text-align: center;
+  color: #62241d;
+}
+.boost .text view:first-child {
+  font-size: 42rpx;
+}
+.boost .text view:last-child {
+  font-size: 26rpx;
+}
+.boost .text view:last-child text {
+  margin: 0 10rpx;
+}
+.boost .progress-bar {
+  width: 590rpx;
+  height: 50rpx;
+  margin: 60rpx auto 12rpx;
+  position: relative;
+}
+.boost .progress-bar .line {
+  height: 13.2rpx;
+  position: absolute;
+  width: 570rpx;
+  top: calc(50% - 6.6rpx);
+  left: calc(50% - 285rpx);
+  background: #f09e8b;
+  z-index: 1;
+}
+.boost .progress-bar .bar {
+  height: 13.2rpx;
+  position: absolute;
+  width: 350rpx;
+  top: calc(50% - 6.6rpx);
+  left: 10rpx;
+  background: #e96c5b;
+  z-index: 2;
+  border-radius: 6.6rpx;
+}
+.boost .progress-bar .step {
+  width: 590rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
+.boost .progress-bar .step view {
+  box-sizing: border-box;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  border: 2rpx solid #feed00;
+  background: #e96c5b;
+  line-height: 50rpx;
+  color: #feed00;
+  text-align: center;
+  font-size: 30rpx;
+}
+.boost .progress-bar .step .unsuccess {
+  color: #e96c5b;
+  background: #FFF;
+}
+.boost .step-text {
+  color: #62241d;
+  font-size: 25rpx;
+  width: 628rpx;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.boost .btn {
+  width: 406rpx;
+  height: 77rpx;
+  background: #ea6a5a;
+  color: #fee400;
+  text-align: center;
+  line-height: 77rpx;
+  font-weight: bold;
+  margin: 58rpx auto 0;
+  border-radius: 10rpx;
+}
+.boost .boost-list {
+  width: 620rpx;
+  padding: 36rpx 0;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 52rpx auto 64rpx;
+  border-radius: 16rpx;
+  font-size: 23rpx;
+  color: #000;
+}
+.boost .boost-list .boost-item {
+  height: 50rpx;
+  width: 578rpx;
+  margin-left: 15rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin-top: 18rpx;
+}
+.boost .boost-list .boost-item image {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+}
+.boost .boost-list .boost-item:first-child {
+  margin-top: 0;
+}
+.boost .share-pop {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+}
+.boost .share-pop > view {
+  height: 1300rpx;
+}
+.boost .share-pop .close {
+  position: absolute;
+  right: 30rpx;
+  top: 10rpx;
+  color: #FFF;
+  font-size: 100rpx;
+  line-height: 100rpx;
+}
+.boost .share-pop .canvasImg {
+  width: 580rpx;
+  height: 920rpx;
+  position: absolute;
+  top: 100rpx;
+  left: calc(50% - 290rpx);
+}
+.boost .share-pop .save-btn {
+  width: 580rpx;
+  height: 70rpx;
+  font-size: 43rpx;
+  color: #FFF;
+  line-height: 70rpx;
+  border-radius: 5rpx;
+  background: #fd6003;
+  top: 1030rpx;
+  left: calc(50% - 290rpx);
+  position: absolute;
+  text-align: center;
+  font-size: 25rpx;
+}
+.boost .share-pop .share-btn {
+  position: absolute;
+  width: 580rpx;
+  height: 70rpx;
+  color: #FFF;
+  font-size: 25rpx;
+  top: 1110rpx;
+  background: #e64240;
+  line-height: 70rpx;
+  text-align: center;
+  left: calc(50% - 290rpx);
+}
+

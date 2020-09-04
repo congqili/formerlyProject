@@ -1,0 +1,64 @@
+page {
+  background: #f9f7f3;
+}
+.trans {
+  overflow: hidden;
+}
+.trans .textarea {
+  margin: 10rpx auto 0;
+  position: relative;
+  width: 704rpx;
+}
+.trans .textarea view {
+  color: #e5e5e5;
+  font-size: 18rpx;
+  line-height: 26rpx;
+  position: absolute;
+  top: 16rpx;
+  left: 14rpx;
+  z-index: 5;
+}
+.trans .textarea .place-style {
+  color: #e5e5e5;
+  font-size: 18rpx;
+  line-height: 26rpx;
+}
+.trans .textarea textarea {
+  width: 100%;
+  height: 474rpx;
+  font-size: 18rpx;
+  line-height: 26rpx;
+  box-sizing: border-box;
+  border: 1.5rpx solid #dcdcdc;
+  background: #FFF;
+  padding: 45rpx 0 0 14rpx;
+}
+.trans .btn {
+  margin: 32rpx 0 46rpx;
+}
+.trans .btn button {
+  width: 375rpx;
+  height: 50rpx;
+  background: #d6b16d;
+  color: #FFF;
+  border: 0;
+  font-size: 18rpx;
+  text-align: center;
+  line-height: 50rpx;
+  margin: 0 auto;
+  border: 1rpx solid #dcdcdc;
+  border-radius: 5rpx;
+}
+.trans .btn button::after {
+  border: 0;
+}
+.trans .text {
+  color: #b0b0b0;
+  font-size: 18rpx;
+}
+.trans .text view {
+  width: 670rpx;
+  margin: 0 auto;
+  line-height: 26rpx;
+}
+

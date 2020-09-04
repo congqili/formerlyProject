@@ -1,0 +1,175 @@
+{
+	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			"enablePullDownRefresh": true,
+			"navigationBarTitleText": "易线报"
+		}
+	}, {
+		"path": "pages/login/index",
+		"style": {
+			"enablePullDownRefresh": true,
+			"navigationBarTitleText": "登录"
+		}
+	},{
+		"path": "pages/rank/index",
+		"style": {
+			"enablePullDownRefresh": true,
+			"navigationBarTitleText": "易线报"
+		}
+	}, {
+		"path": "pages/article/index",
+		"style": {
+			"enablePullDownRefresh": true,
+			"navigationBarTitleText": "帮助中心"
+		}
+	}, {
+		"path": "pages/article/detail",
+		"style": {
+			"navigationBarTitleText": "帮助中心"
+		}
+	}, {
+		"path": "pages/rank/detail",
+		"style": {
+			"enablePullDownRefresh": true,
+			"navigationBarTitleText": "商品详情"
+		}
+	}, {
+		"path": "pages/index/commander",
+		"style": {
+			"enablePullDownRefresh": true,
+			"navigationBarTitleText": "团长推荐"
+		}
+	}, {
+		"path": "pages/user/index",
+		"style": {
+			"navigationBarTitleText": "用户中心"
+		}
+	}, {
+		"path": "pages/user/lottery",
+		"style": {
+			"navigationBarTitleText": "抽奖中心"
+		}
+	}, {
+		"path": "pages/checksee/index",
+		"style": {
+			"navigationBarTitleText": "视频下载"
+		}
+	}, {
+		"path" : "pages/boost/boost",
+		"style" : {
+			"navigationBarTitleText": "发起助力"
+		}
+	}
+        ,{
+            "path" : "pages/share/share",
+            "style" : {
+				"navigationBarTitleText": "分享海报"
+			}
+        }
+        ,{
+            "path" : "pages/toboost/toboost",
+            "style" : {
+				"navigationBarTitleText": ""
+			}
+        },{
+		"path": "pages/link/link",
+		"style": {
+			"enablePullDownRefresh": true,
+			"navigationBarTitleText": "一键转链"
+		}
+		},{
+		"path": "pages/member/member",
+		"style": {
+			"navigationBarBackgroundColor":"#ffe4ad",
+			"navigationBarTitleText": "会员",
+			"navigationBarTextStyle": "black"
+			}
+		}
+        ,{
+            "path" : "pages/rob/rob",
+            "style" : {
+				"navigationBarTitleText": "易线报",
+				"navigationBarTextStyle": "black"
+			}
+        }
+		,{
+		    "path" : "pages/order/reward",
+		    "style" : {
+				"navigationBarTitleText": "带单奖励",
+				"navigationBarTextStyle": "black"
+			}
+		}
+        ,{
+            "path" : "pages/order/order",
+            "style" : {
+				"navigationBarTitleText": "订单列表"
+			}
+        } 
+        ,{
+            "path" : "pages/shareimg/shareimg",
+            "style" : {} 
+        }
+        ,{
+            "path" : "pages/gain/gain",
+            "style" : {
+				"navigationBarTitleText": "预估收益"
+			}
+        }
+		,{
+		    "path" : "pages/goods/detail",
+		    "style" : {
+				"navigationBarTitleText": "商品详情",
+				"navigationBarBackgroundColor":"#FFF"
+			}
+		}
+        ,{
+            "path" : "pages/authorize/authorize",
+            "style" : {
+				"navigationBarTitleText": "苏宁授权"
+			}
+        }
+        ,{
+            "path" : "pages/goods/goods",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "易线报",
+		"navigationBarBackgroundColor": "#f9f7f3",
+		"backgroundColor": "#6a7d8f"
+	},
+	"tabBar": {
+		"color": "#333333",
+		"selectedColor": "#f59a23",
+		"borderStyle": "white",
+		"backgroundColor": "#f7f7f7",
+		"list": [
+			{
+				"pagePath": "pages/index/index"
+			},{
+				"pagePath": "pages/index/commander"
+			},
+			{
+				"pagePath": "pages/rob/rob"
+			},
+			{
+				"pagePath": "pages/order/reward"
+			},
+			{
+				"pagePath": "pages/member/member" 
+			}
+		]
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}

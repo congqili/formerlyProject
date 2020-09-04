@@ -1,0 +1,183 @@
+.input-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  padding: 20rpx 0;
+}
+.input-item view:first-child {
+  color: #6a5225;
+  font-size: 28rpx;
+}
+.input-item view:last-child {
+  color: #FFF;
+  width: 68rpx;
+  height: 36rpx;
+  border-radius: 6rpx;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 36rpx;
+  background: #d6b16d;
+}
+.input-item input {
+  height: 48rpx;
+  width: 385rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #d6b16d;
+  border-radius: 5rpx;
+  background: #FFF;
+  margin: 0 20rpx 0 15rpx;
+}
+.order-list .order-item {
+  background: #FFF;
+  padding: 20rpx 18rpx;
+  margin: 28rpx 20rpx 0;
+}
+.order-list .order-item .order-head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.order-list .order-item .order-head .order-num-info {
+  width: 100%;
+}
+.order-list .order-item .order-head .order-num-info > view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.order-list .order-item .order-head .order-num-info > view view:first-child {
+  font-size: 22rpx;
+  color: #66532c;
+}
+.order-list .order-item .order-head .order-num-info > view view:last-child {
+  font-size: 24rpx;
+  color: #d0b276;
+}
+.order-list .order-item .order-head .order-num-info .order-time {
+  margin-bottom: 30rpx;
+}
+.order-list .order-item .order-head .order-num-info .order-time view:first-child text {
+  margin-left: 15rpx;
+}
+.order-list .order-item .order-head .order-num-info .order-num {
+  margin-bottom: 20rpx;
+}
+.order-list .order-item .order-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.order-list .order-item .order-info > image {
+  width: 165rpx;
+  height: 165rpx;
+}
+.order-list .order-item .order-info .info-text {
+  width: 482rpx;
+  margin-left: 20rpx;
+}
+.order-list .order-item .order-info .info-text .info-tit {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 476rpx;
+  position: relative;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.order-list .order-item .order-info .info-text .info-tit view:first-child {
+  width: 64rpx;
+  font-size: 17rpx;
+  color: #FFF;
+  background: #f1d5a3;
+  line-height: 24rpx;
+  height: 24rpx;
+  border-radius: 4rpx;
+  text-align: center;
+}
+.order-list .order-item .order-info .info-text .info-tit view:last-child {
+  width: 402rpx;
+  color: #666666;
+  font-size: 24rpx;
+  line-height: 32rpx;
+}
+.order-list .order-item .order-info .info-text .info-tit view:last-child text {
+  position: absolute;
+  right: 0;
+}
+.order-list .order-item .order-info .info-text .info-status {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin: 22rpx 0 12rpx;
+}
+.order-list .order-item .order-info .info-text .info-status view:first-child {
+  color: #66532c;
+  font-size: 24rpx;
+}
+.order-list .order-item .order-info .info-text .info-status view:last-child {
+  font-size: 24rpx;
+  color: #353038;
+}
+.order-list .order-item .order-info .info-text .info-price {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.order-list .order-item .order-info .info-text .info-price view:first-child {
+  color: #66532c;
+  font-size: 24rpx;
+}
+.order-list .order-item .order-info .info-text .info-price .paymoney {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  color: #FFF;
+  padding: 0 10rpx;
+  height: 34rpx;
+  border-radius: 17rpx;
+  font-size: 19rpx;
+  text-align: center;
+  line-height: 34rpx;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  background: #d6b16d;
+}
+.order-list .order-item .order-info .info-text .info-price .paymoney image {
+  width: 17rpx;
+  height: 17rpx;
+  margin-right: 6rpx;
+}
+.order-list .order-item .order-info .info-text .info-price .orderState {
+  font-size: 24rpx;
+  color: #353038;
+}
+

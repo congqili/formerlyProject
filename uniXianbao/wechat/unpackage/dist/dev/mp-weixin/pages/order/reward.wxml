@@ -1,0 +1,1 @@
+<view class="reward"><order-list vue-id="5e68401d-1" bind:__l="__l"></order-list><tab-bar vue-id="5e68401d-2" checked="2" bind:__l="__l"></tab-bar></view>

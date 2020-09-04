@@ -1,0 +1,1 @@
+<view><block wx:if="{{list.length>1}}"><ms-tabs bind:input="__e" vue-id="470eb160-1" list="{{list}}" lineColor="#bea577" itemColor="#bea577" value="{{current}}" data-event-opts="{{[['^input',[['__set_model',['','current','$event',[]]]]]]}}" bind:__l="__l"></ms-tabs></block><reward-list vue-id="470eb160-2" month="{{month}}" bind:__l="__l"></reward-list></view>

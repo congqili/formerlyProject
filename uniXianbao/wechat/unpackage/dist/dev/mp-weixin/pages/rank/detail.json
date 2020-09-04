@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "uni-tag": "/components/uni-tag/uni-tag",
+    "parser": "/components/Parser/index"
+  }
+}

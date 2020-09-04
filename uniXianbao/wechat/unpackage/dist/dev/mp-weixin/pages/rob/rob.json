@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "易线报",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "tab-bar": "/components/tarbbar/tabbar"
+  }
+}

@@ -1,0 +1,78 @@
+.share-page {
+  padding-bottom: 160rpx;
+}
+.share-page .bottom-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 138rpx;
+  background: #FFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  padding: 0 76rpx;
+}
+.share-page .bottom-btn view {
+  color: #FFF;
+  background: #d6b16d;
+  width: 280rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 6rpx;
+  font-size: 25rpx;
+}
+.share-page .content {
+  margin-top: 10rpx;
+}
+.share-page .content .img-list {
+  height: 135rpx;
+  padding: 0 24rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.share-page .content .img-list .img-item {
+  position: relative;
+  width: 135rpx;
+  height: 135rpx;
+  margin-right: 20rpx;
+}
+.share-page .content .img-list .img-item view {
+  height: 32rpx;
+  width: 32rpx;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  border-radius: 50%;
+  color: #FFF;
+  top: 16rpx;
+  font-size: 25rpx;
+  text-align: center;
+  line-height: 32rpx;
+  right: 16rpx;
+}
+.share-page .content .img-list .img-item .check {
+  background: #d6b16d;
+}
+.share-page .content .img-list .img-item image {
+  width: 135rpx;
+  height: 135rpx;
+}
+.share-page .content .canvas-body {
+  margin: 60rpx 64rpx 0;
+  background: #FFF;
+  border-radius: 14rpx;
+  overflow: hidden;
+}
+.share-page .content .canvas-body canvas {
+  width: 100%;
+  height: 1000rpx;
+}
+

@@ -1,0 +1,35 @@
+.float-btn {
+	position: fixed;
+	bottom: 50upx;
+	right: 50upx;
+	border: 1px solid rgb(245, 154, 35);
+	border-radius: 80upx;
+	width: 95upx;
+	background: rgb(245, 154, 35);
+	height: 95upx;
+	font-size: 30upx;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 1;
+	padding: 7px 0;
+	color: #fff;
+	i {
+		margin: 0 auto;
+		font-size: 50upx;
+		color: rgb(245, 154, 35);
+	}
+}
+.fixed-tabs {
+	position: fixed;
+	top: 0;
+	background: #fff;
+	width: 100%;
+	z-index: 99;
+	/*#ifdef H5*/
+	top: 44px;
+	/*#endif */
+	
+}
+.bar.content-container{
+	// margin-top: 140upx;
+}

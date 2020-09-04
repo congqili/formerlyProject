@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "预估收益",
+  "usingComponents": {
+    "ms-tabs": "/components/ms-tabs/ms-tabs",
+    "reward-list": "/pages/gain/list"
+  }
+}

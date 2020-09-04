@@ -1,0 +1,224 @@
+page {
+  background: #f8afa7;
+}
+.share {
+  overflow: hidden;
+}
+.share .log {
+  width: 200rpx;
+  left: calc(50% - 100rpx);
+  position: absolute;
+  top: 20rpx;
+}
+.share .popup {
+  position: fixed;
+  width: 430rpx;
+  height: 320rpx;
+  background: #FFF;
+  text-align: center;
+  line-height: 320rpx;
+  font-size: 40rpx;
+  left: calc(50% - 215rpx);
+  top: -640rpx;
+  border-radius: 10rpx;
+}
+.share .bg {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
+.share .rule {
+  color: #FFF;
+  font-size: 26rpx;
+  position: absolute;
+  right: 44rpx;
+  top: 40rpx;
+}
+.share .rule-mask {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+}
+.share .rule-mask .close {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  color: #FFF;
+  font-size: 100rpx;
+}
+.share .rule-mask .rule-content {
+  width: 526rpx;
+  height: 718rpx;
+  background: #FFF;
+  border-radius: 30rpx;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: calc(50% - 359rpx);
+  left: calc(50% - 263rpx);
+}
+.share .rule-mask .rule-content view:first-child {
+  text-align: center;
+  color: 32rpx;
+  margin: 58rpx 0 30rpx 10rpx;
+}
+.share .rule-mask .rule-content rich-text {
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  font-size: 24rpx;
+  padding: 0 40rpx;
+}
+.share .mask {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+}
+.share .mask .close {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  color: #FFF;
+  font-size: 100rpx;
+}
+.share .mask .qr-code {
+  width: 432rpx;
+  height: 620rpx;
+  position: absolute;
+  left: calc(50% - 216rpx);
+  top: calc(50% - 310rpx);
+}
+.share .mask .qr-code view {
+  text-align: center;
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+}
+.share .mask .qr-code .code {
+  width: 182rpx;
+  height: 182rpx;
+  position: absolute;
+  z-index: 50;
+  left: calc(50% - 91rpx);
+  top: 144rpx;
+}
+.share .mask .qr-code view:first-child {
+  font-size: 24rpx;
+  color: #595959;
+  top: 360rpx;
+}
+.share .mask .qr-code .code-btn {
+  width: 252rpx;
+  height: 74rpx;
+  font-size: 43rpx;
+  color: #FFF;
+  line-height: 74rpx;
+  border-radius: 5rpx;
+  background: #ffce00;
+  bottom: 52rpx;
+  left: calc(50% - 126rpx);
+}
+.share .mask .qr-code image:last-child {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.share .message {
+  margin-top: 930rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.share .message > image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 50rpx;
+  margin-left: 30rpx;
+}
+.share .message .text {
+  width: 534rpx;
+  padding: 30rpx 0;
+  font-size: 26rpx;
+  background: #fbcfca;
+  color: #46080b;
+  border-radius: 12rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  position: relative;
+}
+.share .message .text .arrow {
+  margin: 0;
+  position: absolute;
+  left: -45rpx;
+  width: 0px;
+  height: 0px;
+  border-top: 16rpx solid transparent;
+  border-left: 24rpx solid transparent;
+  border-right: 24rpx solid #fbcfca;
+  border-bottom: 16rpx solid transparent;
+}
+.share .message .text view:nth-child(3) {
+  font-size: 38rpx;
+  margin: 16rpx 0 16rpx 30rpx;
+}
+.share .message .text view:nth-child(3) text {
+  font-size: 44rpx;
+  margin: 0 16rpx;
+}
+.share .message .text view {
+  margin-left: 30rpx;
+  position: relative;
+}
+.share .btn {
+  width: 406rpx;
+  height: 77rpx;
+  background: #ea6a5a;
+  color: #fee400;
+  text-align: center;
+  line-height: 77rpx;
+  font-weight: bold;
+  border-radius: 10rpx;
+  margin: 70rpx auto 0;
+}
+.share .gray {
+  background: gray;
+  color: #FFF;
+}
+.share .join {
+  font-size: 27rpx;
+  background: #ffaba4;
+  color: #812c26;
+  width: 406rpx;
+  height: 77rpx;
+  text-align: center;
+  line-height: 77rpx;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  border: 2rpx solid #fc5f52;
+}
+

@@ -1,0 +1,227 @@
+.rob .rob-content .rob-banner {
+  margin: 0 23rpx;
+  border-radius: 14rpx;
+  height: 274rpx;
+}
+.rob .rob-content .rob-banner image {
+  display: block;
+  width: 100%;
+  height: 274rpx;
+}
+.rob .rob-content .goods-item {
+  background: #FFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin: 0 23rpx;
+  padding: 18rpx 10rpx;
+  margin-top: 26rpx;
+}
+.rob .rob-content .goods-item > image {
+  width: 223rpx;
+  height: 210rpx;
+}
+.rob .rob-content .goods-item .goods-info {
+  width: 450rpx;
+  margin-left: 5rpx;
+}
+.rob .rob-content .goods-item .goods-info > view {
+  width: 450rpx;
+}
+.rob .rob-content .goods-item .goods-info .goods-tit {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.rob .rob-content .goods-item .goods-info .goods-tit view:first-child {
+  color: #FFF;
+  width: 61rpx;
+  height: 24rpx;
+  font-size: 18rpx;
+  text-align: center;
+  line-height: 24rpx;
+  border-radius: 5rpx;
+  background: #f1d5a3;
+}
+.rob .rob-content .goods-item .goods-info .goods-tit view:last-child {
+  width: 383rpx;
+  font-size: 21rpx;
+  color: #33270f;
+  line-height: 28rpx;
+}
+.rob .rob-content .goods-item .goods-info .bar {
+  width: 242rpx;
+  position: relative;
+  height: 22rpx;
+  margin-top: 15rpx;
+}
+.rob .rob-content .goods-item .goods-info .bar view:first-child {
+  width: 242rpx;
+  height: 22rpx;
+  border-radius: 11rpx;
+  background: #f1d5a3;
+}
+.rob .rob-content .goods-item .goods-info .bar view:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #eabc67;
+  width: 51rpx;
+  border-radius: 11rpx;
+  height: 22rpx;
+}
+.rob .rob-content .goods-item .goods-info .bar view:nth-child(3) {
+  position: absolute;
+  color: #FFF;
+  left: 10rpx;
+  font-size: 16rpx;
+  line-height: 22rpx;
+  top: 0;
+}
+.rob .rob-content .goods-item .goods-info .bar view:last-child {
+  position: absolute;
+  right: 10rpx;
+  font-size: 16rpx;
+  color: #ed6a3c;
+  line-height: 22rpx;
+  top: 0;
+}
+.rob .rob-content .goods-item .goods-info .goods-time {
+  color: #ea744a;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin: 12rpx 0 16rpx;
+}
+.rob .rob-content .goods-item .goods-info .goods-time view:first-child {
+  font-size: 18rpx;
+}
+.rob .rob-content .goods-item .goods-info .goods-time view:last-child {
+  font-size: 24rpx;
+}
+.rob .rob-content .goods-item .goods-info .bottom-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.rob .rob-content .goods-item .goods-info .bottom-btn view:first-child {
+  font-size: 34rpx;
+  color: #ea744a;
+}
+.rob .rob-content .goods-item .goods-info .bottom-btn view:first-child text {
+  font-size: 23rpx;
+}
+.rob .rob-content .goods-item .goods-info .bottom-btn view:nth-child(2) {
+  position: relative;
+  text-align: center;
+  width: 55rpx;
+  height: 29rpx;
+  line-height: 29rpx;
+  font-size: 19rpx;
+  color: #ea744a;
+}
+.rob .rob-content .goods-item .goods-info .bottom-btn view:nth-child(2) image {
+  left: 0;
+  top: 0;
+  width: 55rpx;
+  height: 29rpx;
+  position: absolute;
+}
+.rob .rob-content .goods-item .goods-info .bottom-btn view:nth-child(2) text {
+  font-size: 12rpx;
+}
+.rob .rob-content .goods-item .goods-info .bottom-btn .btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 228rpx;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.rob .rob-content .goods-item .goods-info .bottom-btn .btn view:first-child {
+  width: 107rpx;
+  height: 34rpx;
+  border-radius: 17rpx;
+  text-align: center;
+  line-height: 34rpx;
+  color: #d0b276;
+  font-size: 19rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #d0b276;
+}
+.rob .rob-content .goods-item .goods-info .bottom-btn .btn view:last-child {
+  background: #d0b276;
+  color: #FFF;
+  width: 107rpx;
+  height: 34rpx;
+  border-radius: 17rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 10rpx;
+  box-sizing: border-box;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.rob .rob-content .goods-item .goods-info .bottom-btn .btn view:last-child image {
+  position: static;
+  width: 17rpx;
+  height: 17rpx;
+}
+.rob .rob-content .preferred {
+  background: #FFF;
+  border-radius: 12rpx;
+  overflow: hidden;
+  width: 704rpx;
+  margin: 20rpx auto;
+}
+.rob .rob-content .preferred > view:first-child {
+  font-size: 23rpx;
+  color: #9b9b9b;
+  text-align: center;
+  letter-spacing: 4rpx;
+  margin: 16rpx 0 22rpx;
+}
+.rob .rob-content .preferred > view:last-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  padding: 0 50rpx;
+  margin-bottom: 24rpx;
+}
+.rob .rob-content .preferred > view:last-child view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 21rpx;
+  color: #d0b276;
+}
+.rob .rob-content .preferred > view:last-child view image {
+  height: 25rpx;
+  width: 22rpx;
+  margin-right: 14rpx;
+}
+

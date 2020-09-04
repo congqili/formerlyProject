@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['tap',[['toArticle',['$event']]]]]}}" class="float-btn" bindtap="__e">去<view class="_br"></view>抽奖</view>

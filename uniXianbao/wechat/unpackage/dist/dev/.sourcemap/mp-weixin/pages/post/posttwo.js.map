@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni-app:///main.js"],"names":["createPage","Page"],"mappings":";;;;wEAAA,qBACA,sBACA,0H,mDACAA,EAAWC,a","file":"pages/post/posttwo.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './pages/post/posttwo.vue'\ncreatePage(Page)"],"sourceRoot":""}
