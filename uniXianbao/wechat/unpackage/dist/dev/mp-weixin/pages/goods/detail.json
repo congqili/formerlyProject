@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "商品详情",
-  "navigationBarBackgroundColor": "#FFF",
-  "usingComponents": {
-    "poster": "/components/plugin-cavas/poster"
-  }
-}

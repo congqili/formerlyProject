@@ -1,1 +1,0 @@
-<uni-notice-bar class="tip-collect" vue-id="e5a9c0aa-1" scrollable="{{true}}" speed="10px" showClose="true" single="{{true}}" text="{{shopconfig.tip_collect}}" data-event-opts="{{[['^close',[['close']]]]}}" bind:close="__e" bind:__l="__l"></uni-notice-bar>

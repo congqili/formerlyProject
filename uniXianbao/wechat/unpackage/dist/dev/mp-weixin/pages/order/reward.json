@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "带单奖励",
-  "navigationBarTextStyle": "black",
-  "usingComponents": {
-    "order-list": "/pages/order/orderList",
-    "tab-bar": "/components/tarbbar/tabbar"
-  }
-}

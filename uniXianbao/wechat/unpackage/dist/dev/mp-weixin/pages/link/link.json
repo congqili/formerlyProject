@@ -1,7 +1,0 @@
-{
-  "enablePullDownRefresh": true,
-  "navigationBarTitleText": "一键转链",
-  "usingComponents": {
-    "tab-bar": "/components/tarbbar/tabbar"
-  }
-}

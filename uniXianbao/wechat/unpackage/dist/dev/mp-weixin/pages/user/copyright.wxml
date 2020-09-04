@@ -1,1 +1,0 @@
-<view class="copyright"><view>{{sysconfig.company}}</view><block wx:if="{{sysconfig.desc!==''}}"><view>{{sysconfig.desc}}</view></block><image mode="aspectFit" src="{{sysconfig.img}}"></image></view>
