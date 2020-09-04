@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#f9f7f3",
+  "navigationBarTitleText": "我的粉丝",
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,305 @@
+view,
+text {
+  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.blue-green-btn {
+  background: linear-gradient(to right, #38debf, #12a5bf);
+}
+.blue-purple-btn {
+  background: linear-gradient(to right, #4d8be1, #889cf4);
+}
+view,
+text {
+  line-height: 1;
+}
+button::after {
+  border: none;
+}
+button {
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  line-height: 1;
+}
+button {
+  border-radius: 0;
+}
+.banxin {
+  width: 710rpx;
+  margin: 0 auto;
+  border-radius: 15rpx;
+}
+.col:after {
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  display: block;
+  visibility: hidden;
+}
+.share-pop {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.share-pop .share-body {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: calc(5vh);
+  top: calc(5vh + env(safe-area-inset-bottom));
+}
+.share-pop .share-body .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.share-pop .share-body .close image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.share-pop .share-body image {
+  width: 80vw;
+  height: 77vh;
+  border-radius: 20rpx;
+}
+.share-pop .share-body button {
+  position: relative;
+  width: 80vw;
+  height: 5vh !important;
+  font-size: 25rpx;
+  color: #FFF;
+  line-height: 5vh;
+  border-radius: 5rpx;
+  background: linear-gradient(to right, #39dfbf, #13a6bf);
+  text-align: center;
+  margin-top: 3vh;
+  /*margin-top: 40rpx;*/
+}
+.share-pop .share-body .share-btn {
+  margin-top: 2vh;
+}
+.com-product-item:first-child {
+  border-top: 0!important;
+}
+.com-product-item {
+  padding: 20rpx 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 1rpx dotted #dcdcdc;
+}
+.com-product-item .subsidy {
+  top: 0;
+  height: 34rpx;
+  white-space: nowrap;
+  border-radius: 17rpx;
+  padding: 0 10rpx;
+  color: #957052;
+  font-size: 18rpx;
+  background: #fcf1d8;
+  position: absolute;
+  line-height: 34rpx;
+  right: 0;
+  top: 143rpx;
+}
+.com-product-item .product-img {
+  float: left;
+  width: 221rpx;
+  height: 221rpx;
+  margin-right: 27rpx;
+  overflow: hidden;
+  border: 1rpx solid #f3f2f2;
+  border-radius: 10rpx;
+}
+.com-product-item .product-img image {
+  width: 221rpx;
+  height: 221rpx;
+}
+.com-product-item .product-content .product-tit,
+.com-product-item .product-content .product-txt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.com-product-item .product-content .product-tit {
+  margin-top: 10rpx;
+  line-height: 32rpx;
+  font-size: 28rpx;
+  color: black;
+}
+.com-product-item .product-content .product-txt {
+  margin-top: 14rpx;
+  line-height: 32rpx;
+  font-size: 25rpx;
+  color: #999999;
+}
+.com-product-item .product-content .product-coupons {
+  margin-top: 10rpx;
+  position: relative;
+  font-size: 24rpx;
+  height: 40rpx;
+  color: #FFF;
+  overflow: hidden;
+}
+.com-product-item .product-content .product-coupons > view {
+  width: 100%;
+  height: 40rpx;
+}
+.com-product-item .product-content .product-coupons > view image {
+  height: 40rpx;
+  width: 137rpx;
+  position: absolute;
+  top: 0;
+  left: 0rpx;
+}
+.com-product-item .product-content .product-coupons > view text {
+  left: 50rpx;
+  width: auto;
+  height: 40rpx;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  color: #fff;
+  line-height: 41.5rpx;
+  display: flex;
+  white-space: nowrap;
+  background: #ff7e78;
+  padding-right: 5rpx;
+  border-radius: 5rpx;
+  font-weight: 100;
+}
+.com-product-item .product-content .product-oldprice {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #999999;
+  text-decoration: line-through;
+}
+.com-product-item .product-content .product-price {
+  margin-top: -5rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.com-product-item .product-content .product-price .product-priceo {
+  font-size: 24rpx;
+  color: #4da68d;
+  height: 40rpx;
+}
+.com-product-item .product-content .product-price .product-priceo text {
+  font-size: 38rpx;
+  font-weight: bold;
+}
+.com-product-item .product-content .product-price .product-pricet {
+  font-size: 24rpx;
+  color: white;
+  height: 48rpx;
+  padding: 0 20rpx;
+  background: linear-gradient(to right, #6de2cd, #3cb6ad);
+  border-radius: 48rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.com-product-item .product-content .product-price .product-pricet image {
+  width: 29rpx;
+  height: 29rpx;
+  margin-right: 12rpx;
+}
+page {
+  background: #f9f7f3;
+}
+.member-withdraw {
+  padding: 0 23rpx;
+}
+.member-withdraw .withdraw-top {
+  color: #FFF;
+  border-radius: 10rpx;
+  padding: 0 60rpx;
+  background: linear-gradient(to right, #6ed7c0, #4fa7bd);
+}
+.member-withdraw .withdraw-top .withdraw-fun {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.member-withdraw .withdraw-top .withdraw-fun > view:first-child view:first-child {
+  font-size: 30rpx;
+  margin: 56rpx 0 28rpx;
+}
+.member-withdraw .withdraw-top .withdraw-fun > view:first-child view:last-child {
+  font-size: 48rpx;
+}
+.member-withdraw .withdraw-top .withdraw-fun > view:last-child {
+  padding: 0 45rpx;
+  height: 58rpx;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #FFF;
+  border-radius: 29rpx;
+  text-align: center;
+}
+.member-withdraw .withdraw-top .member-gain {
+  display: flex;
+}
+.member-withdraw .withdraw-top .member-gain .gain-item {
+  width: 240rpx;
+  display: flex;
+  flex-direction: column;
+}
+.member-withdraw .withdraw-top .member-gain .gain-item view:first-child {
+  margin: 58rpx 0 18rpx;
+  font-size: 25rpx;
+}
+.member-withdraw .withdraw-top .member-gain .gain-item view:last-child {
+  font-size: 29rpx;
+  margin-bottom: 58rpx;
+}
+.member-withdraw .withdraw-info {
+  background: #FFF;
+  margin: 28rpx 0 26rpx;
+  border-radius: 10rpx;
+}
+.member-withdraw .withdraw-info > view:last-child {
+  border: 0;
+}
+.member-withdraw .withdraw-info > view {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 34rpx;
+  height: 78rpx;
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+.member-withdraw .withdraw-info > view image {
+  width: 9rpx;
+  height: 18rpx;
+  margin-left: 8rpx;
+}
+.member-withdraw .withdraw-info > view view:first-child {
+  font-size: 30rpx;
+  color: #414141;
+}
+.member-withdraw .withdraw-info > view view:last-child {
+  color: #989898;
+  font-size: 25rpx;
+  display: flex;
+  align-items: center;
+}
+.member-withdraw .rule {
+  padding: 26rpx 36rpx;
+  background: #FFF;
+  min-height: 200rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+}

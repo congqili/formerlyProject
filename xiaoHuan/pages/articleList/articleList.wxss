@@ -1,0 +1,36 @@
+page {
+  background: #f9f7f3;
+}
+.article-list .article-list-content {
+  width: 710rpx;
+  margin: 0 auto;
+  background: #FFF;
+  overflow: hidden;
+  padding: 10rpx;
+}
+.article-list .article-list-content .article-list-item {
+  margin: 0 30rpx;
+  color: #666;
+  border-bottom: 1rpx solid #cecece;
+}
+.article-list .article-list-content .article-list-item view {
+  overflow: hidden;
+  font-size: 35rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 20rpx 0;
+}
+.article-list .article-list-content .article-list-item:last-child {
+  border: 0;
+}
+.article-list .van-tab {
+  color: #000;
+}
+.article-list .van-tab--active {
+  color: #0fa98c;
+}
+.article-list .van-tabs__line {
+  background: #0fa98c;
+}

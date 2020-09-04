@@ -1,0 +1,51 @@
+page{
+    background: #f9f7f3;
+}
+
+.reward{
+    .van-tab{
+        color: #4d4d4d;
+        background: #f9f7f3;
+    }
+    .van-tab--active{
+        color: #0fa98c;
+    }
+    .van-tabs__line{
+        background: #0fa98c;
+        width: 142rpx;
+        height: 5rpx;
+    }
+    .reward-content{
+        .reward-list{
+            padding-bottom: 50rpx;
+            view,text{
+                line-height: 1;
+            }
+            margin: 0 22rpx 0;
+            .reward-month{
+                background: #FFF;
+                margin-top: 28rpx;
+                padding: 10rpx 42rpx;
+                border-radius: 22rpx;
+                &>view{
+                    font-size: 24rpx;
+                    display: flex;
+                    justify-content: space-between;
+                    border-bottom: 2rpx solid #eeeeee;
+                    line-height: 75rpx;
+                    view:first-child{
+                        color: #353038;
+                        line-height: 75rpx;
+                    }
+                    view:last-child{
+                        color: #4da68d;
+                        line-height: 75rpx;
+                    }
+                }
+                &>view:last-child{
+                    border: 0;
+                }
+            }
+        }
+    }
+}

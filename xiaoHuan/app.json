@@ -1,0 +1,106 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login", 
+    "pages/webview/webview",
+    "pages/live/live",
+    "pages/liveStreamer/liveStreamer",
+    "pages/livePush/livePush",
+    "pages/liveDetail/liveDetail",
+    "pages/liveHistoryDetail/liveHistoryDetail",
+    "pages/liveBeStart/liveBeStart",
+    "pages/liveBeEnd/liveBeEnd",
+    "pages/liveCreateProduct/liveCreateProduct",
+    "pages/liveSelectProduct/liveSelectProduct",
+    "pages/liveCreate/liveCreate",
+    "pages/liveSquare/liveSquare",
+    "pages/productList/productList",
+    "pages/productHotList/productHotList",
+    "pages/productDetail/productDetail",
+    "pages/productVideos/productVideos",
+    "pages/productVideo/productVideo",
+    "pages/member/member",
+    "pages/memberFans/memberFans",
+    "pages/memberOrder/memberOrder",
+    "pages/memberGain/memberGain",
+    "pages/memberWithdraw/memberWithdraw",
+    "pages/article/article",
+    "pages/articleList/articleList",
+    "pages/memberIntegral/memberIntegral",
+    "pages/memberIntegralDetail/memberIntegralDetail",
+    "pages/memberLevel/memberLevel",
+    "pages/liveData/liveData",
+    "pages/memberVip/memberVip",
+    "pages/memberChangeHistory/memberChangeHistory",
+    "pages/memberAccount/memberAccount",
+    "pages/withdrawHistory/withdrawHistory",
+    "pages/memberOrderDetail/memberOrderDetail",
+    "pages/link/link",
+    "pages/feedback/feedback",
+    "pages/brand/brand",
+    "pages/brandDetail/brandDetail",
+    "pages/productGroup/productGroup",
+    "pages/openAssistant/openAssistant"
+    
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小獾好货",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#fff"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/brand/brand"
+      },
+      {
+        "pagePath": "pages/liveSquare/liveSquare"
+      },
+      {
+        "pagePath": "pages/member/member"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index",
+    "tabbar": "./components/tabbar/tabbar",
+    "loadFlag": "./components/loadFlag/loadFlag",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-circle": "@vant/weapp/circle/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-slider": "@vant/weapp/slider/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "van-steps": "@vant/weapp/steps/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-button": "@vant/weapp/button/index"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "plugins": {
+    "liveRoomPlugin": {
+      "version": "1.2.4",
+      "provider": "wx95a7d2b78cf30f98"
+    }
+  }
+}

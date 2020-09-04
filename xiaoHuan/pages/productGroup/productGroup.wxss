@@ -1,0 +1,87 @@
+.page {
+  height: 100vh;
+  background: #FFF;
+}
+.box_scroll {
+  height: 100vh;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+page view {
+  line-height: 1;
+}
+.barText {
+  text-align: center;
+  color: #FFF;
+  position: fixed;
+  width: 750rpx;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+}
+.barText .bg {
+  position: absolute;
+  width: 750rpx;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.barText view {
+  width: 750rpx;
+  height: 100%;
+}
+.barText .back {
+  position: absolute;
+  left: 25rpx;
+  width: 24rpx;
+  height: 40rpx;
+}
+.seleGoods_box {
+  position: relative;
+}
+.seleGoods_box .seleb_img {
+  top: 0;
+  left: 0;
+  display: block;
+  width: 750rpx;
+}
+.seleGoods_box .selebox_section {
+  top: 410rpx;
+}
+.seleGoods_box .seleb_scroll {
+  box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.3);
+  width: 750rpx;
+  height: 114rpx;
+  white-space: nowrap;
+}
+.seleGoods_box .seleb_scroll .content .selebs_action {
+  background: rgba(255, 255, 255, 0.2);
+}
+.seleGoods_box .seleb_scroll .content .selebs_tab {
+  display: inline-block;
+  height: 115rpx;
+  width: 165rpx;
+  box-sizing: border-box;
+  padding: 0 0 20rpx;
+}
+.seleGoods_box .seleb_scroll .content .selebs_tab .stab_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 68rpx;
+}
+.seleGoods_box .seleb_scroll .content .selebs_tab .stab_img image {
+  width: 35rpx;
+}
+.seleGoods_box .seleb_scroll .content .selebs_tab .stab_tit {
+  text-align: center;
+  color: #ffffff;
+  font-size: 26rpx;
+}
+.product-list {
+  margin: 20rpx auto 0 !important;
+  width: 710rpx !important;
+}

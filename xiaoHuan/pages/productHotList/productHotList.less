@@ -1,0 +1,54 @@
+@import '../../style/static.less';
+page{
+    background: #f3f3f3;
+}
+.hot-product{
+    background: #FFF;
+    .nav{
+        height: 98rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .tab{
+            height: 58rpx;
+            width: 490rpx;
+            border-radius: 29rpx;
+            background: #f8f8f8;
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            color: #666666;
+            view{
+                width: 246rpx;
+                text-align: center;
+                line-height: 58rpx;
+                position: absolute;
+            }
+            view:first-child{
+                z-index: 1;
+                left: 0;
+            }
+            view:nth-child(2){
+                z-index: 1;
+                right: 0;
+            }
+            view:last-child{
+                top: 0;
+                height: 58rpx;
+                border-radius: 29rpx;
+                transition: all .2s;
+                width: 246rpx;
+                background: linear-gradient(to left,#4ba2bc,#71dcc0);
+            }
+            .left{
+                left: 0;
+            }
+            .right{
+                left: 246rpx;
+            }
+            .check{
+                color: #FFF;
+            }
+        }
+    }
+}

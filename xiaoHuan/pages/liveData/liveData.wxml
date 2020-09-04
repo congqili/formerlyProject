@@ -1,0 +1,54 @@
+<view class="live-data">
+    <view class="live-head">
+        <image src="{{head}}" />
+        <view>
+            <view>{{nickname}}</view>
+            <view>直播标题</view>
+        </view>
+    </view>
+    <view class="time-data">
+        <view class="time-item">
+            <view>直播时长</view>
+            <view>{{streamInfo.longTime}}</view>
+        </view>
+        <view class="time-item">
+            <view>直播时间</view>
+            <view>{{streamInfo.timer}}</view>
+        </view>
+    </view>
+    <view class="list-tit">互动总结</view>
+    <view class="deal">
+        <view class="deal-item">
+            <view>累计观看人数</view>
+            <view>{{streamInfo.ls_viewer_num}}</view>
+        </view>
+        <view class="deal-item">
+            <view>点赞数</view>
+            <view>{{streamInfo.ls_like_num}}</view>
+        </view>
+        <view class="deal-item">
+            <view>新增粉丝</view>
+            <view>{{streamInfo.ls_fans_num}}</view>
+        </view>
+    </view>
+    <view class="list-tit">成交总结</view>
+    <view class="deal">
+        <view class="deal-item">
+            <view>用户支付订单</view>
+            <view>{{streamInfo.ls_order_num}}</view>
+        </view>
+        <view class="deal-item">
+            <view>用户支付金额</view>
+            <view>{{streamInfo.ls_order_pay_money}}</view>
+        </view>
+        <view class="deal-item">
+            <view>预估佣金</view>
+            <view>{{streamInfo.ls_commission}}</view>
+        </view>
+        <view class="deal-item">
+            <view>观看用户下单率</view>
+            <view>{{streamInfo.ratio}}</view>
+        </view>
+    </view>
+    <van-notify id="van-notify" />
+</view>

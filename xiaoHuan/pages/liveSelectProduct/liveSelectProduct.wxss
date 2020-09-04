@@ -1,0 +1,130 @@
+.select .search-wrapper {
+  background: #FFF;
+  z-index: 70;
+  width: 100%;
+}
+.select .search-wrapper .search-item {
+  margin: 0 24rpx;
+  position: relative;
+  background: #f5f5f5;
+  height: 62rpx;
+  border-radius: 32rpx;
+  display: flex;
+  align-items: center;
+}
+.select .search-wrapper .search-item input {
+  display: block;
+  height: 97rpx;
+  flex: 1;
+  color: #666;
+  font-size: 24rpx;
+}
+.select .search-wrapper .search-item image:first-child {
+  width: 26rpx;
+  height: 26rpx;
+  margin: 0 13rpx 0 25rpx;
+}
+.select .search-wrapper .search-item .close-btn {
+  position: absolute;
+  right: 0;
+  width: 80rpx;
+  height: 62rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.select .search-wrapper .search-item .close-btn image {
+  width: 26rpx;
+  height: 26rpx;
+  margin: 0;
+}
+.select .search-wrapper .search-item .input-placeholder {
+  color: #666666;
+  font-size: 24rpx;
+}
+.select .van-tab {
+  color: #000;
+}
+.select .van-tab--active {
+  color: #0fa98c;
+}
+.select .select-list {
+  margin-top: 18rpx;
+}
+.select .select-list .list-item {
+  height: 176rpx;
+  padding-left: 8rpx;
+  display: flex;
+  align-items: center;
+}
+.select .select-list .list-item image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 4rpx;
+}
+.select .select-list .list-item .check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 92rpx;
+}
+.select .select-list .list-item .product-desc {
+  width: 452rpx;
+  margin-left: 20rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.select .select-list .list-item .product-desc view {
+  width: 100%;
+}
+.select .select-list .list-item .product-desc view:first-child {
+  color: #000;
+  font-size: 26rpx;
+  line-height: 33rpx;
+  margin-bottom: 25rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.select .select-list .list-item .product-desc view:last-child {
+  font-size: 32rpx;
+  color: #ff6e00;
+  margin: 0;
+}
+.select .bottom-btn {
+  position: fixed;
+  bottom: 30rpx;
+  height: 85rpx;
+  left: 0;
+  right: 0;
+  padding-right: 32rpx;
+}
+.select .bottom-btn view {
+  float: right;
+}
+.select .bottom-btn view:first-child {
+  width: 186rpx;
+  height: 85rpx;
+  border-radius: 5rpx;
+  background: linear-gradient(to right, #38e0be, #15a1bf);
+  color: #FFF;
+  text-align: center;
+  line-height: 85rpx;
+}
+.select .bottom-btn view:last-child {
+  color: #0fa98c;
+  font-size: 40rpx;
+  line-height: 85rpx;
+  margin-right: 42rpx;
+}
+.scrolled {
+  height: calc(100vh - 208rpx - env(safe-area-inset-bottom));
+}
+.van-checkbox {
+  padding: 0 0 0 30rpx;
+}

@@ -1,0 +1,33 @@
+<view class="login-body">
+    <view class="log">
+        <image src="../../static/img/log.png" />
+    </view>
+    <button class="login-btn" open-type="getUserInfo" bindtap="login">微信一键登录</button>
+</view>
+
+<van-popup
+        show="{{ show }}"
+        position="bottom"
+        custom-style="height:30%"
+        closeable='{{true}}'
+        z-index="{{10000}}"
+        bind:close='closePopup'
+>
+    <view class='phone-tit'>您还未绑定手机号，点击“获取手机号”按钮绑定手机号</view>
+    <button class="get-phone" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+</van-popup>
+<van-popup custom-style="background:transparent" show="{{ showInvite }}" bind:close="onInivteClose">
+    <view class="input-item">
+        <image src="../../static/img/tuoyuan636.png"></image>
+        <view class="input-content">
+            <view class="image">
+                <image src="../../static/img/iconyaoqing.png" />
+            </view>
+            <view class='text'>
+                <view>邀请码</view>
+                <input type="text" value="{{invite}}" placeholder="请输入邀请码" bindinput="onInput"></input>
+                <view bindtap='login'>提交</view>
+            </view>
+        </view>
+    </view>
+</van-popup>

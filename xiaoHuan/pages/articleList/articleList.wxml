@@ -1,0 +1,13 @@
+<view class="article-list">
+    <view class="article-list-content">
+<!--        <van-tabs active="{{ 0 }}" bind:click='select'>-->
+<!--            <van-tab title="{{item.ac_title}}" wx:for="{{categories}}" wx:key="item">-->
+<!--                <view wx:for="{{articleList[item].id}}" wx:for-item="ac_item" wx:key="ac_item"></view>-->
+<!--            </van-tab>-->
+<!--        </van-tabs>-->
+        <view class="article-list-item" wx:for="{{articleList}}" wx:key="item" data-id="{{item.id}}" bindtap="toArticle" data-index="{{index}}">
+            <view>{{item.article_title}}</view>
+        </view>
+    </view>
+    <van-notify id="van-notify" />
+</view>

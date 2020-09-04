@@ -1,0 +1,109 @@
+<view class="reward">
+    <view class="reward-content">
+        <van-tabs active="{{activeIndex}}">
+            <van-tab title="推手收益">
+                <view class="reward-list">
+<!--                    //today-->
+                    <view class="reward-month">
+                        <view>
+                            <view>今日推广佣金</view>
+                            <view>￥{{user.today.default}}</view>
+                        </view>
+                        <view>
+                            <view>今日推广补贴</view>
+                            <view>￥{{user.today.subsidy}}</view>
+                        </view>
+                        <view>
+                            <view>今日合伙激励</view>
+                            <view>￥{{user.today.team_subsidy}}</view>
+                        </view>
+                        <view>
+                            <view>今日平台补贴</view>
+                            <view>￥{{user.today.up_commission}}</view>
+                        </view>
+                    </view>
+<!--                    //yesterday-->
+                    <view class="reward-month">
+                        <view>
+                            <view>昨日推广佣金</view>
+                            <view>￥{{user.yesterday.default}}</view>
+                        </view>
+                        <view>
+                            <view>昨日推广补贴</view>
+                            <view>￥{{user.yesterday.subsidy}}</view>
+                        </view>
+                        <view>
+                            <view>昨日合伙激励</view>
+                            <view>￥{{user.yesterday.team_subsidy}}</view>
+                        </view>
+                        <view>
+                            <view>昨日平台补贴</view>
+                            <view>￥{{user.yesterday.up_commission}}</view>
+                        </view>
+                    </view>
+<!--                    //month-->
+                    <view class="reward-month">
+                        <view>
+                            <view>本月推广佣金</view>
+                            <view>￥{{user.month.default}}</view>
+                        </view>
+                        <view>
+                            <view>本月推广补贴</view>
+                            <view>￥{{user.month.subsidy}}</view>
+                        </view>
+                        <view>
+                            <view>本月合伙激励</view>
+                            <view>￥{{user.month.team_subsidy}}</view>
+                        </view>
+                        <view>
+                            <view>本月平台补贴</view>
+                            <view>￥{{user.month.up_commission}}</view>
+                        </view>
+                    </view>
+<!--                    //last_month-->
+                    <view class="reward-month">
+                        <view>
+                            <view>上月推广佣金</view>
+                            <view>￥{{user.last_month.default}}</view>
+                        </view>
+                        <view>
+                            <view>上月推广补贴</view>
+                            <view>￥{{user.last_month.subsidy}}</view>
+                        </view>
+                        <view>
+                            <view>上月合伙激励</view>
+                            <view>￥{{user.last_month.team_subsidy}}</view>
+                        </view>
+                        <view>
+                            <view>上月平台补贴</view>
+                            <view>￥{{user.last_month.up_commission}}</view>
+                        </view>
+                    </view>
+                </view>
+            </van-tab>
+            <van-tab title="主播收益" >
+                <view class="reward-list">
+                    <view class="reward-month">
+                        <view>
+                            <view>上月预估总收益</view>
+                            <view>￥{{live.last_month}}</view>
+                        </view>
+                        <view>
+                            <view>本月预估总收益</view>
+                            <view>￥{{live.month}}</view>
+                        </view>
+                        <view>
+                            <view>昨日预估总收益</view>
+                            <view>￥{{live.yesterday}}</view>
+                        </view>
+                        <view>
+                            <view>今日预估总收益</view>
+                            <view>￥{{live.today}}</view>
+                        </view>
+                    </view>
+                </view>
+            </van-tab>
+        </van-tabs>
+    </view>
+    <van-notify id="van-notify" />
+</view>

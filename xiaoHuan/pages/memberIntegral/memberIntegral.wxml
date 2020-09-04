@@ -1,0 +1,38 @@
+<view class="member-intergral">
+    <view class="intergral-detail">
+        <view class="detail-top">
+            <view>今日获得积分<text>{{integral}}</text>
+            </view>
+            <navigator url="/pages/memberChangeHistory/memberChangeHistory" hover-start-time="0" hover-class="none"><view class="writething">兑换记录</view></navigator>
+        </view>
+        <view>零点自动兑换</view>
+    </view>
+    <view class="task-list">
+        <view>
+            <view class="task-item" wx:for="{{taskList}}" wx:key="item">
+                <view class="task-detail">
+                    <view>{{item.title}}</view>
+                    <view>完成后可领取<text>{{item.val * multiple}}</text>积分</view>
+                </view>
+                <view wx:if="{{item.invite}}" bindtap="toInvite">去邀请</view>
+                <view wx:elif="{{item.sign}}" bindtap="toSign">去打卡</view>
+                <view wx:else bindtap="jump">去完成</view>
+            </view>
+        </view>
+    </view>
+</view>
+<van-notify id="van-notify" />
+<view class="share-pop" hidden="{{showShare}}" catchtap="toggleShare">
+    <view class="share-body">
+        <view class="close" catchtap="toggleShare" style="display:block;">
+            <image style="width:50rpx;height:50rpx" src="/static/img/haibaocha.png" />
+        </view>
+        <image mode="widthFix" bindtap="previewImagea" src="{{canvasImg}}"></image>
+        <button class="save-btn" bindtap="saveImage">保存到手机相册</button>
+        <button class="share-btn" bindtap='previewImagea'>长按预览并分享</button>
+    </view>
+</view>
+<poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+</poster>
+<view wx:if="{{showLiveComponent}}" bindtap="backToLive" class="live-component">
+</view>

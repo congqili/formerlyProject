@@ -1,0 +1,35 @@
+<view class="member-withdraw">
+    <view class="withdraw-top">
+        <view class="withdraw-fun">
+            <view>
+                <view>总收益余额(元)</view>
+                <view>{{accountInfo.now_money}}</view>
+            </view>
+            <view bindtap="toWithdraw">提现</view>
+        </view>
+        <view class="member-gain">
+            <view class="gain-item">
+                <view>已提现金额</view>
+                <view>{{accountInfo.withdraw_money}}</view>
+            </view>
+            <view class="gain-item">
+                <view>总收益</view>
+                <view>{{accountInfo.total_money}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="withdraw-info">
+        <view>
+            <view>提现历史</view>
+            <view bindtap="toShowList" data-type="history">详情<image src="../../static/img/arrow.png" /></view>
+        </view>
+        <view>
+            <view>结算帐单</view>
+            <view bindtap="toShowList" data-type="bill">详情<image src="../../static/img/arrow.png" /></view>
+        </view>
+    </view>
+    <view class="rule">
+        <rich-text nodes="{{accountInfo.rule}}" space="nbsp"></rich-text>
+    </view>
+    <van-notify id="van-notify" />
+</view>

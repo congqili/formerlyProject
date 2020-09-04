@@ -1,0 +1,30 @@
+<view class="wrapper">
+    <image src="../../static/img/tabbg.png" class="bgimg"/>
+    <view class="tabbar">
+        <view class="{{check==0?'btn check':'btn'}}">
+            <navigator open-type="switchTab" url="/pages/index/index" hover-start-time="0" hover-class="none"
+                       extra-data="0">
+                <image mode="aspectFit" src="../../static/img/{{check==0?'index.jpg':'shouyekaobei.png'}}"></image>
+                <view>首页</view>
+            </navigator>
+        </view>
+
+
+        <view class="{{check==1?'btn check':'btn'}}">
+            <view bindtap="jump" class="to-st">
+                <view class="tab-wrapper">
+                    <image class="{{icon?'':'changeImg'}}" src="../../static/img/{{icon?'zhibozhuanqian.png':'wodeyuanbao-2.png'}}"></image>
+                </view>
+                <view>{{icon?'我要开播':'我要赚钱'}}</view>
+            </view>
+        </view>
+
+
+        <view class="{{check==2?'btn check':'btn'}}">
+            <navigator open-type="switchTab" url="/pages/member/member" hover-start-time="0" hover-class="none">
+                <image mode="aspectFit" src="../../static/img/{{check==2?'member.png':'vipbar.jpg'}}"></image>
+                <view>会员</view>
+            </navigator>
+        </view>
+    </view>
+</view>

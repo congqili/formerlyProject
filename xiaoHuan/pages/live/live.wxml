@@ -1,0 +1,176 @@
+<view class="start-live">
+    <view class="back" style="top:{{barTop}}rpx" bindtap='navBack'><image mode="widthFix" src="../../static/img/blackarr.png" /></view>
+        <live-player mode="{{pluginsInfo.mode}}"
+                bindstatechange='onPlayEvent'
+                id='player'
+                wx:if='{{pluginsInfo.playUrl !== "" && !showStreamVideo && !showStatus}}'
+                class="room-play" src="{{pluginsInfo.playUrl}}"
+                autoplay mirror='{{pluginsInfo.mirror}}' objectFit="{{pluginsInfo.objectFit}}" />
+        <!-- <live-room-play
+                class="room-play"
+                wx:if='{{pluginsInfo.playUrl !== "" && !showStreamVideo && !showStatus}}'
+                version="{{pluginsInfo.version}}" liveAppID="{{pluginsInfo.liveAppID}}"
+                playUrl="{{pluginsInfo.playUrl}}" orientation="{{pluginsInfo.orientation}}"
+                objectFit="{{pluginsInfo.objectFit}}" minCache="{{pluginsInfo.minCache}}"
+                maxCache="{{pluginsInfo.maxCache}}" mode="{{pluginsInfo.mode}}"
+                muted="{{pluginsInfo.muted}}" debug="{{pluginsInfo.debug}}"
+                bindPlayEvent="onPlayEvent" autoplay="{{pluginsInfo.autoplay}}"
+                bindNetStatus = "netStatus"
+        >
+        </live-room-play> -->
+    <!-- <view class="off_on" catchtap="onPlayClick">
+        <image hidden="{{playing}}" class="fn_img" src="../../static/img/bofang.png"></image>
+    </view> -->
+    <video
+           enable-progress-gesture='{{false}}'
+           show-progress='{{false}}'
+           show-fullscreen-btn="{{false}}"
+           controls="{{false}}"
+           show-play-btn="{{false}}"
+           id="index-video"
+           autoplay="{{true}}"
+           src="{{streamInfo.ls_video}}"
+           object-fit="cover"
+           wx:if="{{showStreamVideo && !showStatus}}"
+    ></video>
+    <view  class="mask-bg" style="">
+        <image mode="widthFix" class="videobg" src="{{streamInfo.ls_image}}"></image>
+    </view>
+    <image class="mask-image" style="{{showStreamVideo?'z-index:1':''}}" src="{{streamInfo.ls_image}}"></image>
+    <view class="live-info" style="margin-top:{{barTop+110}}rpx">
+        <view wx:if="{{liveInfo.live_user_data}}">
+<!--            <button bindtap="back">back</button>-->
+            <view bindtap="goPersonal">
+                <image mode="widthFix" src="{{liveInfo.live_user_data.user_head}}"></image>
+            </view>
+            <view>
+                <view>{{liveInfo.live_user_data.user_nickname}}</view>
+                <view>直播ID：{{liveInfo.live_number}}</view>
+            </view>
+            <view  bindtap="toFollow">
+                {{followStatus?'取消关注':'+关注'}}
+            </view>
+        </view>
+        <view class="advator-list" wx:if="{{viewers.total_num}}">
+            <!-- <view wx:if="{{viewers.list.length<1}}"></view>
+            <view wx:if="{{viewers.list.length<2}}"></view>
+            <view wx:if="{{viewers.list.length<3}}"></view> -->
+            <view wx:for="{{viewers.list}}" wx:key="item" ><image wx:if="{{index < 4}}" mode="widthFix" src="{{item.user_head}}" /></view>
+            <view>{{viewers.total_num}}</view>
+        </view>
+    </view>
+    <view class="bottom-btn" style="bottom:{{keyBoardHeight}}rpx">
+        <view class="input-item">
+            <view class="btn-bg" bindtap='showPopup'><image mode="aspectFit" src="../../static/img/packicon.png" /></view>
+            <input type="text" adjust-position='{{false}}' bindblur='onBlur' bindkeyboardheightchange='keyboardHeightChange' confirm-type="send" value="{{inputVal}}" autofocus="{{true}}" placeholder="说点什么..." placeholder-class="input-place" bindconfirm="liveTalk" />
+        </view>
+        <scroll-view bindscroll="talkScroll"  scroll-top="{{scrollTop}}" scroll-y="{{true}}" class="comment" scroll-into-view="{{bottom}}">
+            <view class="comment-list">
+                <view class="comment-item col" wx:for="{{commentList}}" wx:key="item">
+                    <view wx:if="{{item.type=='remind'}}">
+                        <view class="remind-nickname">{{item.user.user_nickname}}</view>
+                        <view class="message" style="{{'color:'+item.color}}">{{item.content}}</view>
+                    </view>
+                    <view wx:else>
+                        <view class="nickname">{{item.lt_user_data.user_nickname}}</view>
+                        <view class="content">:</view>
+                        <view class="message" style="{{'color:'+item.color}}">{{item.lt_content}}</view>
+                    </view>
+                </view>
+                <view id="scroll-bottom"></view>
+            </view>
+        </scroll-view>
+        <view class="btn-list">
+
+            <view catchtap="shareLive"><image mode="aspectFit" src="../../static/img/fenxiang.png" /></view>
+            <view><image bindtap="checkLike" id="container" mode="aspectFit" src="{{isLike==true?'../../static/img/redHeart.png':'../../static/img/givelike.png'}}" /></view>
+
+        </view>
+    </view>
+    <van-popup
+    show="{{ showGoods }}"
+    position="bottom"
+    custom-style="height: 55%;border-top-left-radius: 20rpx;border-top-right-radius: 20rpx;"
+    overlay-style="background:rgba(0,0,0,.4)"
+    bind:close="closePopup"
+    >
+        <view class="pop-list">
+            <view class="hot-item col" wx:for="{{goodsList}}" wx:key="item" catchtap="toDetail" data-code="{{item.lg_goods_data.goods_code}}">
+                <view class="col">
+                    <view class="img">
+                        <view class="hot" wx:if="{{!index}}">热</view>
+                        <view class="tag" wx:else>{{goodsList.length - index}}</view>
+                        <image id="imga" src="{{item.lg_goods_data.goods_image}}" />
+                    </view>
+                    <view class="item-text">
+                        <view>{{item.lg_goods_data.goods_title}}</view>
+                        <view>￥{{item.lg_goods_data.goods_data.commission.price}}<text wx:if="{{item.lg_goods_data.goods_data.commission.save}}">（立省{{item.lg_goods_data.goods_data.commission.save}}）</text></view>
+                        <view class="dbshare">
+                            <view wx:if='{{CommonUserLevel>1}}'>预估推广收益：￥{{item.lg_goods_data.goods_data.commission.gain}}</view>
+                            <view wx:else></view>
+                        </view>
+                        <view wx:if="{{CommonUserLevel>1}}"  class="shares" catchtap="toShare" data-type="goods" data-target="{{item.lg_goods_data.goods_code}}">
+                            <image src="../../static/img/videoforward.png" />
+                            赚￥{{item.lg_goods_data.goods_data.commission.gain}}
+                        </view>
+                        <view wx:else  class="shares">
+                            <image src="../../static/img/baopin.png" />
+                            去购买
+                        </view>
+                        <view class="price-subsify {{item.lg_goods_data.goods_data.commission.subsidy>0?'':'opctions'}}" >平台额外补贴+ {{item.lg_goods_data.goods_data.commission.subsidy}}元</view>
+                    </view>
+                </view>
+                <view class="item-bottom">
+                    <view wx:if="{{item.lg_video !=''}}" catchtap="toComment" data-vid="{{item.id}}">
+                        <image src="../../static/img/leftarrow.png" />
+                        看讲解
+                    </view>
+                </view>
+            </view>
+        </view>
+    </van-popup>
+    <van-notify id="van-notify" />
+</view>
+
+<view class="status-modal" wx:if='{{showStatus}}'>
+    {{statusText}}
+</view>
+<view class="share-pop" hidden="{{showShare}}" catchtap="toggleShare">
+    <view class="share-body">
+        <view class="close" catchtap="toggleShare" style="display:block;">
+            <image style="width:50rpx;height:50rpx" src="/static/img/haibaocha.png" />
+        </view>
+        <image mode="widthFix" catchtap="previewImagea" src="{{canvasImg}}"></image>
+        <button class="save-btn" catchtap="saveImage">保存到手机相册</button>
+        <button class="share-btn" catchtap='previewImagea'>长按预览并分享</button>
+    </view>
+</view>
+<poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+</poster>
+        <!--直播间红包-->
+<view class="modelBox" hidden="{{true}}">
+    <view class="redBox">
+        <image class="rb_img" mode="widthFix" src="../../static/img/hotBox.png"></image>
+        <image class="rb_headImg" mode="aspectFill" src="../../static/img/avator.jpg"></image>
+        <view class="rb_price">
+            <view class="rbp_big">
+                <text>￥</text>20
+            </view>
+            <view class="rbp_smal">满21元减20元</view>
+        </view>
+        <view class="rb_btn" catchtap="mustReceive">立即领取</view>
+        <image catchtap="closex" class="rb_err" mode="widthFix" src="../../static/img/closex.png"></image>
+    </view>
+</view>
+<!--键盘弹出啊input框-->
+<!--<view class="keyIpt">-->
+<!--    <input class="kei_ipt" value="{{inputVal}}" placeholder="说点什么..."-->
+<!--           type="text"-->
+<!--           style="bottom:{{keyBoardHeight}}rpx"-->
+<!--           focus="{{focusStatus}}"-->
+<!--           adjust-position='{{false}}'-->
+<!--           bindblur='onBlur'-->
+<!--           bindkeyboardheightchange='keyboardHeightChange'-->
+<!--    ></input>-->
+<!--    <view class="kei_enter" catchtap="liveTalk">确认</view>-->
+<!--</view>-->

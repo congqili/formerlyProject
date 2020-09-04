@@ -1,0 +1,231 @@
+@import '../../style/static.less';
+page{
+    background: #f2f2f2;
+}
+.van-toast--icon{
+    width: 270rpx!important;
+}
+@width:710rpx;
+.personal{
+    .content{
+        .info{
+            width: @width;
+            height: 175rpx;
+            background: linear-gradient(to right,#5fe4c9,#3eb3c9);
+            border-radius: 12rpx;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            image{
+                width: 95rpx;
+                height: 95rpx;
+                border-radius: 50%;
+                margin: 0 27rpx 0 90rpx;
+            }
+            .info-text{
+                color: #FFF;
+                view:first-child{
+                    font-size: 33rpx;
+                    margin-bottom: 16rpx;
+                }
+                view:last-child{
+                    font-size: 26rpx;
+                }
+                width: 180rpx;
+                margin-right: 116rpx;
+            }
+            .info-btn{
+                width: 111rpx;
+                background: #FFF;
+                text-align: center;
+                line-height: 38rpx;
+                border-radius: 19rpx;
+                height: 38rpx;
+                font-size: 24rpx;
+                color: #10a98c;
+            }
+        }
+        .live-info{
+            width: @width;
+            background: #FFF;
+            padding: 0 10rpx;
+            overflow: hidden;
+            box-sizing: border-box;
+            margin: 30rpx auto 32rpx;
+            border-radius: 12rpx;
+            .live-tit{
+                color: #2b2b2b;
+                font-size: 30rpx;
+                margin: 22rpx 0 0 6rpx;
+            }
+            .live-tag{
+                font-size: 20rpx;
+                display: flex;
+                width: 260rpx;
+                justify-content: center;
+                margin: 23rpx 0 28rpx;
+                view:first-child{
+                    color: #FFF;
+                    width: 120rpx;
+                    height: 42rpx;
+                    border-radius: 21rpx;
+                    .blue-green-btn();
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    image{
+                        height: 15rpx;
+                        width: 12rpx;
+                        margin-right: 10rpx;
+                    }
+                }
+                view:last-child{
+                    color: #6f6f6f;
+                    width: 120rpx;
+                    margin-left: 24rpx;
+                    line-height: 42rpx;
+                }
+            }
+        }
+    }
+    .back-look{
+        box-sizing: border-box;
+        width: @width;
+        background: #FFF;
+        position: relative;
+        border-radius: 12rpx;
+        margin: 0 auto;
+        overflow: hidden;
+        padding-bottom: 10rpx;
+        .back-tit{
+            text-align: center;
+            font-size: 36rpx;
+            font-weight: 600;
+            color: #000;
+            margin: 50rpx auto 40rpx;
+            width: 212rpx;
+            background: #FFF;
+            position: relative;
+            z-index: 1;
+        }
+        .line{
+            width: 488rpx;
+            height: 1rpx;
+            background: rgba(0, 0, 0, .2);
+            position: absolute;
+            top: 68rpx;
+            left: calc(50% - 244rpx);
+        }
+        .live-list{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .live-item{
+                width: 350rpx;
+                height: 530rpx;
+                border-radius: 15rpx;
+                background: #c6c3e4;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 10rpx;
+                .main{
+                    width: 350rpx;
+                    height: 530rpx;
+                    position: relative;
+                    image:first-child{
+                        width: 350rpx;
+                        position: absolute;
+                        top: calc(50% - 175rpx);
+                        z-index: 1;
+                    }
+                    image:last-child{
+                        width: 350rpx;
+                        height: 530rpx;
+                        position: absolute;
+                        filter: blur(25rpx);
+                    }
+                }
+                .live-foot{
+                    position: absolute;
+                    z-index: 10;
+                    bottom: 7rpx;
+                    color: #FFF;
+                    font-size: 24rpx;
+                    image{
+                        float: left;
+                        background: skyblue;
+                        width: 36rpx;
+                        height: 36rpx;
+                        border-radius: 50%;
+                        margin: 0 10rpx 10rpx 10rpx;
+                    }
+                    view{
+                        float: left;
+                        line-height: 36rpx;
+                    }
+                    .live-name{
+                        width: 176rpx;
+                    }
+                }
+                .tit-tag{
+                    z-index: 10;
+                    width: 260rpx;
+                    height: 38rpx;
+                    background: rgba(0, 0, 0, 0.3);
+                    border-radius: 19rpx;
+                    position: absolute;
+                    font-size: 20rpx;
+                    top: 0rpx;
+                    left: 0rpx;
+                    line-height: 38rpx;
+                    color: #FFF;
+                    .tag-left{
+                        width: auto;
+                        height: 38rpx;
+                        float: left;
+                        .blue-purple-btn();
+                        border-top-left-radius: 19rpx;
+                        border-bottom-left-radius: 19rpx;
+                        text-align: center;
+                        line-height: 38rpx;
+                        display: flex;
+                        align-items: center;
+                        box-sizing: border-box;
+                        justify-content: space-between;
+                        padding: 0 14rpx;
+                        image{
+                            width: 12rpx;
+                            height: 15rpx;
+                        }
+                    }
+                    .tall{
+                        width: auto;
+                    }
+                    .tag-right{
+                        float: left;
+                        width: 150rpx;
+                        line-height: 38rpx;
+                        text-align: center;
+                    }
+    
+                }
+                .content-foot{
+                    position: absolute;
+                    bottom: 16rpx;
+                    padding-left: 15rpx;
+                    color: #FFF;
+                    .price{
+                        font-size: 30rpx;
+                        text:nth-child(1){
+                            font-size: 60rpx;
+                        }
+                    }
+                    .shopname{
+                        font-size: 24rpx;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,8 @@
+<view class="load-flag" hidden="{{!loadData.show}}" style="background:{{loadData.color}}">
+    <view wx:if='{{loadData.status=="load"}}' class="loading">
+        <view style="color:{{loadData.fontColor}}">加载中···</view>
+        <!-- <image src="/static/img/loading.png" /> -->
+    </view>
+    <view style="color:{{loadData.fontColor}}" wx:if='{{loadData.status=="bottom"}}'>到底了</view>
+    <view style="color:{{loadData.fontColor}}" wx:if='{{loadData.status=="noMore"}}'>{{loadData.title}}</view>
+</view>

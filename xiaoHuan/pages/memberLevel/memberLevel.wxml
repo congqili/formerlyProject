@@ -1,0 +1,50 @@
+<view class="member-level">
+    <view class="level-top">
+        <view class="advator">
+            <image src="../../static/img/addicon.png" />
+            白银推客
+        </view>
+        <view class="linear-bar">
+            <view class="bar-dotted">
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
+            <view class="bar"></view>
+            <view class="bar-text">
+                <view>白银推客</view>
+                <view>黄金推客</view>
+                <view>铂金推客</view>
+            </view>
+        </view>
+    </view>
+    <view class="level-detail">
+        <view>距离下一个等级<text>黄金推客</text>还需</view>
+        <view class="need-num">
+            <view class="num-item">
+                <view>3</view>
+                <view>订单数</view>
+            </view>
+            <view class="num-item">
+                <view>3</view>
+                <view>订单数</view>
+            </view>
+        </view>
+    </view>
+    <view class="member-power">
+        <view>会员权益</view>
+        <view class="power-list">
+            <view class="power-item">
+                <image src="../../static/img/gainIcon.png" />
+            </view>
+            <view class="power-item">
+                <view>本月已省</view>
+                <view>￥0.00</view>
+            </view>
+            <view class="power-item">
+                <view>本月已省</view>
+                <view>￥0.00</view>
+            </view>
+        </view>
+    </view>
+</view>

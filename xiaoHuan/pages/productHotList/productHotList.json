@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "productList": "../../components/productList/productList"
+  },
+  "navigationBarTitleText": "超值爆品",
+  "enablePullDownRefresh": true
+}

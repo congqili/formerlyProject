@@ -1,0 +1,86 @@
+<view class="hot-product">
+    <view class="nav">
+        <view class="tab">
+            <view class="{{checkIndex==0?'check':''}}" bindtap='select' data-index='0'>今日热卖</view>
+            <view class="{{checkIndex==1?'check':''}}" bindtap='select' data-index='1'>明日预告</view>
+            <view class="{{checkIndex==0?'left':'right'}}"></view>
+        </view>
+    </view>
+    <view class="product-list" hidden="{{checkIndex==0?false:true}}">
+        <productList list='{{goods_list}}'></productList>
+        <!-- <view class="com-product-item" wx:for="{{goods_list}}" wx:key="item" bindtap="toComment" data-code="{{item.goods_code}}">
+            <view class="product-img">
+                <image mode="widthFix" src="{{item.goods_image}}"></image>
+            </view>
+            <view class="product-content">
+                <view class="product-tit">
+                    {{item.goods_title}}
+                </view>
+                <view class="product-txt">
+                    {{item.goods_data.commodityInfo.sellingPoint}}
+                </view>
+                <view class="product-coupons">
+                    <view hidden="{{item.goods_data.couponInfo.couponValue==''}}">
+                        <image src="../../static/img/pinkcoupon.png"></image>
+                        <text>￥{{item.goods_data.couponInfo.couponValue}}元</text>
+                    </view>
+                </view>
+                <view class="product-oldprice">
+                    ￥{{item.goods_data.commodityInfo.snPrice}}元
+                </view>
+                <view class="product-price">
+                    <view class="product-priceo">
+                        爆品价￥
+                        <text>{{item.goods_data.commission.price}}</text>
+                    </view>
+                    <view class="subsidy" wx:if='{{item.goods_data.commission.subsidy >0}}'>
+                        平台额外补贴+{{item.goods_data.commission.subsidy}}元
+                    </view>
+                    <view class="product-pricet">
+                        <image src="../../static/img/makemoney.png"></image>
+                        赚￥{{item.goods_data.commission.commission}}
+                    </view>
+                </view>
+            </view>
+        </view> -->
+    </view>
+
+    <view class="product-list" hidden="{{checkIndex==1?false:true}}">
+        <productList list='{{goods_list_tomorrow}}'></productList>
+        <!-- <view class="com-product-item" wx:for="{{goods_list_tomorrow}}" wx:key="item" bindtap="toComment" data-code="{{item.goods_code}}">
+            <view class="product-img">
+                <image mode="widthFix" src="{{item.goods_image}}"></image>
+            </view>
+            <view class="product-content">
+                <view class="product-tit">
+                    {{item.goods_title}}
+                </view>
+                <view class="product-txt">
+                    {{item.goods_data.commodityInfo.sellingPoint}}
+                </view>
+                <view class="product-coupons">
+                    <view hidden="{{item.goods_data.couponInfo.couponValue==''}}">
+                        <image src="../../static/img/pinkcoupon.png"></image>
+                        <text>￥{{item.goods_data.couponInfo.couponValue}}元</text>
+                    </view>
+                </view>
+                <view class="product-oldprice">
+                    ￥{{item.goods_data.commodityInfo.snPrice}}元
+                </view>
+                <view class="product-price">
+                    <view class="product-priceo">
+                        爆品价￥
+                        <text>{{item.goods_data.commission.price}}</text>
+                    </view>
+                    <view class="subsidy" wx:if='{{item.goods_data.commission.subsidy >0}}' >
+                        平台额外补贴+{{item.goods_data.commission.subsidy}}元
+                    </view>
+                    <view class="product-pricet">
+                        <image src="../../static/img/makemoney.png"></image>
+                        赚￥{{item.goods_data.commission.commission}}
+                    </view>
+                </view>
+            </view>
+        </view> -->
+    </view>
+</view>

@@ -1,0 +1,224 @@
+page{
+    background: #f0f0f0;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+.brandDetail{
+    view,text{
+        line-height: 1;
+    }
+    position: relative;
+    height:calc(100vh - 100rpx - env(safe-area-inset-bottom));
+    overflow-y: auto;
+    .brd_img{
+        height: 215rpx;
+        width: 750rpx;
+        position: absolute;
+        top: -25rpx;
+        left: 0;
+    }
+    .brd_list{
+        width: 710rpx;
+        position: relative;
+        margin: 0 auto;
+        padding-top: 71rpx;
+        .bl_head{
+            position: relative;
+            width: 710rpx;
+            padding: 79rpx 20rpx 26rpx;
+            border-radius: 20rpx;
+            background: white;
+            box-sizing: border-box;
+            margin-bottom: 20rpx;
+            .blh_box{
+                width: 112rpx;
+                height: 112rpx;
+                border-radius: 50%;
+                border: 5rpx solid #3db8ad;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                box-sizing: border-box;
+                transform: translate(-50%,-50%);
+            }
+            .blh_detail{
+                text-indent: 1rem;
+                color: #828282;
+                font-size: 24rpx;
+                line-height: 41rpx;
+            }
+        }
+        .bl_item{
+            .bli_content{
+                padding: 20rpx;
+                border-radius: 10rpx;
+                box-sizing: border-box;
+                background: white;
+                margin-bottom: 20rpx;
+                overflow: hidden;
+                .blic_img{
+                    width: 212rpx;
+                    height: 212rpx;
+                    border-radius: 15rpx;
+                    float: left;
+                    margin-right: 20rpx;
+                }
+                .blic_tit{
+                    // width: 437rpx;
+                    font-size: 28rpx;
+                    color: black;
+                    height: 68rpx;
+                    line-height: 34rpx;
+                    overflow:hidden;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 2;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    margin-top: 7rpx;
+                    text{
+                        display: inline-block;
+                        height: 27rpx;
+                        width: 54rpx;
+                        border: 2rpx solid #4da68d;
+                        color: #4da68d;
+                        border-radius: 27rpx;
+                        text-align: center;
+                        line-height: 27rpx;
+                        font-size: 21rpx;
+                        vertical-align: top;
+                        margin-top: 3rpx;
+                        margin-right: 7rpx;
+                    }
+                }
+                .blic_pricea{
+                    margin:9rpx 0;
+                    display: flex;
+                    justify-content: space-between;
+                    color: #999999;
+                    font-size: 20rpx;
+                    .blicp_left{
+                        text-decoration: line-through;
+                    }
+                    .blicp_right{
+                        .blicpr_m{
+                            margin-right: 10rpx;
+                        }
+                    }
+                }
+                .blic_save{
+                    position: relative;
+                    font-size: 24rpx;
+                    height: 40rpx;
+                    color: #FFF;
+                    overflow: hidden;
+                    & > view {
+                        width: 100%;
+                        height: 40rpx;
+        
+                        image {
+                            height: 40rpx;
+                            width: 137rpx;
+                            position: absolute;
+                            top: 0;
+                            left: 0rpx;
+                        }
+        
+                        text {
+                            left: 50rpx;
+                            width: auto;
+                            height: 40rpx;
+                            position: absolute;
+                            top: 0;
+                            text-align: center;
+                            color: #fff;
+                            line-height: 41.5rpx;
+                            display: flex;
+                            white-space: nowrap;
+                            background: #ff7e78;
+                            padding-right: 5rpx;
+                            border-radius: 5rpx;
+                            font-weight: 300;
+                        }
+                    }
+                }
+                .blic_price{
+                    color: #4da68d;
+                    font-size: 24rpx;
+                    position: relative;
+                    margin: 10rpx 0 0;
+                    .blicp_price{
+                        color: #4da68d;
+                        text{
+                            color: #4da68d;
+                            font-size: 38rpx;
+                        }
+                    }
+                    .blic_btn{
+                        position: absolute;
+                        bottom: -7rpx;
+                        right: 0;
+                        width: 180rpx;
+                        height: 48rpx;
+                        border-radius: 48rpx;
+                        background: linear-gradient(to right, rgb(109, 226, 205), rgb(60, 182, 173));
+                        line-height: 48rpx;
+                        text-align: center;
+                        color: white;
+                        font-size: 24rpx;
+                    }
+                    .subsidy {
+                        // top: 0;
+                        height: 34rpx;
+                        white-space: nowrap;
+                        border-radius: 17rpx;
+                        padding: 0 10rpx;
+                        color: #957052;
+                        font-size: 18rpx;
+                        background: #fcf1d8;
+                        position: absolute;
+                        line-height: 34rpx;
+                        // left: 495rpx;
+                        right: 0;
+                        // top: 143rpx;
+                        top: -45rpx;
+                        display: flex;
+                        align-items: center;
+                        view{
+                            line-height: 34rpx;
+                        }
+                        image{
+                            width: 11rpx;
+                            display: block;
+                            height: 19rpx;
+                            margin-left: 5rpx;
+                        }
+                    }
+                    .product-pricet {
+                        position: absolute;
+                        bottom: -7rpx;
+                        right: 0;
+                        font-size: 24rpx;
+                        color: white;
+                        height: 48rpx;
+                        padding: 0 20rpx;
+                        background: linear-gradient(to right, rgb(109, 226, 205), rgb(60, 182, 173));
+                        border-radius: 48rpx;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    
+                        image {
+                            width: 29rpx;
+                            height: 29rpx;
+                            margin-right: 12rpx;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

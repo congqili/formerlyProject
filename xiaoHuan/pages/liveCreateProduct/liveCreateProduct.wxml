@@ -1,0 +1,18 @@
+<view class="add">
+    <view class="product-list">
+        <view bindtap='jumpselect'>
+            <image src="../../static/img/addicon.png"/>
+        </view>
+
+        <view bindtap='toggleCheck' wx:for="{{checkBaby}}" wx:key="index" data-index='{{index}}'>
+            <view class="check" style="background:{{item.checked?'#4da68d':''}}">
+                {{item.checked?'√':''}}
+            </view>
+            <image src="{{item.goods_pictureUrl}}"/>
+        </view>
+    </view>
+    <view class="bottom-btn">
+        <view bindtap="delectgoods">删除</view>
+        <view bindtap="entergoods">确定</view>
+    </view>
+</view>

@@ -1,0 +1,51 @@
+<view class="personal">
+    <view class="content">
+        <view class="info">
+            <image src="{{headerImg}}"/>
+            <view class="info-text">
+                <view>{{userName}}</view>
+                <view>粉丝 {{fansNum}}</view>
+            </view>
+            <view class="info-btn" bindtap="changeFwState">{{followState==false?'未关注':'已关注'}}</view>
+        </view>
+        <view class="live-info" wx:if="{{liveTitle !== ''}}">
+            <view class="live-tit">{{liveTitle}}</view>
+            <view class="live-tag">
+                <view wx:if="{{liveState =='online'}}" bindtap="toLiveRoom">
+                    <image src="../../static/img/singalicon.png"/>
+                    <text>直播中</text>
+                </view>
+                <view wx:elif="{{liveState=='ready'}}" bindtap="toLiveRoom">
+                    <image src="../../static/img/singalicon.png"/>
+                    <text>未开播</text>
+                </view>
+                <view wx:else bindtap="toLiveRoom">
+                    <image src="../../static/img/singalicon.png"/>
+                    <text>已下播</text>
+                </view>
+                <view>{{viewerNum}}观看</view>
+            </view>
+        </view>
+        <view class="back-look">
+            <view class="back-tit">精彩回放</view>
+            <view class="line"></view>
+            <view class="live-list" wx:if="{{videoPlayBack.length >= 0}}">
+                <view class="live-item" wx:for="{{videoPlayBack}}" wx:key="index" data-vid="{{item.id}}" bindtap="toShortVideo" data-code="{{item.lg_goods_code}}">
+                    <view class="main">
+                        <image mode="widthFix" src="{{item.lg_goods_data.goods_image}}"></image>
+                        <image src="{{item.lg_goods_data.goods_image}}"></image>
+                    </view>
+                    <view class="tit-tag">
+                        <view class="tag-left">商品讲解</view>
+                        <view class="tag-right">{{item.lg_view_num}}人观看</view>
+                    </view>
+                    <view class="live-foot">
+                        <image src="{{headerImg}}"></image>
+                        <view class="live-name">{{userName}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <van-notify id="van-notify" />
+</view>

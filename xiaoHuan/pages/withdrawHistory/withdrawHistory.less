@@ -1,0 +1,86 @@
+@import '../../style/static.less';
+
+page{
+    background: #f9f7f3;
+}
+.withdraw-history{
+    .history-list{
+        .history-item{
+            margin-bottom: 13rpx;
+            background: #FFF;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 20rpx;
+            align-items: center;
+            .tit{
+                display: flex;
+                text{
+                    font-size: 24rpx;
+                    margin-top: 16rpx;
+                    width: 272rpx;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+            }
+            &>view:first-child{
+                
+                view:last-child{
+                    font-size: 20rpx;
+                    color: #b4b4b4;
+                    margin: 14rpx 0;
+                }
+            }
+            .status{
+                color: #b4b4b4;
+                font-size: 24rpx;
+                margin: 0 36rpx 0 26rpx;
+            }
+        }
+    }
+    .order-list{
+        .order-item{
+            background: #FFF;
+            margin-bottom: 13rpx;
+            overflow: hidden;
+            padding: 0 20rpx 15rpx;
+            &>view:first-child{
+                display: flex;
+                justify-content: space-between;
+                font-size: 25rpx;
+                align-items: center;
+                margin: 28rpx 0 10rpx;
+                text{
+                    font-size: 30rpx;
+                }
+                view:first-child{
+                    width: 332rpx;
+                }
+                view:nth-child(2){
+                    margin-left: -48rpx;
+                }
+                view:last-child{
+                    font-size: 22rpx;
+                    color: #989898;
+                    display: flex;
+                    align-items: center;
+                    image{
+                        width: 11rpx;
+                        height: 18rpx;
+                        margin-left: 25rpx;
+                    }
+                }
+            }
+            .info-list{
+                display: flex;
+                flex-wrap: wrap;
+                view{
+                    width: 332rpx;
+                    font-size: 25rpx;
+                    line-height: 55rpx;
+                    color: #727272;
+                }
+            }
+        }
+    }
+}

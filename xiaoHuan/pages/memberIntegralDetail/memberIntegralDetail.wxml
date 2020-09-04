@@ -1,0 +1,9 @@
+<view class="integral-detail">
+    <view class="history-list">
+        <view class="change-item" wx:for="{{integralInfo}}" wx:key="item">
+            <view>{{item.ui_type_title}}</view>
+            <view class="time">{{item.ui_create_time}}</view>
+            <text>+{{item.ui_integral}}</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,67 @@
+<view>
+    <scroll-view scroll-y="{{true}}" class="sup_box"
+                 lower-threshold="{{100}}"
+                 upper-threshold="{{20}}"
+                 bindscrolltolower="downScroll"
+                 bindscrolltoupper="scrollToUp">
+        <view class="sup_backgroundimg">
+            <image mode="widthFix" src="https://cdn.iyizhanke.com/static/img/superbrand.jpg"></image>
+        </view>
+        <view class="sup_item">
+            <view class="si_kind">
+                <view class="sk_item" wx:if="{{brandTopPit.length>0}}">
+                    <view class="si_content" wx:for="{{brandTopPit}}" wx:key="index" catchtap="toBrandDetail"
+                          data-id="{{item.layout_link_data.id}}">
+                        <view class="image">
+                            <image mode="widthFix" src="{{item.layout_image}}"></image>
+                        </view>
+                        <view>{{item.layout_title}}</view>
+                    </view>
+                    <view class="si_content" wx:for="{{4 - brandTopPit.length%4}}" wx:key="item"
+                          wx:if="{{brandTopPit.length%4 < 4}}"></view>
+                </view>
+            </view>
+            <view class="si_tab">
+                <view class="st_detail" wx:for="{{goodsBrands}}" wx:key="item" data-id="{{item.id}}" catchtap="toBrandDetail">
+                    <view class="sd_content">
+                        <image src="{{item.gb_logo}}"></image>
+                        <view class="sd_tit">{{item.gb_title}}</view>
+                        <view class="sd_block">
+                            <text class="sd_o" wx:for="{{item.gb_discount_tags_list}}" wx:for-item="items"
+                                  wx:key="items">{{items}}
+                            </text>
+                            <!--                                <text class="sd_re">{{item.gb_discount_tags_list[1]}}</text>-->
+                            <text class="sd_t" wx:for="{{item.gb_postage_tags_list}}" wx:for-item="postage"
+                                  wx:key="postage">{{postage}}
+                            </text>
+                            <text class="sb_more">查看更多</text>
+                        </view>
+                    </view>
+                    <view class="sd_recom">
+                        <view class="sr_play" wx:if="{{item.live}}" bindtap="bindToLive" data-id="{{item.live.id}}">
+                            <image mode="aspectFill" class="sp_img" src="{{item.live.live_image}}"></image>
+                            <image mode="widthFix" class="sp_pdf"
+                                   src="https://cdn.iyizhanke.com/static/img/playAnimation.gif"></image>
+                            <view class="sp_tit">
+                                <image mode="widthFix" src="../../static/img/live.gif"></image>
+                                <view>直播中</view>
+                            </view>
+                        </view>
+                        <view class="sr_content" wx:for-index="goodsIndex" wx:for="{{item.goodsList}}"
+                              wx:key="goodsItem" wx:for-item="goodsItem" wx:if="{{goodsIndex<(item.live?2:3)}}">
+                            <view catchtap="toDetail" data-code="{{goodsItem.goods_code}}">
+                                <image class="sc_img" src="{{goodsItem.goods_image}}"></image>
+                                <view class="sc_tit">{{goodsItem.goods_title}}</view>
+                                <view class="sc_money">
+                                    <text class="sm_one">￥</text>{{goodsItem.goods_data.commission.price}}
+                                    <text class="sm_two">￥{{goodsItem.goods_data.commodityInfo.snPrice}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<tabbar check='3'></tabbar>

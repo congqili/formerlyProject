@@ -1,0 +1,21 @@
+<view class="keyChain" hidden="{{show}}">
+    <view class="kc-area">
+        <textarea placeholder="请将您要推广的苏宁商品链接（链接加文案），推广链接（链接+文案）完整复制到这里进行转链"
+                maxlength="{{1000}}"
+                bindinput="oninput"
+                class="text-area"
+                value = '{{areaValue}}'
+                placeholder-style="color:#e5e5e5;font-size:28rpx"
+        ></textarea>
+        <view class="writeNum">{{areaValue.length}}/1000</view>
+    </view>
+    <view class="kc-btn">
+        <view bindtap="onkeyChain">一键转链成我的链接</view>
+    </view>
+    <view class="kc-tit">
+        <text>
+            转链说明：\n通过{{CommonConfig.store_title}}转链成功的推广链接，用户下单后可以在苏宁推客APP订单列表查看，计入您的苏宁推客佣金中，同时出现在易线报订单列表，产生额外的平台补助，转链不成功的链接会用红色标识，请删除后再次转链。
+        </text>
+    </view>
+</view>
+<van-dialog id="van-dialog"/>

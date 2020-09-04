@@ -1,0 +1,42 @@
+<view class="order-detail">
+    <view class="order-list">
+        <view class="order-item" wx:for="{{billList}}" wx:key="index">
+            <view class="order-data">
+                <view>
+                    <view>订单号:{{item.order_line_code}}</view>
+                    <view>完成时间：{{item.order_line_time}}</view>
+                </view>
+                <view class="main-gain">
+                    <view>下单时间：{{item.order_create_time}}</view>
+                    <view></view>
+                </view>
+            </view>
+            <view class="order-info">
+                <image src="{{item.order_data.pictureUrl}}"/>
+                <view class="info-txt">
+                    <view class="tit">
+                        <view>苏宁</view>
+                        <view>{{item.order_data.productName}}</view>
+                    </view>
+                    <view class="status">
+                        <view>订单状态：{{item.order_data.orderLineStatusDesc}}</view>
+                        <view class="price-subsify" wx:if="{{item.order_subsidy_data.commission_money>0}}">
+                            平台额外补贴+ {{item.order_subsidy_data.commission_money}}元
+                        </view>
+                    </view>
+                    <view class="saleNum">数量：
+                        <text>x{{item.order_data.saleNum}}</text>
+                    </view>
+                    <view class="amount">
+                        <view>计佣金额：
+                            <text>￥{{item.order_pay_money}}</text>
+                        </view>
+                        <view>预估收益：
+                            <text>￥{{item.order_total_gain}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

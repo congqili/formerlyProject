@@ -1,0 +1,103 @@
+.login-body{
+    .log{
+        width: 250rpx;
+        height: 250rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 310rpx auto 174rpx;
+        border-radius: 14rpx;
+        background: linear-gradient(to left,#4fa6bd,#6dd7c0);
+        image{
+            width: 189rpx;
+            height: 158rpx;
+        }
+    }
+    .input-item{
+        width: 640rpx;
+        margin: 20rpx auto;
+    }
+    .login-btn{
+        width: 574rpx;
+        color: #FFF;
+        text-align: center;
+        height: 88rpx;
+        margin: 0 auto;
+        font-size: 30rpx;
+        line-height: 88rpx;
+        border-radius: 10rpx;
+        letter-spacing: 5rpx;
+        background: linear-gradient(to left,#4fa6bd,#6dd7c0);
+    }
+}
+.phone-tit{
+    margin: 100rpx 30rpx 50rpx;
+    text-align: center;
+    font-size: 40rpx;
+}
+.get-phone{
+    width: 426rpx;
+    height: 87rpx;
+    border-radius: 10rpx;
+    text-align: center;
+    line-height: 87rpx;
+    color: #FFF;
+    background: linear-gradient(to left, #4fa7bd,#6ed8c0);
+    margin: 0 auto;
+}
+.input-item{
+    width: 578rpx;
+    margin: 20rpx auto;
+    height: 800rpx;
+    position: relative;
+    &>image{
+        width: 578rpx;
+        height: 800rpx;
+        position: absolute;
+        z-index: -1;
+    }
+    .input-content{
+        .image{
+            margin: 0 42rpx;
+            height: 242rpx;
+            border-bottom: 1rpx dashed #c2c2c2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            image{
+                width: 93rpx;
+                height: 80rpx;
+            }
+        }
+        .text{
+            view:first-child{
+                text-align: center;
+                font-size: 32rpx;
+                color: #2d2d2d;
+                margin: 110rpx 0 32rpx;
+            }
+            input{
+                display: block;
+                width: 426rpx;
+                height: 84rpx;
+                border-radius: 10rpx;
+                background: #f5f5f5;
+                margin: 0 auto 68rpx;
+                box-sizing: border-box;
+                text-align: center;
+                padding-left: 20rpx;
+                font-size: #353535;
+            }
+            view:last-child{
+                width: 426rpx;
+                height: 87rpx;
+                border-radius: 10rpx;
+                text-align: center;
+                line-height: 87rpx;
+                color: #FFF;
+                background: linear-gradient(to left, #4fa7bd,#6ed8c0);
+                margin: 0 auto;
+            }
+        }
+    }
+}

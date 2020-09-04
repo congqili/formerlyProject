@@ -1,0 +1,133 @@
+page {
+  background: #f5f5f5;
+}
+.create {
+  background: #f5f5f5;
+}
+.create .van-picker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding-top: 20rpx;
+}
+.create .container {
+  overflow: hidden;
+  padding: 0 30rpx 400rpx;
+}
+.create .container .img1 view:first-child {
+  color: #000;
+  font-size: 26rpx;
+  margin: 20rpx 0;
+}
+.create .container .img1 view:nth-child(2) {
+  width: 384rpx;
+  height: 518rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+.create .container .img1 view:nth-child(2) image {
+  width: 386rpx;
+  height: 100%;
+}
+.create .form {
+  margin-top: 30rpx;
+}
+.create .form .form-item {
+  box-sizing: border-box;
+  height: 80rpx;
+  width: 690rpx;
+  margin: 0 auto;
+  font-size: 26rpx;
+  position: relative;
+  border-bottom: 2rpx solid #d9d9d9;
+}
+.create .form .form-item view {
+  float: left;
+  line-height: 80rpx;
+  text-indent: 14rpx;
+}
+.create .form .form-item .drop-menu {
+  width: 520rpx;
+  float: right;
+  height: 79rpx;
+  position: relative;
+}
+.create .form .form-item .drop-menu > view {
+  height: 80rpx;
+}
+.create .form .form-item .van-dropdown-item__option {
+  height: 80rpx;
+}
+.create .form .form-item .van-dropdown-item {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+.create .form .form-item .van-popup--top {
+  left: 40rpx;
+  width: 520rpx;
+}
+.create .form .form-item .van-cell {
+  border-bottom: 1rpx solid #cecece;
+}
+.create .form .form-item .van-cell:last-child {
+  border: 0;
+}
+.create .form .form-item .van-dropdown-item--down {
+  position: absolute;
+  top: 81rpx!important;
+  height: 300rpx;
+}
+.create .form .form-item .van-dropdown-menu {
+  background: none;
+}
+.create .form .form-item .van-dropdown-menu__title {
+  font-size: 26rpx;
+  position: absolute;
+  height: 80rpx;
+  top: calc(50% - 40rpx);
+  left: 50rpx;
+}
+.create .form .form-item .van-dropdown-item__title {
+  font-size: 26rpx;
+}
+.create .form .form-item input,
+.create .form .form-item .add-btn {
+  width: 505rpx;
+  float: right;
+  height: 80rpx;
+}
+.create .form .form-item image {
+  width: 45rpx;
+  height: 26rpx;
+  position: absolute;
+  right: 17rpx;
+  bottom: 26rpx;
+}
+.create .bottom-btn {
+  position: fixed;
+  padding: 20rpx 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFF;
+  z-index: 1000;
+}
+.create .bottom-btn .sub {
+  width: 690rpx;
+  height: 84rpx;
+  background: linear-gradient(to right, #39e1bf, #0ca0c0);
+  color: #FFF;
+  font-size: 34rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 84rpx;
+}
+.create .dialog-index--van-dialog__confirm {
+  color: #000 !important;
+}
+.van-popup--bottom {
+  bottom: 122rpx !important;
+}

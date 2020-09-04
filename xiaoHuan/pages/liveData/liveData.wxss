@@ -1,0 +1,105 @@
+view,
+text {
+  font-family: font;
+}
+.blue-green-btn {
+  background: linear-gradient(to right, #38debf, #12a5bf);
+}
+.blue-purple-btn {
+  background: linear-gradient(to right, #4d8be1, #889cf4);
+}
+view,
+text {
+  line-height: 1;
+}
+button::after {
+  border: none;
+}
+button {
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  line-height: 1;
+}
+button {
+  border-radius: 0;
+}
+.banxin {
+  width: 710rpx;
+  margin: 0 auto;
+  border-radius: 15rpx;
+}
+.col:after {
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  display: block;
+  visibility: hidden;
+}
+.live-data {
+  padding: 0 30rpx;
+}
+.live-data .live-head {
+  display: flex;
+  align-items: center;
+  margin: 52rpx 0 58rpx;
+}
+.live-data .live-head image {
+  height: 110rpx;
+  width: 110rpx;
+  border-radius: 50%;
+  margin-right: 22rpx;
+}
+.live-data .live-head > view view:first-child {
+  color: #000;
+  font-size: 34rpx;
+}
+.live-data .live-head > view view:last-child {
+  color: #7f7f7f;
+  margin-top: 25rpx;
+  font-size: 28rpx;
+}
+.live-data .list-tit {
+  font-size: 32rpx;
+  margin: 30rpx 0 22rpx;
+}
+.live-data .time-data {
+  display: flex;
+  border-radius: 10rpx;
+  box-shadow: 0 0 1rpx 1rpx rgba(0, 0, 0, 0.05);
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+.live-data .time-data .time-item {
+  flex: 1;
+}
+.live-data .time-data .time-item view:first-child {
+  font-size: 30rpx;
+  color: #7f7f7f;
+  margin: 24rpx 0 33rpx;
+}
+.live-data .time-data .time-item view:last-child {
+  font-size: 34rpx;
+  margin-bottom: 27rpx;
+}
+.live-data .deal {
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 0 1rpx 1rpx rgba(0, 0, 0, 0.05);
+}
+.live-data .deal .deal-item {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  width: 340rpx;
+}
+.live-data .deal .deal-item view:first-child {
+  font-size: 30rpx;
+  color: #7f7f7f;
+  margin: 22rpx 0 33rpx;
+}
+.live-data .deal .deal-item view:last-child {
+  font-size: 34rpx;
+  color: #000;
+  margin-bottom: 25rpx;
+}

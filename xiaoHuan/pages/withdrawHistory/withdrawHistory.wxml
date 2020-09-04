@@ -1,0 +1,42 @@
+<view class="withdraw-history">
+    <view class="history-list" wx:if="{{isHistory}}">
+        <view class="history-item" wx:for="{{historyList}}" wx:key="item">
+            <view>
+                <view class="tit">
+                    <text>{{item.withdraw_create_time}}</text>
+                    <text>提现金额：￥{{item.withdraw_money}}</text>
+                </view>
+                <view>{{item.withdraw_cause?item.withdraw_cause:item.withdraw_status_title}}</view>
+            </view>
+            <view class="status">{{item.withdraw_status_title}}</view>
+        </view>
+        <!--        <view class="history-item">-->
+        <!--            <view>-->
+        <!--                <view>-->
+        <!--                    <text>2020-05-05   13:13:35</text>-->
+        <!--                    <text>提现金额：￥7.00</text>-->
+        <!--                </view>-->
+        <!--                <view>提现已提交</view>-->
+        <!--            </view>-->
+        <!--            <view class="status">提现中</view>-->
+        <!--        </view>-->
+    </view>
+    <view class="order-list" wx:else >
+        <view class="order-item"  wx:for="{{billList}}" wx:key="item">
+            <view>
+                <view>{{item.create_time}}账单</view>
+                <view>总收益：<text>￥{{item.ob_total}}</text></view>
+                <view data-id="{{item.id}}" bindtap="goOrderDetail">订单详情<image src="../../static/img/arrow.png" /></view>
+            </view>
+            <view class="info-list">
+                <view>推广收益：￥{{item.ob_commission}}</view>
+                <view>直播收益：￥{{item.ob_live}}</view>
+                <view>平台补贴：￥{{item.ob_up_commission}}</view>
+                <view>合伙人激励：￥{{item.ob_team_subsidy}}</view>
+                <view>积分分红：￥{{item.ob_dividend}}</view>
+                <view>推广补贴：￥{{item.ob_subsidy}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<van-notify id="van-notify" />

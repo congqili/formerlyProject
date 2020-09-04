@@ -1,0 +1,46 @@
+<view class="fans">
+    <view class="fans-content" wx:if='{{userInfo.user_level>1}}'>
+        <van-tabs v-model="active" bind:click="tabSelect" active="{{selIndex}}">
+            <van-tab title="推手粉丝">
+                <view class="anchor-fans">
+                    <view class="fans-item" wx:for="{{userFans}}" wx:key="item">
+                        <image src="{{item.invite_to_user_data.user_head}}" />
+                        <view class="fans-info">
+                            <view>{{item.invite_to_user_data.user_nickname}}</view>
+                            <view>{{item.invite_to_user_data.mobile}}</view>
+                            <view>{{item.invite_create_time}}</view>
+                        </view>
+                    </view>
+                </view>
+                <loadFlag loadData='{{loadData}}'></loadFlag>
+            </van-tab>
+            <van-tab title="主播粉丝">
+                <view class="anchor-fans">
+                    <view class="fans-item" wx:for="{{liveFans}}" wx:key="item">
+                        <image src="{{item.uf_fans_data.user_head}}" />
+                        <view class="fans-info">
+                            <view>{{item.uf_fans_data.user_nickname}}</view>
+                            <view>{{item.uf_fans_data.mobile}}</view>
+                            <view>{{item.uf_create_time}}</view>
+                        </view>
+                    </view>
+                </view>
+                <loadFlag loadData='{{loadData}}'></loadFlag>
+            </van-tab>
+        </van-tabs>
+    </view>
+    <view wx:else >
+        <view class="anchor-fans">
+            <view class="fans-item" wx:for="{{userFans}}" wx:key="item">
+                <image src="{{item.invite_to_user_data.user_head}}" />
+                <view class="fans-info">
+                    <view>{{item.invite_to_user_data.user_nickname}}</view>
+                    <view>{{item.invite_to_user_data.mobile}}</view>
+                    <view>{{item.invite_create_time}}</view>
+                </view>
+            </view>
+        </view>
+        <loadFlag loadData='{{loadData}}'></loadFlag>
+    </view>
+</view>
+<van-notify id="van-notify" />

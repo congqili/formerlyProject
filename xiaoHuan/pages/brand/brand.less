@@ -1,0 +1,228 @@
+/* pages/supBrand/supBrand.wxss */
+.sup_box{
+    background: #f3f3f3;
+    position: relative;
+    height:calc(100vh - 100rpx - env(safe-area-inset-bottom));
+    overflow-y: auto;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+  }
+.sup_backgroundimg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    image{
+        width: 750rpx;
+    }
+}
+.sup_item{
+    position: relative;
+    padding-top: 205rpx;
+    margin:0 auto;
+    width: 710rpx;
+    .si_kind{
+        padding: 15rpx 0 0rpx;
+        border-radius: 16rpx;
+        background: white;
+        .sk_item{
+            margin: 0 auto;
+            padding-bottom: 33rpx;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .si_content{
+                width: 25%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 32rpx;
+                .image{
+                    margin-top: 0;
+                    width: 86rpx;
+                    height: 86rpx;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    border: 1rpx solid #e8e8e8;
+                    image{
+                        width: 86rpx;
+                    }
+                }
+                view{
+                    margin-top: 18rpx;
+                    text-align: center;
+                    color: #7c7c7c;
+                    font-size: 23rpx;
+                }
+            }
+        }
+    }
+}
+.si_tab{
+    margin-top: 20rpx;
+    .st_detail{
+        background: white;
+        border-radius: 16rpx;
+        padding: 22rpx 22rpx 28rpx 22rpx;
+        margin-bottom: 25rpx;
+    }
+    .sd_content{
+        height: 73rpx;
+        image{
+            height: 73rpx;
+            width: 73rpx;
+            border-radius: 50%;
+            margin-right: 18rpx;
+            float: left;
+        }
+        .sd_tit{
+            font-size: 25rpx;
+            font-weight: bold;
+            margin-bottom: 10rpx;
+        }
+        .sc_tit{
+            font-size: 25rpx;
+            color: #010101;
+            font-weight: bold;
+        }
+        .sd_block{
+            display: flex;
+            align-items: center;
+            position: relative;
+            .sd_o{
+                color: #ff7e78;
+                font-size: 20rpx;
+                border: 1rpx solid #ff7e78;
+                height: 30rpx;
+                line-height: 30rpx;
+                padding: 0 8rpx;
+                text-align: center;
+                margin-right: 8rpx;
+            }
+            // .sd_re{
+            //     color: #ff7e78;
+            //     font-size: 20rpx;
+            //     border: 1rpx solid #ff7e78;
+            //     height: 30rpx;
+            //     line-height: 30rpx;
+            //     padding: 0 8rpx;
+            //     text-align: center;
+            //     margin-left: 8rpx;
+            // }
+            .sd_t{
+                color: #4da68d;
+                font-size: 20rpx;
+                border: 1rpx solid #4da68d;
+                height: 30rpx;
+                line-height: 30rpx;
+                padding: 0 8rpx;
+                margin-right: 8rpx;
+            }
+            .sb_more{
+                color: #989898;
+                font-size: 20rpx;
+                height: 30rpx;
+                line-height: 30rpx;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+    .sd_recom{
+        display: flex;
+        margin-top: 20rpx;
+        .sr_play{
+            height: 290rpx;
+            width: 214rpx;
+            border-radius: 10rpx;
+            overflow: hidden;
+            position: relative;
+            margin-right: 14rpx;
+            .sp_img{
+                height: 290rpx;
+                width: 214rpx;
+            }
+            .sp_pdf{
+                width: 78rpx;
+                position: absolute;
+                bottom: 15rpx;
+                right: 0;
+            }
+            .sp_tit{
+                width: 130rpx;
+                height: 32rpx;
+                border-radius: 32rpx;
+                background: rgba(0, 0, 0, 0.5);
+                position: absolute;
+                top: 15rpx;
+                left: 15rpx;
+                image{
+                    width: 32rpx;
+                    border-radius: 50%;
+                    float: left;
+                }
+                view{
+                    line-height: 32rpx;
+                    color: white;
+                    font-size: 18rpx;
+                    text-indent: 0.5rem
+                }
+            }
+        }
+        .sr_content:last-child{
+            margin-right: 0;
+        }
+        .sr_content{
+            height: 290rpx;
+            width: 213rpx;
+            margin-right: 14rpx;
+            .sc_img{
+                width: 213rpx;
+                height: 213rpx;
+                border-radius: 10rpx;
+            }
+            .sc_tit{
+                width: 213rpx;
+                color: #666666;
+                font-size: 24rpx;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            .sc_money{
+                color: #3eb7ae;
+                font-size: 24rpx;
+                .sm_one{
+                    color: #3eb7ae;
+                    font-size: 20rpx;
+                }
+                .sm_two{
+                    color: #666666;
+                    font-size: 20rpx;
+                    text-decoration: line-through;
+                    margin-left: 20rpx;
+                }
+            }
+        }
+    }
+}
+// tab栏
+.van-tabs__wrap{
+    border-radius: 16rpx;
+    margin: 25rpx 0;
+    height: 87rpx;
+    line-height: 87rpx;
+}
+.van-tab--active{
+    color: #4da68d !important;
+}
+.van-tabs__line{
+    display: none !important;
+}
+.van-tabs__wrap--scrollable  .van-tab{
+    -webkit-flex: 0 0 14% !important;
+    flex: 0 0 14% !important;
+}

@@ -1,0 +1,42 @@
+<scroll-view class="brandDetail" scroll-y="{{true}}"
+             lower-threshold="{{100}}"
+             bindscrolltolower="downScroll"
+             upper-threshold="{{20}}"
+             bindscrolltoupper="scrollToUp"
+>
+    <image class="brd_img" mode="heightFix" src="https://cdn.iyizhanke.com/static/img/maskbrand.png"></image>
+    <view class="brd_list">
+        <view class="bl_head">
+            <image class="blh_box" src="{{Brander.gb_logo}}"></image>
+            <view class="blh_detail">{{Brander.gb_desc}}</view>
+        </view>
+        <view class="bl_item">
+            <view class="bli_content" catchtap="toDetail" data-code="{{item.goods_code}}" wx:for="{{GoodsDetail}}" wx:key="item" >
+                <image class="blic_img" mode="aspectFill" src="{{item.goods_image}}"></image>
+                <view class="blic_tit"><text>苏宁</text>{{item.goods_title}}</view>
+                <view class="blic_pricea">
+                    <view class="blicp_left">苏宁价￥{{item.goods_data.commodityInfo.snPrice}}</view>
+                </view>
+                <view class="blic_save">
+                    <view hidden="{{item.goods_data.couponInfo.couponValue==''}}">
+                        <image src="../../static/img/pinkcoupon.png"></image>
+                        <text>￥{{item.goods_data.couponInfo.couponValue}}元</text>
+                    </view>
+                </view>
+                <view class="blic_price">
+                    <view class="blicp_price">券后价￥<text>{{item.goods_data.commission.price}}</text></view>
+                    <view class="product-pricet">
+                        <image wx:if='{{CommonUserLevel>1}}' src="../../static/img/makemoney.png"></image>
+                        <image wx:else src="../../static/img/baopin.png"></image>
+                        {{CommonUserLevel>1?'赚￥'+item.goods_data.commission.gain:'立即抢购'}}
+                    </view>
+                    <view class="subsidy" wx:if='{{CommonUserLevel<=1}}' catchtap='toMemberVip'>
+                        <view>升级超级会员再省{{item.goods_data.commission.gain}}元</view>
+                        <image src="/static/img/youjiantouzong.png" />
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<tabbar check='3'></tabbar>

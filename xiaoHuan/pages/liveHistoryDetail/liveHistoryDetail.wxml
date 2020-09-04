@@ -1,0 +1,34 @@
+<view class="history-detail">
+    <view class="content">
+        <view class="info" bindtap='toLiveData'>
+            <view>
+                <text>直播标题</text>
+                <text>{{title}}</text>
+            </view>
+            <view>
+                <text>直播时间</text>
+                <text>{{timer}}</text>
+            </view>
+        </view>
+        <view class="back-look">
+            <view class="back-tit">精彩回放</view>
+            <view class="line"></view>
+            <view class="live-list">
+                <view class="live-item" wx:for="{{videoList}}" wx:key="index" data-vid="{{item.id}}" bindtap="toShortVideo">
+                    <view class="main">
+                        <video src="{{item.lg_video}}" controls="{{false}}" class="videobg" autoplay></video>
+                    </view>
+                    <view class="tit-tag">
+                        <view class="tag-left">商品讲解</view>
+                        <view class="tag-right">{{item.lg_view_num}}人观看</view>
+                    </view>
+                    <view class="live-foot">
+                        <image src="{{userInfo.user_head}}"></image>
+                        <view class="live-name">{{userInfo.user_nickname}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <van-notify id="van-notify" />
+</view>

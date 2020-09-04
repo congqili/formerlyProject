@@ -1,0 +1,120 @@
+<view class="start-live" catchtap='closeProduct'>
+    <live-room-push class="live-push"
+                    wx:if="{{pluginsInfo.pushUrl !== ''}}"
+                    version="{{pluginsInfo.version}}" liveAppID="{{pluginsInfo.liveAppID}}"
+                    pushUrl="{{pluginsInfo.pushUrl}}" orientation="{{pluginsInfo.orientation}}"
+                    muted="{{pluginsInfo.muted}}" mode="{{pluginsInfo.mode}}"
+                    waitingImage="{{pluginsInfo.waitingImage}}" enableCamera="{{pluginsInfo.enableCamera}}"
+                    beauty="{{pluginsInfo.beauty}}" whiteness="{{pluginsInfo.whiteness}}"
+                    backgroundMute="{{pluginsInfo.backgroundMute}}" debug="{{pluginsInfo.debug}}"
+                    autoFocus="{{pluginsInfo.autoFocus}}" aspect="{{pluginsInfo.aspect}}"
+                    minBitrate="{{pluginsInfo.minBitrate}}" maxBitrate="{{pluginsInfo.maxBitrate}}"
+                    zoom="{{pluginsInfo.zoom}}" devicePosition="{{pluginsInfo.devicePosition}}"
+                    sdkAppID="{{pluginsInfo.sdkAppID}}" accountType="{{pluginsInfo.accountType}}"
+                    userID="{{pluginsInfo.userID}}" userSig="{{pluginsInfo.userSig}}"
+                    roomID="{{pluginsInfo.roomID}}" nickName="{{pluginsInfo.nickName}}"
+                    avatar="{{pluginsInfo.avatar}}" mirror='{{pluginsInfo.mirror}}'
+                    bindPushEvent="onPushEvent" bindIMEvent="onIMEvent" bindError="onPushError">
+    </live-room-push>
+    <view class="mask-bg" style="">
+        <image mode="widthFix" class="videobg" src="{{streamInfo.live_image}}"></image>
+    </view>
+    <image class="mask-image" src="{{streamInfo.live_image}}"></image>
+    <view class="live-info">
+        <view>
+            <view>预告</view>
+            {{time}}
+        </view>
+        <view>
+            直播间ID：{{streamInfo.live_number}}
+        </view>
+    </view>
+    <view class="live-fun">
+        <view>
+            <image style="width:41rpx;height:50rpx"  src="../../static/img/pos-icon.png"/>
+            <text>{{streamInfo.live_stream_data.ls_address}}</text>
+        </view>
+        <view>
+            <image mode="aspectFit" catchtap='showBar'  src="../../static/img/ziyuan.png"/>
+            <image mode="aspectFit"  src="../../static/img/yuanjiaojuxing3.png"/>
+            <image mode="aspectFit" bindtap='mirror'  src="../../static/img/yunjingxiang71.png"/>
+            <image mode="aspectFit" bindtap='turn'  src="../../static/img/fanzhuanjingtouxianxing.png"/>
+        </view>
+    </view>
+    <view class="bottom-btn" wx:if="{{!showBar && !showProduct}}">
+        <view>
+            <view class="fun-btn" catchtap="openProduct">
+                <image mode="aspectFit" src='../../static/img/liveaddbtn.png' />
+                <view>添加</view>
+            </view>
+            <button class="fun-btn" open-type="share">
+                <image mode="aspectFit" src='../../static/img/fenxiang.png' />
+                <view>分享</view>
+            </button>
+        </view>
+        <view>
+            <view class="back btn" bindtap="back">返回</view>
+            <view class="start btn" bindtap="startLive">开始直播</view>
+        </view>
+    </view>
+    <van-popup
+            show="{{ showProduct }}"
+            position="bottom"
+            custom-style="height: 857rpx;width:100%;"
+            bind:close="closeProduct"
+            custom-class='pop-class'
+    >
+        <view class="product-content">
+            <view class="top-btn" bindtap="toSelect">
+                <image src="../../static/img/+.png"/>
+                添加宝贝
+            </view>
+            <view class="product-list">
+                <view class="product-item" wx:for="{{goodsList}}" wx:key="item">
+                    <view class="img">
+                        <view class="hot" wx:if="{{!index}}">热</view>
+                        <view class="tag" wx:else>{{goodsList.length - index}}</view>
+                        <image src="{{item.lg_goods_data.goods_image}}"/>
+                    </view>
+                    <view class="product-desc">
+                        <view class="product-name">{{item.lg_goods_data.goods_title}}</view>
+                        <view class="product-price">
+                            <view class="price">￥
+                                <text>{{item.lg_goods_data.goods_data.commission.price}}</text>
+                                （立省{{item.lg_goods_data.goods_data.commission.rebate}}）
+                            </view>
+                        </view>
+                        <view class="operate">
+                            <view wx:if="{{CommonUserLevel>1}}">预估推广收益：￥{{item.lg_goods_data.goods_data.commission.gain}}</view>
+                            <view wx:else></view>
+                            <image  wx:if="{{index>0}}" data-code="{{item.lg_goods_data.goods_code}}" bindtap="goodsTop" data-index="{{index}}"  class="set-top" src="../../static/img/zhidingtop-2.png" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </van-popup>
+    <van-popup show="{{ showBar }}" position="bottom" custom-style="height: 277rpx;width:100%;background:rgba(0,0,0,0.3)" bind:close="closeProduct" overlay='{{false}}' custom-class='pop-class'>
+        <view class="pop-content">
+            <view class="wrappera">
+                <view>美颜</view>
+                <view class="top">
+                    <slider value="{{90}}" activeColor="#10a98c" block-size="12" block-color="#10a98c" bindchange="onSkin"></slider>
+<!--                    <van-slider active-color="#10a98c" value="{{ currentValue }}" use-button-slot bind:drag="onSkin">-->
+<!--                        <view class="custom-button" slot="button"></view>-->
+<!--                    </van-slider>-->
+                </view>
+            </view>
+            <view class="wrappera">
+                <view>美白</view>
+                <view class="top">
+                    <slider value="{{90}}" activeColor="#10a98c" block-size="12" block-color="#10a98c" bindchange="onFilter"></slider>
+<!--                    <van-slider active-color="#10a98c" value="{{ currentValue }}" use-button-slot bind:drag="onFilter">-->
+<!--                        <view class="custom-button" slot="button"></view>-->
+<!--                    </van-slider>-->
+                </view>
+            </view>
+        </view>
+    </van-popup>
+    <van-notify id="van-notify" />
+</view>

@@ -1,0 +1,41 @@
+<view class="wrapper">
+    <view class="tabbar">
+        <view class="{{check==0?'btn check':'btn'}}">
+            <navigator open-type="switchTab" url="/pages/index/index" hover-start-time="0" hover-class="none"
+                       extra-data="0">
+                <view class="tab-wrapper">
+                    <image mode="aspectFit" src="../../static/img/{{check==0?'index.jpg':'shouyekaobei.png'}}"></image>
+                </view>
+                <view>首页</view>
+            </navigator>
+        </view>
+
+
+        <view class="{{check==1?'btn check':'btn'}}">
+            <navigator open-type="switchTab" url="/pages/liveSquare/liveSquare" hover-start-time="0" hover-class="none">
+                <view class="tab-wrapper">
+                    <image mode="aspectFit" src="../../static/img/{{check==1?'liveselect.png':'live-square.png'}}"></image>
+                </view>
+                <view>直播</view>
+            </navigator>
+        </view>
+
+        <view class="{{check==3?'btn check':'btn'}}">
+            <navigator open-type="switchTab" url="/pages/brand/brand" hover-start-time="0" hover-class="none">
+                <view class="tab-wrapper">
+                    <image mode="aspectFit" style="transform:translateX(3rpx)" src="../../static/img/{{check==3?'brandselect.png':'brand.png'}}"></image>
+                </view>
+                <view>品牌</view>
+            </navigator>
+        </view>
+
+        <view class="{{check==2?'btn check':'btn'}}">
+            <navigator open-type="switchTab" url="/pages/member/member" hover-start-time="0" hover-class="none">
+                <view class="tab-wrapper">
+                    <image mode="aspectFit" src="../../static/img/{{check==2?'memberselect.png':'vipbar.png'}}"></image>
+                </view>
+                <view>会员</view>
+            </navigator>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,60 @@
+
+page{
+    background: #f9f7f3;
+}
+.fans{
+    .van-tab{
+        color: #4d4d4d;
+        background: #f9f7f3;
+    }
+    .van-tab--active{
+        color: #0fa98c;
+    }
+    .van-tabs__line{
+        background: #0fa98c;
+        width: 142rpx;
+        height: 5rpx;
+    }
+    .anchor-fans{
+        background: #FFF;
+        margin: 28rpx 20rpx 0;
+        border-radius: 20rpx;
+        view,text{
+            line-height: 1;
+        }
+        .fans-item{
+            display: flex;
+            border-bottom: 2rpx solid #ececec;
+            box-sizing: border-box;
+            margin: 0 40rpx;
+            overflow: hidden;
+            image{
+                width: 110rpx;
+                height: 110rpx;
+                border-radius: 10rpx;
+                margin: 27rpx 0 24rpx;
+            }
+            .fans-info{
+                margin-left: 18rpx;
+                view{
+                    font-size: 20rpx;
+                    color: #dbdbdb;
+                }
+                view:first-child{
+                    font-size: 32rpx;
+                    color: #000;
+                    margin: 34rpx 0 20rpx;
+                }
+                view:last-child{
+                    margin-top: 10rpx;
+                    text{
+                        margin-left: 20rpx;
+                    }
+                }
+            }
+        }
+        .fans-item:last-child{
+            border-bottom: 0;
+        }
+    }
+}

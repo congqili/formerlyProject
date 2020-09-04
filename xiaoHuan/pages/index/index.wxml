@@ -1,0 +1,392 @@
+<view class="index">
+    <view class="search-wrapper">
+        <view class="search-item">
+            <image src="../../static/img/topfangfajing.png" />
+            <input confirm-type="search" type="text" bindconfirm="inputConfirm" value='{{searchVal}}' placeholder="请输入产品名称" placeholder-class="input-placeholder"></input>
+        </view>
+    </view>
+    <!-- TODO:下拉加载多次 -->
+    <scroll-view upper-threshold="{{20}}" lower-threshold='{{200}}' bindscrolltoupper="scrollToUp" class='scroll-class scroll-view' scroll-y bindscroll="onScroll" bindscrolltolower="onViewScroll">
+        <view class="nav">
+            <view class="category-icon" bindtap='onOpen'>
+                <view>
+                    <image src="../../static/img/fenleiIcon.png" />
+                </view>
+                <image src="../../static/img/shadow.png" />
+            </view>
+            <van-tabs bindprogress='seekProgress' show-play-btn='{{false}}' show-fullscreen-btn='{{false}}' sticky='{{true}}' nav-class='nav-class' tab-class='tab-class' active="{{ tab_index }}" bind:change="onChange" tab-class='tab-class'>
+                <van-tab title="推荐">
+                    <view class="index-main-content" wx:if="{{!showSearchList}}">
+                        <view class="banner-wrapper">
+                            <swiper bindanimationfinish="swiperChange" class="banner" autoplay="true" circular="true">
+                                <swiper-item wx:for="{{banner}}" wx:key='item' bindtap="jumpPage" data-type="{{item.layout_link_type}}" data-params="{{item.layout_link_data}}" data-target="{{item.layout_link_target}}">
+                                    <image mode="heightFix" src="{{item.layout_image}}"></image>
+                                </swiper-item>
+                            </swiper>
+                            <view class="dots">
+                                <block wx:for="{{banner}}" wx:key='item'>
+                                    <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+                                </block>
+                            </view>
+                        </view>
+                        <view class="category-list">
+                            <view wx:for="{{top_category}}" wx:key="item" bindtap="jumpPage" data-params="{{item.layout_link_data}}" data-target="{{item.layout_link_target}}" data-index="{{index}}" data-type="{{item.layout_link_type}}" data-id="{{item.id}}">
+                                <image class="" src="{{item.layout_image}}"></image>
+                                <text>{{item.layout_title}}</text>
+                            </view>
+                        </view>
+                        <view class="speack" wx:if="{{false}}">
+                            <view class="text">
+                                <text class='tit'>主播\n讲解</text>
+                                <image class="" src="../../static/img/microphone.png"></image>
+                                <text class="desc">真人实物讲解</text>
+                            </view>
+                            <view class="product" wx:for="{{streamer_explain}}" wx:key='item' bindtap='jumpPage' data-target="{{item.layout_link_target}}" data-params="{{item.layout_link_data}}" data-type="{{item.layout_link_type}}">
+                                <view class="img-wrapper">
+                                    <image src="{{item.layout_image}}"></image>
+                                </view>
+                                <text>{{item.layout_title}}</text>
+                            </view>
+                        </view>
+                        <view class="brand" wx:if='{{false}}'>
+                            <view class="brand-tit">品牌特卖</view>
+                            <view class="brand-wrapper">
+                                <view class="brand-left" bindtap='jumpPage' data-params='{{brandList[0].layout_link_data}}' data-target='{{brandList[0].layout_link_target}}' data-type='{{brandList[0].layout_link_type}}'>
+                                    <image mode="widthFix" src="{{brandList[0].layout_image}}" />
+                                </view>
+                                <view class="brand-right">
+                                    <view wx:for="{{brandList}}" wx:key="item" data-params='{{brandList[0].layout_link_data}}' data-target='{{brandList[0].layout_link_target}}' data-type='{{brandList[0].layout_link_type}}'>
+                                        <image wx:if='{{index>0}}' mode="widthFix" src="{{item.layout_image}}" />
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <!-- 超级品牌 -->
+                        <view class="superBrand" wx:if='{{brandList.length>0}}'>
+                            <view wx:for="{{brandList}}" class="sup_box" wx:key='item' bindtap='jumpPage' data-id="{{item.id}}" data-target="{{item.layout_link_target}}" data-params="{{item.layout_link_data}}" data-type="{{item.layout_link_type}}">
+                                <view class="enter-tit">{{item.layout_title}}</view>
+                                <view class="enter-desc">{{item.layout_desc}}</view>
+                                <view class="enter-btn" style="border: 2rpx solid #4da68d;">
+                                    {{item.layout_extend.btn_title}}
+                                </view>
+                                <image mode="widthFix" src="{{item.layout_image}}" />
+                            </view>
+                        </view>
+                        <!-- 超级会员专享 -->
+                        <view class="superMember" wx:if='{{superGoods.length>0}}'>
+                            <view class="spm_tit">
+                                <view class="spt_tit">超级会员专享</view>
+                                <image mode="widthFix" src="https://cdn.iyizhanke.com/static/img/huangguan.png"></image>
+                            </view>
+                            <view class="spm_content">
+                                <view class="spmc_box" wx:for="{{superGoods}}" wx:key="item" bindtap='jumpPage' data-target="{{item.layout_link_target}}" data-params="{{item.layout_link_data}}" data-type="{{item.layout_link_type}}">
+                                    <view class="spmcb_tit">{{item.layout_title}}</view>
+                                    <view class="spmcb_money">
+                                        {{item.layout_link_data.goods_data.commission.subsidy>0?'平台￥'+item.layout_link_data.goods_data.commission.subsidy+'+':''}}{{'佣金￥'+item.layout_link_data.goods_data.commission.gain}}
+                                    </view>
+                                    <image mode="aspectFit" class="spmcb_img" src="{{item.layout_image}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="hot">
+                            <view class="tit">
+                                <view class='text'>超值爆品</view>
+                            </view>
+                            <view class="hot-product">
+                                <productList list='{{hot_goods}}'></productList>
+                                <view class="product-btn" bindtap="lookMoreThing">点击查看更多爆品</view>
+                            </view>
+                        </view>
+                        <view class="live-square" wx:if='{{streamers.length>0}}'>
+                            <view class="square-tit">直播广场</view>
+                            <scroll-view scroll-x="{{true}}">
+                                <view class="live-square-list">
+                                    <view class="live-square-item" wx:if='{{index<6}}' wx:for="{{streamers}}" wx:key='item' bindtap='jumpPage' data-target="{{item.layout_link_target}}" data-params="{{item.layout_link_data}}" data-type="{{item.layout_link_type}}">
+                                        <view class="live-tag" mode="widthFix">
+                                            <view></view>
+                                        </view>
+                                        <view class="tag-tit">{{item.layout_title}}</view>
+                                        <image src="{{item.layout_image}}" class="live-image" />
+                                        <view class="live-info">
+                                            <image src="{{item.layout_link_data.live_user_data.user_head || item.layout_link_data.lg_user_data.user_head}}" class="advator" />
+                                            <view class="streamer">
+                                                {{item.layout_link_data.live_user_data.user_nickname || item.layout_link_data.lg_user_data.user_nickname}}
+                                            </view>
+                                            <view class="stream-tit">{{item.layout_desc}}</view>
+                                            <view class="status">
+                                                <view class="img" style="">
+                                                    <image mode="aspectFit" wx:if="{{item.layout_link_type=='goods_explain'}}" src="https://cdn.iyizhanke.com/static/img/play{{index}}.gif" />
+                                                    <image mode="aspectFit" wx:else src="https://cdn.iyizhanke.com/static/img/online{{index}}.gif" />
+                                                </view>
+                                                <view class="status-text">
+                                                    {{item.layout_link_type=='goods_explain'?'商品讲解':'正在直播'}}
+                                                </view>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </scroll-view>
+                        </view>
+                        <!-- TODO:测试代码记得关掉 -->
+                        <view class="best-sellers" wx:if='{{true}}'>
+                            <view class="best-tit">人气特卖</view>
+                            <view class="best-list">
+                                <view class="best-item" wx:key="item" wx:for="{{popularityList}}" bindtap='jumpPage' data-params='{{item.layout_link_data}}' data-target='{{item.layout_link_target}}' data-type='{{item.layout_link_type}}'>
+                                    <image mode="aspectFit" src="{{item.layout_image}}" />
+                                    <view class="best-desc">{{item.layout_title}}</view>
+                                    <view class="best-name">{{item.layout_desc}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="index-goods-list" wx:if='{{true}}'>
+                            <view class="index-goods-item" wx:key="item" wx:for="{{popGoodsList}}" bindtap="toGoodsDetail" data-code="{{item.goods_code}}">
+                                <view class="goods-image">
+                                    <image src="{{item.goods_image}}" />
+                                </view>
+                                <view class="goods-title">{{item.goods_title}}</view>
+                                <view class="tag-list">
+                                    <view class="red tag" wx:key="item" wx:for="{{item.goods_discount_tags_list}}" wx:for-item="tgr">
+                                        {{tgr}}
+                                    </view>
+                                    <view class="tag green" wx:key="item" wx:for="{{item.goods_postage_tags_list}}" wx:for-item="tgg">
+                                        {{tgg}}
+                                    </view>
+                                </view>
+                                <view class="goods-bottom">
+                                    <view class="goods-price">
+                                        <text>￥</text>
+                                        <text>{{item.goods_data.commission.price}}</text>
+                                    </view>
+                                    <view class="member-vip" wx:if="{{CommonUserLevel<=1}}">
+                                        会员省￥{{item.goods_data.commission.gain}}元
+                                    </view>
+                                    <view class="buy-num" wx:else>{{item.goods_buy_num}}人购买</view>
+                                </view>
+                            </view>
+                            <!-- <view class="index-goods-item" wx:if='{{false}}'>
+                                <view class="goods-image">
+                                    <image src="" />
+                                </view>
+                                <view class="goods-title">心选梦乐园系列进口EVA彩色情侣Q弹底拖鞋</view>
+                                <view class="tag-list">
+                                    <view class="red tag">立减10元</view>
+                                    <view class="tag green">免邮费</view>
+                                </view>
+                                <view class="goods-bottom">
+                                    <view class="goods-price">
+                                        <text>￥</text>46.6
+                                    </view>
+                                    <view class="buy-num">123人购买</view>
+                                </view>
+                            </view> -->
+                        </view>
+                        <view class="live-list" wx:if='{{false}}'>
+                            <view class="{{item.layout_link_type=='live'?'live-item':'live-tit'}}" wx:for="{{streamers}}" wx:key="item" bindtap='jumpPage' data-target="{{item.layout_link_target}}" data-params="{{item.layout_link_data}}" data-type="{{item.layout_link_type}}">
+                                <view wx:if="{{item.layout_link_type=='live'}}">
+                                    <view class="main">
+                                        <image mode="aspectFill" src="{{item.layout_image}}"></image>
+                                    </view>
+                                    <view class="tit-tag">
+                                        <view class="tag-left live-tag">
+                                            <image src="../../static/img/singalicon.png"></image>
+                                            直播中
+                                        </view>
+                                        <view class="tag-right">
+                                            {{item.layout_link_data.live_stream_data.ls_viewer_num}}人观看
+                                        </view>
+                                    </view>
+                                    <view class="mask"></view>
+                                    <view class="live-foot">
+                                        <image src="{{item.layout_link_data.live_user_data.user_head}}"></image>
+                                        <view class="live-name">
+                                            {{item.layout_link_data.live_user_data.user_nickname}}
+                                        </view>
+                                        <image class="like-icon" src='../../static/img/xin.png'></image>
+                                        <view class="live-like">
+                                            {{item.layout_link_data.live_stream_data.ls_like_num}}
+                                        </view>
+                                    </view>
+                                </view>
+                                <view wx:else>
+                                    <view class="imgs">
+                                        <view wx:for-item='itemImg' wx:for-index='imgIndex' wx:key="itemImg" wx:for="{{item.layout_link_data.live_goods_list}}">
+                                            <image src="{{itemImg.lg_goods_data.goods_image}}" wx:if="{{imgIndex<4}}"></image>
+                                        </view>
+                                    </view>
+                                    <view class="tit-tag">
+                                        <view class="tag-left live-tag">
+                                            <image src="../../static/img/singalicon.png"></image>
+                                            直播中
+                                        </view>
+                                        <view class="tag-right">
+                                            {{item.layout_link_data.live_stream_data.ls_viewer_num}}人观看
+                                        </view>
+                                    </view>
+                                    <view class="tit-head">
+                                        {{item.layout_link_data.live_title}}
+                                    </view>
+                                    <view class="tit-txt">{{item.layout_link_data.live_desc}}</view>
+                                    <view class="tit-foot">
+                                        <view class="foot-main">
+                                            <view>
+                                                <image wx:key="item" src="{{item.user_head}}" wx:if="{{index<4}}" wx:for="{{item.layout_link_data.live_share_list}}"></image>
+                                            </view>
+                                            <text>
+                                                {{item.layout_link_data.live_stream_data.ls_share_num}}人分享了该直播间
+                                            </text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="live-item" wx:for="{{goods_explain}}" wx:key="item" bindtap='jumpPage' data-target="{{item.layout_link_target}}" data-params="{{item.layout_link_data}}" data-type="{{item.layout_link_type}}">
+                                <view class="main">
+                                    <image src="{{item.layout_image}}"></image>
+                                </view>
+                                <view class="tit-tag">
+                                    <view class="tag-left tall">商品讲解</view>
+                                    <view class="tag-right">
+                                        {{item.layout_link_data.lg_view_num}}人观看
+                                    </view>
+                                </view>
+                                <view class="mask"></view>
+                                <view class="content-foot">
+                                    <view class="price">
+                                        ￥
+                                        <text>
+                                            {{item.layout_link_data.lg_goods_data.goods_data.commission.price[0]}}
+                                        </text>
+                                        <text>
+                                            .{{item.layout_link_data.lg_goods_data.goods_data.commission.price[1]}}
+                                        </text>
+                                    </view>
+                                    <view class="shopname">
+                                        {{item.layout_link_data.lg_goods_data.goods_title}}
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- <view wx:else>
+                        <view class="product-container">
+                            <view class="product-list">
+                                <view class="com-product-item" wx:for="{{searchList}}" wx:for-item="listItem"
+                                      wx:for-index="listIndex" wx:key="item" bindtap="toGoodsDetail"
+                                      data-code="{{listItem.goods_code}}">
+                                    <view class="product-img">
+                                        <image mode="widthFix" src="{{listItem.goods_image}}"></image>
+                                    </view>
+                                    <view class="product-content">
+                                        <view class="product-tit">
+                                            {{listItem.goods_title}}
+                                        </view>
+                                        <view class="product-txt">
+                                            {{listItem.goods_data.commodityInfo.sellingPoint}}
+                                        </view>
+                                        <view class="product-coupons">
+                                            <view hidden="{{listItem.goods_data.couponInfo.couponValue==''}}">
+                                                <image src="../../static/img/pinkcoupon.png"></image>
+                                                <text>￥{{listItem.goods_data.couponInfo.couponValue}}元</text>
+                                            </view>
+                                        </view>
+                                        <view class="product-oldprice">
+                                            ￥{{listItem.goods_data.commodityInfo.snPrice}}元
+                                        </view>
+                                        <view class="product-price">
+                                            <view class="product-priceo">
+                                                爆品价￥
+                                                <text>{{listItem.goods_data.commission.price}}</text>
+                                            </view>
+                                            <view class="subsidy" wx:if='{{listItem.goods_data.commission.subsidy >0}}'>
+                                                含推广补贴{{listItem.goods_data.commission.subsidy}}元
+                                            </view>
+                                            <view class="product-pricet">
+                                                <image src="../../static/img/makemoney.png"></image>
+                                                赚￥{{listItem.goods_data.commission.commission}}
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view> -->
+                </van-tab>
+                <van-tab disabled='{{index==top_tab_category.length-1?true:false}}' title-style="{{index==top_tab_category.length-1?'color:#FFF':''}}" wx:key="item" wx:for="{{top_tab_category}}" title="{{item.layout_title}}">
+                    <view class="product-container">
+                        <productList list='{{tab_goods_list}}'></productList>
+                        <!-- <view class="product-list">
+                            <view class="com-product-item" wx:for="{{tab_goods_list[item.layout_link_data.id]}}"
+                                  wx:for-item="listItem" wx:for-index="listIndex" wx:key="item" bindtap="toComment"
+                                  data-code="{{listItem.goods_code}}">
+                                <view class="product-img">
+                                    <image mode="widthFix" src="{{listItem.goods_image}}"></image>
+                                </ view>
+                                <view class="product-content">
+                                    <view class="product-tit">
+                                        {{listItem.goods_title}}
+                                    </view>
+                                    <view class="product-txt">
+                                        {{listItem.goods_data.commodityInfo.sellingPoint}}
+                                    </view>
+                                    <view class="product-coupons">
+                                        <view hidden="{{listItem.goods_data.couponInfo.couponValue==''}}">
+                                            <image src="../../static/img/pinkcoupon.png"></image>
+                                            <text>￥{{listItem.goods_data.couponInfo.couponValue}}元</text>
+                                        </view>
+                                    </view>
+                                    <view class="product-oldprice">
+                                        ￥{{listItem.goods_data.commodityInfo.snPrice}}元
+                                    </view>
+                                    <view class="product-price">
+                                        <view class="product-priceo">
+                                            爆品价￥
+                                            <text>{{listItem.goods_data.commission.price}}</text>
+                                        </view>
+                                        <view class="subsidy"
+                                              wx:if='{{listItem.goods_data.commission.subsidy >0}}'>
+                                            平台额外补贴+{{listItem.goods_data.commission.subsidy}}元
+                                        </view>
+                                        <view class="product-pricet">
+                                            <image src="../../static/img/makemoney.png"></image>
+                                            赚￥{{listItem.goods_data.commission.commission}}
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view> -->
+                    </view>
+                </van-tab>
+            </van-tabs>
+            <loadFlag loadData='{{loadData}}'></loadFlag>
+        </view>
+    </scroll-view>
+    <van-notify id="van-notify" />
+    <tabbar check="0"></tabbar>
+</view>
+<van-popup show="{{ showCategoryPop }}" position="top" bind:close="onClose">
+    <view class="category-pop">
+        <view class="pop-tit">
+            <view>全部分类</view>
+            <image class="closeIcon" bindtap='onClose' src="../../static/img/chacha.jpg" />
+        </view>
+        <view class='category-list'>
+            <view class="category-item" bindtap='jumpIndex'>
+                <view>
+                    <image mode="widthFix" src="../../static/img/tuijianzan.png" />
+                </view>
+                <view>推荐</view>
+            </view>
+            <view class="category-item" wx:for="{{tab_category}}" wx:key="index" bindtap="jumpProduct" data-title="{{item.layout_title}}" data-id="{{item.layout_link_data.id}}">
+                <view>
+                    <image mode="widthFix" src="{{item.layout_image}}" />
+                </view>
+                <view>{{item.layout_title}}</view>
+            </view>
+            <view class="category-item" wx:key="item" wx:for="{{3 - tab_category.length%4}}">
+                <view>
+                    <image mode="widthFix" style="height:20rpx" />
+                </view>
+                <view></view>
+            </view>
+        </view>
+    </view>
+</van-popup>

@@ -1,0 +1,187 @@
+<view class="detail container">
+    <view class="look-video" wx:if="{{showLiveComponent || hasLive}}" bindtap="backToLive">
+        <image src="../../static/img/live.gif" />
+        <view>直播中</view>
+    </view>
+    <view bindtap="toComment" class="look-video" wx:if="{{lookTalking && !showLiveComponent && !hasLive}}">
+        <image src="../../static/img/live.gif" />
+        <view>看讲解</view>
+    </view>
+    <view class="goods-zoom">
+
+        <view class="prevImgIndex" wx:if='{{main_images.length>1}}'>{{currentSwiper+1}}/{{main_images.length}}</view>
+        <!-- <image src="{{goods_image}}" bindtap='previewImage'></image> -->
+        <swiper circular='{{true}}' class="main-image" bindanimationfinish="swiperChange">
+            <swiper-item wx:for="{{main_images}}" wx:key='item' data-type='main' data-index='{{index}}' bindtap='previewImage'>
+                <image mode="aspectFit" src="{{item}}" bindload="imageLoad"></image>
+            </swiper-item>
+        </swiper>
+        <view class="gz_content">
+            <view class="gzc_pay">
+                <view>折后价</view>
+                <view class="price-incom" wx:if="{{CommonUserLevel>1}}">预估推广收益：￥<text>{{goods_data.commission.gain}}</text></view>
+                <view class="price_incom" wx:else>
+                    升级超级会员可再省￥{{goods_data.commission.gain}}
+                    <view class="prin_upgrade" bindtap="jump" data-url="memberVip">一键升级</view>
+                </view>
+            </view>
+            <view class="gzc_money">
+                <view class="gzcm_item">
+                    <text>￥</text><text>{{goods_data.commission.price}}</text><text></text><text class="gzcmi_through">￥{{goods_data.commodityInfo.snPrice}}</text>
+                </view>
+                <view class="price_subsify" wx:if="{{goods_data.commission.subsidy>0}}">平台额外补贴+ {{goods_data.commission.subsidy}}元</view>
+            </view>
+            <view class="gzc_tit">{{goods_data.commodityInfo.sellingPoint}}</view>
+            <view class="gzc_text">{{goods_title}}</view>
+        </view>
+<!--        <view class="info-left">-->
+<!--            <view class="goods-tit">{{goods_data.commodityInfo.sellingPoint}}</view>-->
+<!--            <view class="goods-info">{{goods_title}}</view>-->
+<!--        </view>-->
+<!--        <view class="goods-price info-right">-->
+<!--            <view class="price-incom" wx:if="{{goods_data.commission.gain>0}}">预估推广收益：￥<text>{{goods_data.commission.gain}}</text></view>-->
+<!--            <view class="price-incom" wx:else><text></text></view>-->
+<!--            <view class="price-commission">-->
+<!--                <text>￥</text>-->
+<!--                <text>{{goods_data.commission.price}}</text>-->
+<!--                <text></text>-->
+<!--            </view>-->
+<!--        </view>-->
+<!--        <view class="price-subsify" wx:if="{{goods_data.commission.subsidy>0}}" >平台额外补贴+ {{goods_data.commission.subsidy}}元</view>-->
+    </view>
+    
+<!--    <view class="upgrade" wx:if="{{CommonUserLevel<=1}}">-->
+<!--        <view class="upgrade_item">-->
+<!--            <view class="ui_content">-->
+<!--                <image src="../../static/img/detailhuiyuan.png"></image>-->
+<!--                <view>超级会员</view>-->
+<!--                <view class="uic_sup">升级超级会员可再省￥{{goods_data.commission.gain}}</view>-->
+<!--            </view>-->
+<!--            <view class="ui_bottom">升级为超级会员，自买省钱，分享赚钱，享受9大权益</view>-->
+<!--        </view>-->
+<!--        <view class="upgrade_add" bindtap="jump" data-url="memberVip">一键升级</view>-->
+<!--    </view>-->
+
+<!--    <view class="nav">-->
+<!--        <view class="tab">-->
+<!--            <view class="{{checkIndex==0?'check':''}}" bindtap='select' data-index='0'>图文详情</view>-->
+<!--            <view class="{{checkIndex==1?'check':''}}" bindtap='select' data-index='1'>文字详情</view>-->
+<!--            <view class="{{checkIndex==0?'left':'right'}}"></view>-->
+<!--        </view>-->
+<!--    </view>-->
+<!--&lt;!&ndash;    图文详情&ndash;&gt;-->
+<!--    <view class="product-list" hidden="{{checkIndex==0?false:true}}">-->
+<!--        <image wx:for="{{goods_images}}" wx:key="item" src="{{item}}" mode="widthFix" bindtap='previewImage'-->
+<!--               data-index="{{index}}"/>-->
+<!--    </view>-->
+<!--&lt;!&ndash;    文字详情&ndash;&gt;-->
+<!--    <view class="product-list" hidden="{{checkIndex==1?false:true}}">-->
+<!--    </view>-->
+
+<!--    商品编号-->
+<view class="goodsNum" wx:if='{{true}}'>
+    <view class="gN_num">商品编号</view>{{goods_data.commodityInfo.commodityCode}}
+</view>
+<view class="detail-tit" wx:if="{{false}}">
+    <view>商品详情</view>
+    <view></view>
+</view>
+<!--    商品文案-->
+<view class="exam_wrapper" wx:if='{{true}}'>
+    <view class="exam_tit"><view></view>商品文案</view>
+    <view class="exam_text" style="height:auto">
+        <rich-text nodes="{{goods_text}}" space='nbsp'></rich-text>
+<!--        <view class='extend' bindtap='showAllText'>-->
+<!--            {{remindText?'展开':'收起'}}<image src="/static/img/{{remindText?'arrdown':'arrtop'}}.png" />-->
+<!--        </view>-->
+    </view>
+    <view class="copy-btn" bindtap="copyText">复制文案</view>
+</view>
+
+<!--    验货图片-->
+<view class="examimg" wx:if='{{false}}'>
+    <view class="exam_tit"><view></view>验货图片</view>
+    <view class="exam_one" wx:if="{{false}}">
+        <image mode="aspectFill" src="../../static/img/avator.jpg"></image>
+    </view>
+    <view class="exam_box" wx:if="{{true}}">
+        <view class="eb_top">
+            <image class="eb_top_img" mode="aspectFill" src="../../static/img/avator.jpg"></image>
+            <view class="ebt_content">
+                <image mode="aspectFill" src="../../static/img/avator.jpg"></image>
+                <image mode="aspectFill" src="../../static/img/avator.jpg"></image>
+            </view>
+        </view>
+        <view class="eb_bottom">
+            <view>
+                <image mode="aspectFill" src="../../static/img/avator.jpg"></image>
+                <image mode="aspectFill" src="../../static/img/avator.jpg"></image>
+            </view>
+            <image mode="aspectFill" src="../../static/img/avator.jpg"></image>
+        </view>
+    </view>
+    <view class="copy-btn" bindtap="saveImage" data-img='receipt'>一键保存</view>
+</view>
+
+
+    <view class="belive" wx:if="{{CommonConfig.store_ensure.length>0}}">
+        <text class="b_bao">保障</text>
+        <view wx:key="item" wx:for="{{CommonConfig.store_ensure}}">{{item}}
+            <text class="point" wx:if="{{index<CommonConfig.store_ensure.length-1}}">·</text>
+        </view>
+
+    </view>
+<!--//图片详情原版本-->
+    <image wx:for="{{goods_images}}" wx:key="item" src="{{item}}" mode="widthFix" bindtap='previewImage'
+           data-index="{{index}}"/>
+    <view class="detail-foot">
+        <view bindtap="mustBuy">立即购买</view>
+        <view bindtap="mustShare">立即分享</view>
+    </view>
+    <van-notify id="van-notify"/>
+</view>
+<view class="share-pop" hidden="{{showShare}}" catchtap="toggleShare">
+    <view class="share-body">
+        <view class="close" catchtap="toggleShare" style="display:block;">
+            <image style="width:50rpx;height:50rpx" src="/static/img/haibaocha.png" />
+        </view>
+        <image mode="widthFix" catchtap="previewImagea" src="{{canvasImg}}"></image>
+        <button class="save-btn" catchtap="saveImage">保存到手机相册</button>
+        <button class="share-btn" catchtap='previewImagea'>长按预览并分享</button>
+    </view>
+</view>
+<poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+</poster>
+<movable-area class="drag" wx:if="{{showLiveComponent}}">
+    <movable-view  x="{{240}}" y="{{200}}" direction='all' wx:if="{{showLiveComponent}}" bindtap="backToLive" class="live-component">
+        <video
+                class="video-class"
+                enable-progress-gesture='{{false}}'
+                show-progress='{{false}}'
+                show-fullscreen-btn="{{false}}"
+                controls="{{false}}"
+                show-play-btn="{{false}}"
+                id="index-video"
+                autoplay="{{true}}"
+                src="{{videoUrl}}"
+                object-fit="cover"
+                wx:if="{{showStreamVideo}}"
+        ></video>
+        <live-player wx:elif="{{pluginsInfo.playUrl !== ''}}"
+                class="room-play" src="{{pluginsInfo.playUrl}}"
+                id='player'
+                mode="{{pluginsInfo.mode}}" objectFit="{{pluginsInfo.objectFit}}"
+                bindstatechange='onPlayEvent' mirror='{{pluginsInfo.mirror}}' 
+                autoplay />
+        <!-- <live-room-play
+                wx:elif="{{pluginsInfo.playUrl !== ''}}"
+                class="room-play"
+                version="{{pluginsInfo.version}}" liveAppID="{{pluginsInfo.liveAppID}}"
+                playUrl="{{pluginsInfo.playUrl}}" orientation="{{pluginsInfo.orientation}}"
+                objectFit="{{pluginsInfo.objectFit}}" minCache="{{pluginsInfo.minCache}}"
+                maxCache="{{pluginsInfo.maxCache}}" mode="{{pluginsInfo.mode}}"
+                muted="{{pluginsInfo.muted}}" debug="{{pluginsInfo.debug}}"
+                bindPlayEvent="onPlayEvent">
+        </live-room-play> -->
+    </movable-view>
+</movable-area>

@@ -1,0 +1,18 @@
+<view class="keyChain">
+    <view class="title-item">
+        <input bindinput="inputTit" value="{{title}}" placeholder-style="color:#e5e5e5;font-size:28rpx"  placeholder="请输入标题"></input>
+    </view>
+    <view class="kc-area">
+            <textarea placeholder="请输入您的问题或建议，不少于5个字符，如有紧急问题请直接咨询客服"
+                      maxlength="{{1000}}"
+                      bindinput="oninput"
+                      class="text-area"
+                      value="{{areaValue}}"
+                      placeholder-style="color:#e5e5e5;font-size:28rpx"
+            ></textarea>
+        <view class="writeNum">{{areaValue.length}}/1000</view>
+    </view>
+    <view class="kc-btn">
+        <view bindtap="submit">提交</view>
+    </view>
+</view>

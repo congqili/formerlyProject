@@ -1,0 +1,94 @@
+@import '../../style/static.less';
+
+page{
+  background: #f9f7f3;
+}
+.member-withdraw {
+  padding: 0 23rpx;
+  .withdraw-top {
+    color: #FFF;
+    border-radius: 10rpx;
+    padding: 0 60rpx;
+    background: linear-gradient(to right,#6ed7c0,#4fa7bd);
+    .withdraw-fun {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      & > view:first-child {
+        view:first-child{
+          font-size: 30rpx;
+          margin: 56rpx 0 28rpx;
+        }
+        view:last-child{
+          font-size: 48rpx;
+        }
+      }
+      & > view:last-child {
+        padding: 0 45rpx;
+        height: 58rpx;
+        display: flex;
+        align-items: center;
+        font-size: 30rpx;
+        box-sizing: border-box;
+        border: 1rpx solid #FFF;
+        border-radius: 29rpx;
+        text-align: center;
+      }
+    }
+    .member-gain{
+      display: flex;
+      .gain-item{
+        width: 240rpx;
+        display: flex;
+        flex-direction: column;
+        view:first-child{
+          margin: 58rpx 0 18rpx;
+          font-size: 25rpx;
+        }
+        view:last-child{
+          font-size: 29rpx;
+          margin-bottom: 58rpx;
+        }
+      }
+    }
+  }
+  .withdraw-info{
+    background: #FFF;
+    margin: 28rpx 0 26rpx;
+    border-radius: 10rpx;
+    &>view:last-child{
+      border: 0;
+    }
+    &>view{
+      display: flex;
+      justify-content: space-between;
+      margin: 0 34rpx;
+      height: 78rpx;
+      border-bottom: 1rpx solid rgba(0, 0, 0, .1);
+      align-items: center;
+      image{
+        width: 9rpx;
+        height: 18rpx;
+        margin-left: 8rpx;
+      }
+      view:first-child{
+        font-size: 30rpx;
+        color: #414141;
+      }
+      view:last-child{
+        color: #989898;
+        font-size: 25rpx;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  .rule{
+    padding: 26rpx 36rpx;
+    background: #FFF;
+    min-height: 200rpx;
+    border-radius: 10rpx;
+    font-size: 30rpx;
+    line-height: 40rpx;
+  }
+}

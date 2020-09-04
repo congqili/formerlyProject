@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "poster": "wxa-plugin-canvas/poster",
+    "live-room-push": "plugin://liveRoomPlugin/live-room-push"
+  },
+  "navigationStyle":"custom"
+}

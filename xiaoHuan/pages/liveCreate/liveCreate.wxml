@@ -1,0 +1,71 @@
+<view class="create">
+    <view class="container">
+        <view class="img1 col">
+            <view>添加封面</view>
+            <view bindtap='addCover'>
+                <image mode="aspectFill" src="{{image==''?'https://cdn.iyizhanke.com/static/img/cover.png':image}}"></image>
+            </view>
+        </view>
+        <view class="form">
+            <view class="form-item">
+                <view>直播标题</view>
+                <input type="text" placeholder="直播标题" bindinput="onInput" data-type='title' value="{{title}}"/>
+                <image style="display:{{title==''?'none':'block'}}" src="../../static/img/currect.png"/>
+            </view>
+            <view class="form-item">
+                <view>直播时间</view>
+                <input  type="text" disabled placeholder="请选择直播时间" bindtap="checkTime"  value="{{time}}"/>
+                <image style="display:{{time==''?'none':'block'}}" src="../../static/img/currect.png"/>
+            </view>
+            <view class="form-item">
+                <view>内容简介</view>
+                <input type="text" placeholder="介绍直播内容" bindinput="onInput" data-type='desc' value="{{desc}}"/>
+                <image style="display:{{desc==''?'none':'block'}}" src="../../static/img/currect.png"/>
+            </view>
+            <view class="form-item">
+                <view>频道栏目</view>
+                <input type="text" placeholder="选个主题" bindtap="theme" disabled  value="{{showText}}"/>
+                <image style="display:{{category_id==''?'none':'block'}}" src="../../static/img/currect.png"/>
+            </view>
+            <view class="form-item" bindtap='getLocation'>
+                <view>直播地点</view>
+                <input type="text" placeholder="输入/定位位置" bindinput="onInput" data-type='address' value="{{address}}"/>
+                <image style="display:{{address==''?'none':'block'}}" src="../../static/img/currect.png"/>
+            </view>
+            <view class="form-item">
+                <view>添加宝贝</view>
+                <input type="text" disabled bindtap='jumpToAdd' placeholder="去添加宝贝" value="{{babycom.goodlength(goods)}}"/>
+                <image style="display:{{goods.length==0?'none':'block'}}" src="../../static/img/currect.png"/>
+            </view>
+        </view>
+    </view>
+    <view class="bottom-btn">
+        <view class="sub" bindtap='showDialog'>
+            {{beginLive}}
+        </view>
+    </view>
+    <van-dialog id="van-dialog"/>
+    <van-datetime-picker
+            type="datetime"
+            value="{{ setTime }}"
+            min-date="{{minTime}}"
+            max-date="{{ maxTime }}"
+            bind:confirm="onTime"
+            bind:cancel="cancelTime"
+            wx:if="{{showTime}}"
+    />
+    <van-action-sheet
+            show="{{ showa }}"
+            actions="{{ actions }}"
+            bind:close="onClosea"
+            bind:select="onSelect"
+    />
+</view>
+<wxs module="babycom">
+function goodlength(res) {
+    var babynum='';
+    res.length>0?babynum='您已添加'+res.length+'个宝贝':babynum=''
+    return babynum
+}
+module.exports.goodlength = goodlength;
+</wxs>

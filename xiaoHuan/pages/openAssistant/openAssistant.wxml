@@ -1,0 +1,102 @@
+<view class="onPage">
+    <van-steps active-color="#4da68d" steps="{{ steps }}" active="{{ active }}" />
+    <view wx:if="{{active === 0}}">
+        <view class="cvBox">
+            <view>务必修改群名称为</view>
+            <view class="cvtextColor">苏宁内购优惠群197358</view>
+            <view class="cv" data-snText="苏宁内购优惠群197358" bind:tap="cvSnGroup">复制</view>
+        </view>
+        <view class="cellBox">
+            <view class="posBox">
+                苏宁内购优惠群197358
+            </view>
+            <image style="width:100%" class="" src="../../static/img/open03.png" mode="widthFix"/>
+        </view>
+        <view class="hoverText">
+            <view>注意*</view>
+            <view class="tex">1.开通时务必按照要求来修改群名称</view>
+            <view>2.开通助理后可在修改为自己的群名称</view>
+        </view>
+        <view class="btn">
+            <button bind:tap="goNextStep">下一步</button>
+        </view>
+    </view>
+    <view wx:if="{{active === 1}}">
+        <van-notice-bar backgroundColor="#f5f5f5" color="#666666" scrollable="false" left-icon="volume-o" text="务必正确按群人数选择，否则无法成功开通助理" />
+        <view class="conter">
+            <view class="topConter">{{text}}</view>
+            <view class="conterTex">
+                申请助理群人数必须在
+                <text>50人</text>
+                至
+                <text>100人</text>
+                之间
+            </view>
+            <view class="conterTex">
+                开通后需要
+                <text>5天</text>
+                内将人数拉够100人，预期人数不够100人助理会自动关闭
+            </view>
+            <button color="#4da68d">点击申请（50-100人）</button>
+        </view>
+        <view class="conterTwo">
+            <view class="topConter">{{text}}</view>
+            <view class="conterTex">
+                微信人数大于
+                <text>100人</text>
+                就可以申请助理
+            </view>
+            <view class="conterTex">务必群人数满100人，否则群助理会自动关闭</view>
+            <button color="#4da68d">点击申请（>=100人）</button>
+        </view>
+        <view class="btn">
+            <button bind:tap="goNextStep">下一步</button>
+        </view>
+    </view>
+    <view class="stepThree" wx:if="{{active === 2}}">
+        <view class="topTex">
+            <view class="fontTex">
+                <text>为您分配助理微信号：</text>
+                <text>g35yohhfj</text>
+                <view class="onVie">您需要完成两步：</view>
+                <view>
+                    <text class="ico">❶</text>
+                       复制以上微信添加助理为好友
+                </view>
+            </view>
+            <button class="cvAssistant" data-group="g35yohhfj" bind:tap="cvGroup">点击复制助理微信</button>
+            <image src="../../static/img/open01.png" mode="widthFix" />
+            <view class="boomView">
+                <text class="ico">❷</text>
+                   把助理拉到您的微信群，并务必@它
+            </view>
+            <image src="../../static/img/open02.png" mode="widthFix" />
+            <view class="careful">
+                <view>
+                    申请时注意：
+                    <view class="allVie">
+                        <text class="ico">❶</text>
+                        <view class="spView">每个群开通智能助理务必单独申请。</view>
+                           
+                    </view>
+                    <view class="allVie">
+                        <text class="ico">❷</text>
+                           <view class="spView">此助理微信号不可用于其他人或微信群。</view>
+                    </view>
+                </view>
+                <view>
+                    完成以上操作后：
+                    <view class="allVie">
+                        <text class="ico">❶</text>
+                           <view class="spView">客服工作时间内，一般会在2个小时内为您开通，助理会在群里自动发品。</view>
+                    </view>
+                    <view class="allVie">
+                        <text class="ico">❷</text>
+                          <view class="spView">如果助理3小时内仍未自动发品，请联系小獾在线客服解决。</view> 
+                    </view>
+                </view>
+                <text space="emsp">客服工作时间：早8:00-晚23:00</text>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+<view class="loading" hidden="{{!showLoading}}">
+    <view class="loader">
+        <image src="https://cdn.iyizhanke.com/6e/728592c600fa2087064c85b5b8618d.png" mode="aspectFit"></image>
+        <text>加载中</text>
+    </view>
+</view>

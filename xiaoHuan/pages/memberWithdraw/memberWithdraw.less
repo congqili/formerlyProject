@@ -1,0 +1,109 @@
+@import '../../style/static.less';
+
+page{
+  background: #f9f7f3;
+}
+.member-withdraw {
+  padding: 0 26rpx;
+  .input-list{
+    box-sizing: border-box;
+    background: #FFF;
+    .input-item{
+      margin: 0 35rpx;
+      border-bottom: 1rpx solid rgba(0, 0, 0, .1);
+      position: relative;
+      view:first-child{
+        width: 125rpx;
+        font-size: 30rpx;
+        float: left;
+        color: #414141;
+        line-height: 70rpx;
+      }
+      view{
+        float: left;
+      }
+      input{
+        width: 367rpx;
+        float: left;
+        font-size: 30rpx;
+        margin-top: 12rpx;
+        box-sizing: border-box;
+        padding: 0 20rpx;
+      }
+      .btn{
+        width: 91rpx;
+        height: 42rpx;
+        border-radius: 10rpx;
+        line-height: 42rpx;
+        font-size: 21rpx;
+        color: #FFF;
+        margin: 0;
+        margin-top: 13rpx;
+        text-align: center;
+        background: linear-gradient(to right,#67ddbe,#52a9bd);
+      }
+      .btn,.money{
+        float: right;
+      }
+      .money{
+        font-size: 22rpx;
+        line-height: 70rpx;
+        color: #989898;
+        position: absolute;
+        right: 10rpx;
+      }
+    }
+    .input-item:last-child{
+      border: 0;
+    }
+  }
+  .info-input{
+    background: #FFF;
+    input{
+      height: 68rpx;
+      margin: 0 34rpx;
+      border-bottom: 1rpx solid rgba(0, 0, 0, .1);
+      display: block;
+    }
+    .input-placeholder{
+      font-size: 25rpx;
+      color: #cfcfcf;
+    }
+    input:last-child{
+      border: 0;
+    }
+  }
+  .text-message{
+    color: #5cbbbe;
+    font-size: 21rpx;
+    line-height: 70rpx;
+  }
+  .btn{
+    width: 633rpx;
+    height: 66rpx;
+    text-align: center;
+    line-height: 66rpx;
+    color: #FFF;
+    font-size: 30rpx;
+    border-radius: 6rpx;
+    margin: 26rpx auto;
+    background: linear-gradient(to right,#67ddbe,#52a9bd)
+  }
+  .fail{
+    background: #bfbfbf;
+  }
+  .rule{
+    padding: 26rpx 36rpx;
+    background: #FFF;
+    min-height: 200rpx;
+    border-radius: 10rpx;
+    line-height: 1.4;
+  }
+}
+.withdraw-info{
+  padding: 60rpx 0 60rpx 110rpx;
+  view{
+    line-height: 50rpx;
+    font-size: 30rpx;
+  }
+}

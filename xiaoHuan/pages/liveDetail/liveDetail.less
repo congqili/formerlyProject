@@ -1,0 +1,110 @@
+@import '../../style/static.less';
+.van-toast--icon{
+    width: 270rpx!important;
+}
+@width:710rpx;
+.live-deatil{
+    .content{
+        .info{
+            width: @width;
+            height: 175rpx;
+            border-radius: 12rpx;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            image{
+                width: 95rpx;
+                height: 95rpx;
+                border-radius: 50%;
+                margin: 0 27rpx 0 60rpx;
+            }
+            .info-text{
+                color: #6ebda8;
+                view:first-child{
+                    font-size: 33rpx;
+                    margin-bottom: 16rpx;
+                }
+                view:last-child{
+                    font-size: 26rpx;
+                }
+                width: 180rpx;
+                margin-right: 116rpx;
+            }
+            .info-btn{
+                .blue-green-btn();
+                color: #FFF;
+                text-align: center;
+                line-height: 56rpx;
+                width: 177rpx;
+                border-radius: 28rpx;
+                height: 56rpx;
+                font-size: 30rpx;
+            }
+        }
+    }
+    .back-look{
+        box-sizing: border-box;
+        width: @width;
+        background: #FFF;
+        position: relative;
+        border-radius: 12rpx;
+        margin: 0 auto;
+        overflow: hidden;
+        padding-bottom: 10rpx;
+        .back-tit{
+            text-align: center;
+            font-size: 36rpx;
+            font-weight: 600;
+            color: #000;
+            margin: 50rpx auto 40rpx;
+            width: 212rpx;
+            background: #FFF;
+            position: relative;
+            z-index: 1;
+        }
+        .line{
+            width: 488rpx;
+            height: 1rpx;
+            background: rgba(0, 0, 0, .2);
+            position: absolute;
+            top: 68rpx;
+            left: calc(50% - 244rpx);
+        }
+        .live-list{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .live-item{
+                margin: 0 0 20rpx;
+                width: 100%;
+                display: flex;
+                border-radius: 10rpx;
+                background: #f8f8f8;
+                padding: 12rpx;
+                image{
+                    width: 134rpx;
+                    height: 134rpx;
+                    border-radius: 10rpx;
+                }
+                .live-info{
+                    margin-left: 26rpx;
+                    view{
+                        font-size: 32rpx;
+                        color: #616161;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text:last-child{
+                            margin-left: 40rpx;
+                        }
+                    }
+                    view:first-child{
+                        margin: 20rpx 0 30rpx;
+                        width: 420rpx;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,2 @@
+<web-view src="{{url}}" bindload="loadSuccess"></web-view>
+<van-notify id="van-notify" />

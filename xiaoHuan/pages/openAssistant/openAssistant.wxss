@@ -1,0 +1,168 @@
+.onPage .cvBox {
+  margin-top: 110rpx 20rpx;
+  margin: 0 20rpx;
+  font-size: 26.66rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.onPage .cvBox .cv {
+  background-color: #4da68d;
+  width: 93rpx;
+  font-size: 26.66rpx;
+  line-height: 47rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 10rpx;
+}
+.onPage .cvBox .cvtextColor {
+  width: 318rpx;
+  line-height: 47rpx;
+  text-align: center;
+  background-color: #cccccc;
+}
+.onPage .cellBox {
+  margin: 15rpx 20rpx 0 20rpx;
+  position: relative;
+}
+.onPage .cellBox .posBox {
+  position: absolute;
+  top: 11rpx;
+  left: 295rpx;
+  width: 392rpx;
+  line-height: 94rpx;
+  height: 94rpx;
+  text-align: center;
+  font-size: 26.66 rpx;
+  border-radius: 60rpx;
+  color: #000000;
+  background-color: #fff;
+}
+.onPage .hoverText {
+  margin: 0 20rpx;
+  color: #999999;
+  font-size: 26.66rpx;
+}
+.onPage .hoverText .tex {
+  margin: 15rpx 0;
+}
+.onPage .btn {
+  margin-top: 95rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.onPage .btn button {
+  width: 301rpx;
+  height: 65rpx;
+  font-size: 26.66rpx;
+  color: #fff;
+  background-color: #4da68d;
+}
+.onPage .conter {
+  height: 320rpx;
+  margin: 30rpx 20rpx;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+.onPage .conter .topConter {
+  width: 176rpx;
+  line-height: 47rpx;
+  font-size: 20rpx;
+  color: #fff;
+  text-align: center;
+  border-bottom-right-radius: 30rpx;
+  background-color: #4da68d;
+}
+.onPage .conter .conterTex {
+  margin: 30rpx 15rpx;
+  font-size: 26.66rpx;
+}
+.onPage .conter .conterTex text {
+  color: #4da68d;
+}
+.onPage .conter button {
+  width: 308rpx;
+  height: 64rpx;
+  margin: 27rpx auto;
+  font-size: 26.66rpx;
+  color: #fff;
+  background-color: #4da68d;
+}
+.onPage .conterTwo {
+  height: 285rpx;
+  margin: 30rpx 20rpx;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+.onPage .conterTwo .topConter {
+  width: 176rpx;
+  line-height: 47rpx;
+  font-size: 20rpx;
+  color: #fff;
+  text-align: center;
+  border-bottom-right-radius: 30rpx;
+  background-color: #4da68d;
+}
+.onPage .conterTwo .conterTex {
+  margin: 30rpx 15rpx;
+  font-size: 26.66rpx;
+}
+.onPage .conterTwo .conterTex text {
+  color: #4da68d;
+}
+.onPage .conterTwo button {
+  width: 308rpx;
+  height: 64rpx;
+  margin: 27rpx auto;
+  font-size: 26.66rpx;
+  color: #fff;
+  background-color: #4da68d;
+}
+.onPage .stepThree {
+  margin: 0 0 140rpx 20rpx;
+}
+.onPage .stepThree .topTex .cvAssistant {
+  width: 570rpx;
+  height: 62rpx;
+  font-size: 29.33rpx;
+}
+.onPage .stepThree .topTex .fontTex {
+  font-size: 30.66rpx;
+}
+.onPage .stepThree .topTex text:nth-child(2) {
+  color: #4da68d;
+}
+.onPage .stepThree .topTex .onVie {
+  margin-top: 30rpx;
+}
+.onPage .stepThree .topTex button {
+  width: 500rpx;
+  line-height: 60rpx;
+  margin: 20rpx auto;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #4da68d;
+}
+.onPage .stepThree .topTex image {
+  width: 100%;
+  height: 340rpx;
+}
+.onPage .stepThree .topTex .boomView {
+  margin-bottom: 15rpx;
+}
+.onPage .stepThree .topTex .careful {
+  font-size: 30.66rpx;
+}
+.onPage .stepThree .topTex .careful > view {
+  margin: 15rpx 0;
+}
+.onPage .stepThree .topTex .careful .allVie {
+  display: flex;
+  margin: 15rpx 0;
+}
+.onPage .stepThree .topTex .careful .allVie .spView {
+  margin-left: 15rpx;
+}
+.onPage .ico {
+  font-size: 34rpx;
+}

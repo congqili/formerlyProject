@@ -1,0 +1,4 @@
+<view class="article">
+    <rich-text nodes="{{content}}"></rich-text>
+    <van-notify id="van-notify" />
+</view>

@@ -1,0 +1,388 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "folder",
+        "value": ".idea"
+      },
+      {
+        "type": "folder",
+        "value": ".svn"
+      },
+      {
+        "type": "folder",
+        "value": "node_modules"
+      },
+      {
+        "type": "folder",
+        "value": "PSD"
+      },
+      {
+        "type": "regexp",
+        "value": "\\.less$"
+      }
+    ]
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "useMultiFrameRuntime": true,
+    "useApiHook": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.9.5",
+  "appid": "wx299b63bafcb2ac0e",
+  "projectname": "xiaohuan",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": [
+        {
+          "id": 0,
+          "name": "index",
+          "pathName": "pages/index/index",
+          "query": "scene=si%403066%2Fli%4010",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "live",
+          "pathName": "pages/live/live",
+          "query": "id= 4",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "livePush",
+          "pathName": "pages/livePush/livePush",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "liveBeStart",
+          "pathName": "pages/liveBeStart/liveBeStart",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "liveBeEnd",
+          "pathName": "pages/liveBeEnd/liveBeEnd",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "liveCreate",
+          "pathName": "pages/liveCreate/liveCreate",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "liveCreateProduct",
+          "pathName": "pages/liveCreateProduct/liveCreateProduct",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "liveSelectProduct",
+          "pathName": "pages/liveSelectProduct/liveSelectProduct",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "liveStreamer",
+          "pathName": "pages/liveStreamer/liveStreamer",
+          "query": "userid=1617",
+          "scene": null
+        },
+        {
+          "id": 9,
+          "name": "productDetail",
+          "pathName": "pages/productDetail/productDetail",
+          "query": "code=11037965395-0070620353",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "productList",
+          "pathName": "pages/productList/productList",
+          "query": "code= 11231298711-0070220539",
+          "scene": null
+        },
+        {
+          "id": 11,
+          "name": "productVideo",
+          "pathName": "pages/productVideo/productVideo",
+          "query": "videoid=2",
+          "scene": null
+        },
+        {
+          "id": 12,
+          "name": "productVideos",
+          "pathName": "pages/productVideos/productVideos",
+          "query": "code= 11958122356-0070856041",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "member",
+          "pathName": "pages/member/member",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "memberFans",
+          "pathName": "pages/memberFans/memberFans",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "memberGain",
+          "pathName": "pages/memberGain/memberGain",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "memberOrder",
+          "pathName": "pages/memberOrder/memberOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "login",
+          "pathName": "pages/login/login",
+          "query": "code=11228170782-0000000000",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "articleList",
+          "pathName": "pages/articleList/articleList",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "memberWithdraw",
+          "pathName": "pages/memberWithdraw/memberWithdraw",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": 20,
+          "name": "login",
+          "pathName": "pages/login/login",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "webview",
+          "pathName": "pages/webview/webview",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "cavas",
+          "pathName": "pages/cavas/cavas",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "memberOrderDetail",
+          "pathName": "pages/memberOrderDetail/memberOrderDetail",
+          "query": "code= 11231298711-0070220539",
+          "scene": null
+        },
+        {
+          "id": 24,
+          "name": "memberIntegral",
+          "pathName": "pages/memberIntegral/memberIntegral",
+          "query": "code= 11231298711-0070220539",
+          "scene": null
+        },
+        {
+          "id": 25,
+          "name": "withdrawHistory",
+          "pathName": "pages/withdrawHistory/withdrawHistory",
+          "query": "type=history",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "memberAccount",
+          "pathName": "pages/memberAccount/memberAccount",
+          "query": "code= 11231298711-0070220539",
+          "scene": null
+        },
+        {
+          "id": 27,
+          "name": "memberVip",
+          "pathName": "pages/memberVip/memberVip",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "memberChangeHistory",
+          "pathName": "pages/memberChangeHistory/memberChangeHistory",
+          "query": "id=2",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "liveDetail",
+          "pathName": "pages/liveDetail/liveDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 30,
+          "name": "liveHistoryDetail",
+          "pathName": "pages/liveHistoryDetail/liveHistoryDetail",
+          "query": "id=48",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "liveData",
+          "pathName": "pages/liveData/liveData",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "productHotList",
+          "pathName": "pages/productHotList/productHotList",
+          "query": "id=48",
+          "scene": null
+        },
+        {
+          "id": 33,
+          "name": "productHotList",
+          "pathName": "pages/productHotList/productHotList",
+          "query": "category_id=38",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/keyChain/keyChain",
+          "pathName": "pages/keyChain/keyChain",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 35,
+          "name": "link",
+          "pathName": "pages/link/link",
+          "query": "type=feedback",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "BeStartBeStart",
+          "pathName": "pages/liveBeStart/liveBeStart",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/feedback/feedback",
+          "pathName": "pages/feedback/feedback",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 38,
+          "name": "memberLevel",
+          "pathName": "pages/memberLevel/memberLevel",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 39,
+          "name": "brand",
+          "pathName": "pages/brand/brand",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 40,
+          "name": "liveSquare",
+          "pathName": "pages/liveSquare/liveSquare",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/memberWithdraw/memberWithdraw",
+          "pathName": "pages/memberWithdraw/memberWithdraw",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

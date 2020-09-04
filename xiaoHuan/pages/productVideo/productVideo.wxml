@@ -1,0 +1,62 @@
+<view class="shortvideo">
+    <view class="back" style="top:{{barTop+10}}rpx" bindtap='back'><image mode="widthFix" src="../../static/img/arrwhite.png" /></view>
+    <view class="content" bindtap='onClose'>
+<!--        <image mode="widthFix" class="videobg" src="../../static/img/videoimg.jpg"></image>-->
+        <video src="{{videoInfo.lg_video}}" object-fit="contain" class="videobg" autoplay></video>
+        <view class="video-info" style="top:{{barTop+110}}rpx" wx:if="{{streamerInfo.user_head}}">
+            <view>
+                <image src="{{streamerInfo.user_head}}" bindtap="toPersonal"></image>
+                <view>
+                    <view>{{streamerInfo.user_nickname}}</view>
+                    <view>直播ID：{{liveNumber}}</view>
+                </view>
+                <view bindtap="clickFollow">
+                    {{isFollow?'取消关注':'+关注'}}
+                </view>
+            </view>
+
+        </view>
+        <view class="replay" style="top:{{barTop+210}}rpx" wx:if="{{videoInfo.lg_view_num}}">
+            <text>回放</text>
+            <text>{{videoInfo.lg_view_num}}</text>
+            <text>观看</text>
+        </view>
+        <view class="bottom-btn" wx:if="{{likeNum !== ''}}">
+
+            <view class="like" bindtap="checkLike">
+                <image id="container" src="{{isLike==true?'../../static/img/redHeart.png':'../../static/img/like-bg.png'}}"/>
+            </view>
+            <view>{{likeNum}}</view>
+
+            <view class="forward" bindtap="shareVideo">
+                <image src="../../static/img/videoFenxiang.png"/>
+            </view>
+            <view>{{videoInfo.lg_video_share_num}}</view>
+        </view>
+    </view>
+
+    <view class="pop-content" bindtap="toDetail" data-code="{{goodsInfo.goods_code}}" wx:if="{{goodsInfo.goods_title}}">
+        <image src="{{goodsInfo.goods_image}}"/>
+        <view class="tit">{{goodsInfo.goods_title}}</view>
+        <view class="save">￥<text>{{goodsPrice[0]+'.'+goodsPrice[1] || 0}}</text><text wx:if="{{goodsInfo.goods_data.commission.save}}">（立省{{goodsInfo.goods_data.commission.save || 0}}）</text></view>
+        <view class="bottom" wx:if='{{CommonUserLevel>1}}'>
+            <text>预估推广收益:￥{{goodsInfo.goods_data.commission.gain}}</text>
+        </view>
+        <view wx:else></view>
+        <view  class="detail" data-code="{{goodsInfo.goods_code}}">马上抢</view>
+        <view class="price-subsify {{goodsInfo.goods_data.commission.subsidy>0?'':'opctions'}}" >平台额外补贴+ {{goodsInfo.goods_data.commission.subsidy}}元</view>
+    </view>
+    <van-notify id="van-notify" />
+</view>
+<view class="share-pop" hidden="{{showShare}}" catchtap="toggleShare">
+    <view class="share-body">
+        <view class="close" catchtap="toggleShare" style="display:block;">
+            <image style="width:50rpx;height:50rpx" src="/static/img/haibaocha.png" />
+        </view>
+        <image mode="widthFix" catchtap="previewImagea" src="{{canvasImg}}"></image>
+        <button class="save-btn" catchtap="saveImage">保存到手机相册</button>
+        <button class="share-btn" catchtap='previewImagea'>长按预览并分享</button>
+    </view>
+</view>
+<poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+</poster>

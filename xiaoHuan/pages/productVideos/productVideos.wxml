@@ -1,0 +1,61 @@
+<!-- pages/comment/comment.wxml -->
+<view class="container comment">
+    <view class="goods-zoom">
+        <image bindtap="previewImage" data-src="{{goodsInfo.goods_image}}" src="{{goodsInfo.goods_image}}"></image>
+        <view class="goods-tit">{{goodsInfo.goods_data.commodityInfo.sellingPoint}}</view>
+        <view class="goods-info">{{goodsInfo.goods_title}}</view>
+        <view class="goods-price">
+            <view class="promote" wx:if="{{CommonUserLevel>1}}">预估推广收益：￥<text>{{goodsInfo.goods_data.commission.gain}}</text></view>
+            <view class="now-price">
+                <text>￥</text>
+                <text>{{goodsPrice[0]}}</text>
+                <text>.{{goodsPrice[1]}}</text>
+            </view>
+            <view class='buy-btn' bindtap="goDetail">查看详情</view>
+            <view class="price-subsify" wx:if="{{goodsInfo.goods_data.commission.subsidy>0}}">平台额外补贴+ {{goodsInfo.goods_data.commission.subsidy}}元</view>
+        </view>
+    </view>
+    <view class="live-comment">
+        <view class="comment-tit">主播讲解</view>
+        <view class="line"></view>
+        <view class="comment-list">
+            <view class="live-item" wx:for="{{videoList}}" wx:key="item" bindtap="toShortVideo"
+                  data-id="{{item.id}}">
+                <view class="mask"></view>
+                <view class="main">
+                    <image src="{{item.lg_live_data.live_image}}"></image>
+                </view>
+                <view class="tit-tag">
+                    <view class="tag-left">商品讲解</view>
+                    <view class="tag-right">{{item.lg_view_num}}人观看</view>
+                </view>
+                <view class="live-foot">
+                    <image src="{{item.lg_live_data.live_user_data.user_head}}"></image>
+                    <view class="live-name">{{item.lg_live_data.live_user_data.user_nickname}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<!--购买按钮-->
+<view class="detail-foot">
+    <view bindtap="mustBuy">立即购买</view>
+    <view bindtap="mustShare">立即分享</view>
+</view>
+<!--海报-->
+<view class="share-pop" hidden="{{showShare}}" catchtap="toggleShare">
+    <view class="share-body">
+        <view class="close" catchtap="toggleShare" style="display:block;">
+            <image style="width:50rpx;height:50rpx" src="/static/img/haibaocha.png" />
+        </view>
+        <image mode="widthFix" bindtap="previewImagea" src="{{canvasImg}}"></image>
+        <button class="save-btn" bindtap="saveImage">保存到手机相册</button>
+        <button class="share-btn" bindtap='previewImagea'>长按预览并分享</button>
+    </view>
+</view>
+<poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+</poster>
+
+
+<!--<tabbar check='0'></tabbar>-->
+<van-notify id="van-notify" />

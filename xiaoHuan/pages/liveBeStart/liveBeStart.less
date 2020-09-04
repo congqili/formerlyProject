@@ -1,0 +1,343 @@
+@import '../../style/static.less';
+
+page{
+  background: #000;
+}
+.live-push{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.start-live{
+    overflow: hidden;
+    .mask-bg{
+        position: fixed;
+        z-index: -1;
+        display: flex;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        .videobg{
+            width: 750rpx;
+        }
+    }
+    .mask-image{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100vh;
+        width: 100vw;
+        filter:blur(25rpx);
+        z-index: -2;
+    }
+    .bottom-btn{
+        width: 100%;
+        height: 81rpx;
+        position: fixed;
+        bottom: 70rpx;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 36rpx;
+        justify-content: space-between;
+        &>view{
+            display: flex;
+            width: 308rpx;
+            justify-content: space-between;
+        }
+        &>view:first-child{
+            width: 160rpx;
+        }
+        .btn{
+            width: 135rpx;
+            height: 81rpx;
+            border-radius: 6rpx;
+            color: #FFF;
+            text-align: center;
+            line-height: 81rpx;
+            font-size: 26rpx;
+        }
+        .start{
+            background: linear-gradient(to right,#3ae0c0,#10a3bf);
+        }
+        .back{
+            background: #898989;
+        }
+        .fun-btn{
+            font-size: 24rpx;
+            color: #FFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 81rpx;
+            image{
+                height: 47rpx;
+                width: 50rpx;
+            }
+        }
+    }
+    .live-info{
+        margin-top: 150rpx;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        padding: 0 36rpx;
+        color: #FFF;
+        font-size: 22rpx;
+        &>view:nth-child(1){
+            width: 260rpx;
+            height: 44rpx;
+            background: rgba(0, 0, 0, .1);
+            border-radius: 6rpx;
+            line-height: 44rpx;
+            text-indent: 10rpx;
+            view{
+                float: left;
+                width: 87rpx;
+                height: 44rpx;
+                background: linear-gradient(to right,#3ae0c0,#10a3bf);
+                border-radius: 6rpx;
+                text-align: center;
+                line-height: 44rpx;
+            }
+        }
+        &>view:nth-child(2){
+            width: 260rpx;
+            height: 44rpx;
+            background: rgba(0, 0, 0, .1);
+            border-radius: 6rpx;
+            text-align: center;
+            line-height: 44rpx;
+        }
+    }
+    .live-fun{
+        margin-top: 26rpx;
+        display: flex;
+        position: relative;
+        padding: 0 40rpx;
+        justify-content: space-between;
+        align-items: center;
+        color: #FFF;
+        view:first-child{
+            line-height: 52rpx;
+            image{
+                height: 52rpx;
+                float: left;
+                margin-right: 18rpx;
+            }
+        }
+        view:last-child{
+            width: 360rpx;
+            display: flex;
+            justify-content: space-between;
+            image{
+                height: 50rpx;
+            }
+        }
+    }
+}
+.pop-class {
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    overflow: hidden;
+  }
+  .pop-content {
+    height: 277rpx;
+    width: 750rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    .wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 39rpx;
+      color: #fff;
+      margin-bottom: 50rpx;
+      .top {
+        width: 490rpx;
+        margin-left: 28rpx;
+      }
+    }
+    .custom-button {
+      width: 20rpx;
+      height: 20rpx;
+      border-radius: 50%;
+      background: #10a98c;
+    }
+  }
+  .product-content {
+    overflow: auto;
+    position: relative;
+    padding-top: 86rpx;
+    .top-btn {
+      height: 86rpx;
+      background: #10a98c;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      width: 100%;
+      position: absolute;
+
+      image {
+        width: 30rpx;
+        height: 30rpx;
+        margin-right: 12rpx;
+      }
+    }
+    .product-list {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 830rpx;
+      .product-item:last-child{
+          margin-bottom: 100rpx;
+      }
+      .product-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 50rpx 48rpx 0;
+        .img {
+          position: relative;
+          overflow: hidden;
+          image {
+            width: 162rpx;
+            height: 162rpx;
+            border-radius: 5rpx;
+          }
+          .hot {
+            position: absolute;
+            top: 6rpx;
+            left: 6rpx;
+            width: 28rpx;
+            height: 28rpx;
+            text-align: center;
+            line-height: 28rpx;
+            color: #fff;
+            background: #e92962;
+            font-size: 16rpx;
+            border-radius: 50%;
+          }
+          .tag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 18rpx;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            line-height: 23rpx;
+            height: 23rpx;
+            padding: 0 7rpx;
+            border-bottom-right-radius: 4rpx;
+           }
+        }
+        .product-desc {
+          width: 452rpx;
+          .product-name {
+            color: #000;
+            font-size: 25rpx;
+            line-height: 33rpx;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+          }
+          .product-price {
+            display: flex;
+            justify-content: space-between;
+            margin: 20rpx 0 22rpx;
+            .price {
+              color: @font-green;
+              font-size: 22rpx;
+              text {
+                font-size: 30rpx;
+              }
+            }
+            .btn {
+              width: 136rpx;
+              height: 32rpx;
+              .blue-green-btn();
+              border-radius: 16rpx;
+              line-height: 32rpx;
+              text-align: center;
+              font-size: 15.7rpx;
+              color: #fff;
+            }
+          }
+          .operate {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            view:first-child {
+              color: @font-green;
+              font-size: 24rpx;
+            }
+            .set-top {
+              width: 38rpx;
+              height: 38rpx;
+              border-radius: 50%;
+            }
+            .record {
+              padding: 0 20rpx;
+              border-radius: 19rpx;
+              line-height: 38rpx;
+              color: #fff;
+              font-size: 20rpx;
+              text-align: center;
+              .blue-green-btn();
+            }
+          }
+        }
+      }
+    }
+  }
+  .room-play{
+    position: fixed;
+    height: 92vh;
+    bottom: 4vh;
+    width: 100%;
+  }
+  
+  .pop-content {
+    height: 277rpx;
+    width: 750rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    .wrappera {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 39rpx;
+      color: #fff;
+      margin-bottom: 50rpx;
+      .top {
+        width: 490rpx;
+        margin-left: 28rpx;
+      }
+    }
+    .custom-button {
+      width: 20rpx;
+      height: 20rpx;
+      border-radius: 50%;
+      background: #10a98c;
+    }
+  }
+  .pop-class {
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+  }

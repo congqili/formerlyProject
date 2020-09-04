@@ -1,0 +1,70 @@
+<view class="live-end">
+    <view class="back" style="top:{{barTop}}rpx" bindtap='navBack'><image mode="widthFix" src="../../static/img/blackarr.png" /></view>
+    <view class="mask-bg" style="">
+        <image mode="widthFix" class="videobg" src="{{streamData.ls_image}}"></image>
+    </view>
+    <image  class="mask-image" src="{{streamData.ls_image}}"></image>
+    <view class='room-info col'>
+        <view class="room-advator">
+            <image src="{{streamerInfo.user_head}}" />
+        </view>
+        <view class="room-text">
+            <view>{{streamerInfo.user_nickname}}<text></text></view>
+            <view>开始时间：{{streamData.ls_start_time}}</view>
+            <view>结束时间：{{streamData.ls_stop_time}}</view>
+        </view>
+    </view>
+<!--    <view class="room-message">-->
+<!--        <view>-->
+<!--            <view>99</view>-->
+<!--            <view>收入金币</view>-->
+<!--        </view>-->
+<!--        <view>-->
+<!--            <view>99</view>-->
+<!--            <view>收入金币</view>-->
+<!--        </view>-->
+<!--        <view>-->
+<!--            <view>99</view>-->
+<!--            <view>收入金币</view>-->
+<!--        </view>-->
+<!--    </view>-->
+    <view class="detail-message">
+        <view class="message-item">
+            <view>累计观看人数</view>
+            <view>{{stopLiveInfo.live_stream_data.ls_viewer_num}}</view>
+        </view>
+        <view class="message-item">
+            <view>点赞量</view>
+            <view>{{stopLiveInfo.live_stream_data.ls_like_num}}</view>
+        </view>
+        <view class="message-item">
+            <view>新增粉丝</view>
+            <view>{{stopLiveInfo.live_stream_data.ls_fans_num}}</view>
+        </view>
+        <view class="message-item">
+            <view>分享量</view>
+            <view>{{stopLiveInfo.live_stream_data.ls_share_num}}</view>
+        </view>
+        <view class="message-item">
+            <view>下单数</view>
+            <view>{{stopLiveInfo.live_stream_data.ls_order_num}}</view>
+        </view>
+        <view class="message-item">
+            <view>支付金额</view>
+            <view>{{stopLiveInfo.live_stream_data.ls_order_pay_money}}</view>
+        </view>
+        <view class="message-item">
+            <view>预估佣金</view>
+            <view>{{stopLiveInfo.live_stream_data.ls_commission}}</view>
+        </view>
+<!--        <view class="message-item">-->
+<!--            <view>成交数量</view>-->
+<!--            <view>-</view>-->
+<!--        </view>-->
+<!--        <view class="message-item">-->
+<!--            <view>观看次数</view>-->
+<!--            <view>-</view>-->
+<!--        </view>-->
+    </view>
+    <van-notify id="van-notify" />
+</view>

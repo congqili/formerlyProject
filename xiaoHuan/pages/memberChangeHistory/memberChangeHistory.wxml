@@ -1,0 +1,26 @@
+<view class="change-history">
+    <block wx:for="{{integrals}}" wx:key="integrals" wx:for-index="index" wx:for-item="item">
+        <view class="change-time">
+            <text>{{item.date}}</text>
+            <text bindtap='toIntegralDetail' data-date='{{item.date}}'>积分明细</text>
+        </view>
+        <view class="history-list">
+            <view class="change-item" >
+                <view>当天平台总积分</view>
+                <text>{{item.total_integral}}</text>
+            </view>
+            <view class="change-item" >
+                <view>当天总分红金额</view>
+                <text>{{item.total_commission}}</text>
+            </view>
+            <view class="change-item" >
+                <view>我的积分</view>
+                <text>{{item.integral}}</text>
+            </view>
+            <view class="change-item" >
+                <view>我的分红</view>
+                <text>{{item.money}}</text>
+            </view>
+        </view>
+    </block>
+</view>

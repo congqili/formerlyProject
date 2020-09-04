@@ -1,0 +1,32 @@
+<view class="live-deatil">
+    <view class="content">
+        <view class="info">
+            <image src="{{headerImg}}"/>
+            <view class="info-text">
+                <view>{{userName}}</view>
+                <view>粉丝 {{fansNum}}</view>
+            </view>
+            <view class="info-btn" bindtap="createLive">我要开播</view>
+        </view>
+        <view class="back-look">
+            <view class="back-tit">精彩回放</view>
+            <view class="line"></view>
+            <view class="live-list">
+                <view class="live-item" data-id="{{item.id}}" bindtap='toHistoryDetail' wx:for="{{historyList}}" wx:key="item">
+                    <image src="{{item.ls_image}}" />
+                    <view class="live-info">
+                        <view>
+                            <text>直播标题</text>
+                            <text>{{item.ls_title}}</text>
+                        </view>
+                        <view>
+                            <text>直播时间</text>
+                            <text>{{item.timer}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <van-notify id="van-notify" />
+</view>

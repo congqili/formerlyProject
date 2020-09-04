@@ -1,0 +1,88 @@
+@import '../../style/static.less';
+
+page{
+    background: #f9f7f3;
+}
+.member-intergral{
+    .intergral-detail{
+        overflow: hidden;
+        margin: 0 30rpx;
+        background: linear-gradient(to right,#6ce1c0,#3db8ae);
+        border-radius: 14rpx;
+        color: #FFFF;
+        padding: 26rpx 30rpx 0;
+        .detail-top{
+            display: flex;
+            justify-content: space-between;
+            view:first-child{
+                font-size: 36rpx;
+                text{
+                    font-size: 60rpx;
+                    margin-left: 20rpx;
+                }
+            }
+            .writething{
+                font-size: 28rpx !important;
+            }
+        }
+        &>view:last-child{
+            margin: 44rpx 0 40rpx 0;
+            font-size: 26rpx;
+        }
+    }
+    .jump-page{
+        background: #FFF;
+        border-radius: 10rpx;
+    }
+    .task-list{
+        padding: 0 30rpx;
+        margin-top: 23rpx;
+        &>view{
+            .task-item{
+                display: flex;
+                justify-content: space-between;
+                padding: 0 35rpx;
+                align-items: center;
+                border-radius: 10rpx;
+                box-shadow: 0 0 2rpx rgba(0, 0, 0, .3);
+                margin-bottom: 23rpx;
+                .task-detail{
+                    margin: 42rpx 0 25rpx;
+                    font-size: 30rpx;
+                    view:first-child{
+                        color: #000;
+                    }
+                    view:last-child{
+                        margin-top: 20rpx;
+                        color: #acabab;
+                        text{
+                            color: #42b7ab;
+                        }
+                        margin-bottom: 40rpx;
+                    }
+                }
+                &>view:last-child{
+                    text-align: center;
+                    line-height: 62rpx;
+                    color: #FFF;
+                    padding: 0 48rpx;
+                    height: 62rpx;
+                    font-size: 30rpx;
+                    border-radius: 31rpx;
+                    background: linear-gradient(to right,#6ce1c0,#3eb8ae);
+                }
+            }
+        }
+    }
+}
+
+.share-pop {
+    .share-body {
+        top: 8vh;
+        top: calc(8vh + env(safe-area-inset-bottom));
+
+        button {
+            background: #21bbbf;
+        }
+    }
+}

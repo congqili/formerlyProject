@@ -1,0 +1,67 @@
+<view class="select">
+    <view class="content">
+    <view class="search-wrapper">
+        <view class="search-item">
+            <image src="../../static/img/topfangfajing.png" />
+            <input confirm-type="search" type="text" bindconfirm="inputConfirm" value='{{searchVal}}' placeholder="请输入产品名称" placeholder-class="input-placeholder"></input>
+            <view class="close-btn" bindtap='clearInput'>
+                <image src="../../static/img/chacha.jpg" />
+            </view>
+        </view>
+    </view>
+    <view hidden='{{showSearchList}}'>
+        <van-tabs active="{{ active }}" bind:change="onChange" color='#0fa98c'>
+            <van-tab title="{{item.live_goods_title}}" wx:for="{{live_goods_cate}}" wx:key='item'>
+                <scroll-view lower-threshold="{{50}}" scroll-y bindscrolltolower="scroll_down" class="scrolled">
+                    <view class="select-list" wx:for="{{item.live_goods_list}}" wx:for-item="items"
+                          wx:for-index="indexs"
+                          wx:key='items'>
+                        <van-checkbox-group value="{{ result }}" bind:change="changeState">
+                            <van-checkbox icon-size="42rpx" checked-color="#10a98c"
+                                          name="{{index}}_{{indexs}}"
+                            >
+                                <view class="list-item">
+
+                                    <image src="{{items.goods_image}}"/>
+                                    <view class="product-desc">
+                                        <view>{{items.goods_data.commodityInfo.commodityName}}</view>
+                                        <view>￥{{items.goods_data.commission.price}}</view>
+                                    </view>
+                                </view>
+                            </van-checkbox>
+                        </van-checkbox-group>
+                    </view>
+                </scroll-view>
+
+            </van-tab>
+        </van-tabs>
+    </view>
+    <view hidden='{{!showSearchList}}'>
+        <scroll-view lower-threshold="{{50}}" scroll-y bindscrolltolower="searchDown" class="scrolled">
+            <view class="select-list" wx:for="{{searchList}}" wx:for-item="items"
+                    wx:for-index="indexs"
+                    wx:key='items'>
+                <van-checkbox-group value="{{ resultS }}" bind:change="changeStateS">
+                    <van-checkbox icon-size="42rpx" checked-color="#10a98c"
+                                    name="{{indexs}}"
+                    >
+                        <view class="list-item">
+
+                            <image src="{{items.goods_image}}"/>
+                            <view class="product-desc">
+                                <view>{{items.goods_data.commodityInfo.commodityName}}</view>
+                                <view>￥{{items.goods_data.commission.price}}</view>
+                            </view>
+                        </view>
+                    </van-checkbox>
+                </van-checkbox-group>
+            </view>
+        </scroll-view>
+    </view>
+    </view>
+    <view class="bottom-btn">
+        <view bindtap="checkResult">确定</view>
+        <view>{{result.length+resultS.length}}/{{select_list_length+searchList.length}}</view>
+    </view>
+    <van-notify id="van-notify"/>
+</view>

@@ -1,0 +1,169 @@
+<view class="live_box">
+<!--    <view class="nav">-->
+<!--        <view class="tab">-->
+<!--            <view class="{{checkIndex==0?'check':''}}" bindtap='select' data-index='0'>直播</view>-->
+<!--            <view class="{{checkIndex==1?'check':''}}" bindtap='select' data-index='1'>验货秀</view>-->
+<!--            <view class="{{checkIndex==0?'left':'right'}}"></view>-->
+<!--        </view>-->
+<!--    </view>-->
+<!--    <view class="product-list">-->
+<!--        &lt;!&ndash;        直播&ndash;&gt;-->
+<!--        <view class="back_color">-->
+<!--            <view class="live-comment">-->
+<!--                <view class="comment-list">-->
+<!--                    &lt;!&ndash;                样式一&ndash;&gt;-->
+<!--                    <view wx:for="{{streamers}}" wx:key="item">-->
+<!--                        <view class="live-item" wx:if="{{item.layout_link_type=='live'}}" >-->
+<!--                            <view class="main">-->
+<!--                                <image mode="widthFix" src="{{item.layout_image}}"></image>-->
+<!--                                <view class="m_coverimg">-->
+<!--                                    <view class="mc_tit">当红主播好物推荐</view>-->
+<!--                                    <view class="mc_detail">这款商品太值得入手了</view>-->
+<!--                                    <view class="mc_watch">-->
+<!--                                        <view class="mw_img">-->
+<!--                                            <image mode="widthFix" src="../../static/img/avator.jpg"></image>-->
+<!--                                            <image mode="widthFix" src="../../static/img/avator.jpg"></image>-->
+<!--                                            <image mode="widthFix" src="../../static/img/avator.jpg"></image>-->
+<!--                                        </view>-->
+<!--                                        <view>1186人分享该直播间</view>-->
+<!--                                    </view>-->
+<!--                                </view>-->
+<!--                            </view>-->
+<!--                            <view class="tit-tag tit_two">-->
+<!--                                <view class="tag-left live-tag">-->
+<!--                                    <image src="../../static/img/singalicon.png"></image>-->
+<!--                                    直播中-->
+<!--                                </view>-->
+<!--                                <view class="tag-right">-->
+<!--                                    {{item.layout_link_data.live_stream_data.ls_viewer_num}}购买-->
+<!--                                </view>-->
+<!--                            </view>-->
+<!--                        </view>-->
+<!--                        &lt;!&ndash;                样式二&ndash;&gt;-->
+<!--                        <view class="live-item" wx:else>-->
+<!--                            <view class="main">-->
+<!--                                <image mode="aspectFill" src="{{item.layout_image}}"></image>-->
+<!--                            </view>-->
+<!--                            <view class="tit-tag">-->
+<!--                                <view class="tag-left live-tag">-->
+<!--                                    <image src="../../static/img/singalicon.png"></image>-->
+<!--                                    直播中-->
+<!--                                </view>-->
+<!--                                <view class="tag-right">-->
+<!--                                    {{item.layout_link_data.live_stream_data.ls_viewer_num}}人观看-->
+<!--                                </view>-->
+<!--                            </view>-->
+<!--                            <view class="live-foot">-->
+<!--                                <image src="{{item.layout_link_data.live_user_data.user_head}}"></image>-->
+<!--                                <view class="live-name">-->
+<!--                                    {{item.layout_link_data.live_user_data.user_nickname}}-->
+<!--                                </view>-->
+<!--                                <image class="like-icon" src='../../static/img/xin.png'></image>-->
+<!--                                <view class="live-like">-->
+<!--                                    {{item.layout_link_data.live_stream_data.ls_like_num}}-->
+<!--                                </view>-->
+<!--                            </view>-->
+<!--                        </view>-->
+<!--                    </view>-->
+<!--                </view>-->
+<!--            </view>-->
+<!--        </view>-->
+<!--    </view>-->
+    <scroll-view bindrefresherrefresh="customPullDown" refresher-triggered="{{pulldown}}" refresher-enabled='{{true}}' lower-threshold="{{900}}" scroll-y="{{true}}" class="product-list" bindscrolltolower='onViewScroll'>
+        <!--        商品讲解-->
+        <view class="back_color">
+            <view class="live-comment">
+                <view class="comment-list">
+                    <view wx:for="{{streamers}}" wx:key="item" wx:if="{{true}}"  bindtap='jumpPage'
+                          data-target="{{item.layout_link_target}}" data-params="{{item.layout_link_data}}"
+                          data-type="{{item.layout_link_type}}">
+                        <!--                样式一-->
+                        <view class="live-item" wx:if="{{item.layout_link_type=='live_goods'}}">
+                            <view class="main">
+                                <view class="imgs">
+                                    <view wx:for-item='itemImg' wx:for-index='imgIndex' wx:key="itemImg" wx:for="{{item.layout_link_data.live_goods_list}}">
+                                        <image src="{{itemImg.lg_goods_data.goods_image}}" wx:if="{{imgIndex<4}}"></image>
+                                    </view>
+                                </view>
+                                <view class="m_coverimg">
+                                    <view class="mc_tit">{{item.layout_link_data.live_title}}</view>
+                                    <view class="mc_detail">{{item.layout_link_data.live_desc}}</view>
+                                    <view class="mc_watch">
+                                        <view class="mw_img">
+                                            <image wx:key="item" src="{{item.user_head}}" wx:if="{{index<4}}" wx:for="{{item.layout_link_data.live_share_list}}" mode="widthFix"></image>
+                                        </view>
+                                        <view>{{item.layout_link_data.live_stream_data.ls_share_num}}人分享该直播间</view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="tit-tag tit_two">
+                                <view class="tag-left live-tag">
+                                    <image src="../../static/img/singalicon.png"></image>
+                                    直播中
+                                </view>
+                                <view class="tag-right">
+                                    {{item.layout_link_data.live_stream_data.ls_viewer_num}}观看
+                                </view>
+                            </view>
+                        </view>
+                        <!--                样式二-->
+                        <view class="live-item" wx:else>
+                            <view class="mask"></view>
+                            <view class="main">
+                                <image mode="aspectFill" src="{{item.layout_image}}"></image>
+                            </view>
+                            <view class="tit-tag">
+                                <view class="tag-left live-tag">
+                                    <image src="../../static/img/singalicon.png"></image>
+                                    直播中
+                                </view>
+                                <view class="tag-right">
+                                    {{item.layout_link_data.live_stream_data.ls_viewer_num}}人观看
+                                </view>
+                            </view>
+                            <view class="live-foot">
+                                <image src="{{item.layout_link_data.live_user_data.user_head}}"></image>
+                                <view class="live-name">
+                                    {{item.layout_link_data.live_user_data.user_nickname}}
+                                </view>
+                                <image class="like-icon" src='../../static/img/xin.png'></image>
+                                <view class="live-like">
+                                    {{item.layout_link_data.live_stream_data.ls_like_num}}
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="live-item" wx:for="{{goods_explain}}" wx:key="item" bindtap='jumpPage'
+                          data-target="{{item.layout_link_target}}" data-params="{{item.layout_link_data}}"
+                          data-type="{{item.layout_link_type}}">
+                        <view class="main">
+                            <image src="{{item.layout_image}}"></image>
+                        </view>
+                        <view class="mask"></view>
+                        <view class="tit-tag">
+                            <view class="tag-left tall">商品讲解</view>
+                            <view class="tag-right">
+                                {{item.layout_link_data.lg_view_num}}人观看
+                            </view>
+                        </view>
+                        <view class="content-foot">
+                            <view class="price">
+                                ￥
+                                <text>{{item.layout_link_data.lg_goods_data.goods_data.commission.price[0]}}</text>
+                                <text>.{{item.layout_link_data.lg_goods_data.goods_data.commission.price[1]}}</text>
+                            </view>
+                            <view class="shopname">
+                                {{item.layout_link_data.lg_goods_data.goods_title}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="start-live" bindtap='startLive'>
+        <image src="/static/img/starticon.png" />
+        <view>立即开播</view>
+    </view>
+</view>
+<tabbar check='1'></tabbar>

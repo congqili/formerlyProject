@@ -1,0 +1,244 @@
+<view class="member container col" catchtap='closePopup'>
+    <view class="nav-bar" >
+        <view style="height:{{barTop+110}}rpx;line-height:{{barTop+110+statusBar/2}}rpx">会员</view>
+    </view>
+    <view class="bg-img">
+        <image mode="widthFix" src="/static/img/memberbg.png" />
+    </view>
+    <view class="main" style="margin-top:{{barTop+110}}rpx">
+        <view class="setting">
+            <image class="setting" catchtap='showPopup' src="../../static/img/setting.png"></image>
+        </view>
+        <view class="user-info">
+            <view class="info-top col">
+                <view class="avator">
+                    <image src="{{userInfo.user_head}}"></image>
+                </view>
+                <image class="level" mode="widthFix" src="{{userInfo.user_level_icon}}"/>
+                <view class="info-text">
+                    <view>
+                        <view class="username">
+                            <text>{{userInfo.user_nickname}}</text>
+                            <image wx:if='{{isStreamer}}' src="../../static/img/microphoneIcon.png" />
+                        </view>
+                        <view class="teacher" bindtap="copyTeach" data-text="{{userInfo.user_advisor}}">微信专属导师<image src="/static/img/arrright.png" /></view>
+                    </view>
+                    <view class="bottom-btn">
+                        <text>邀请码: {{userInfo.user_invite_code}}</text>
+                        <text bindtap="copyCode" data-text="{{userInfo.user_invite_code}}">复制</text>
+                        <!--                        <text>{{userInfo.user_level_title}}</text>-->
+                    </view>
+                </view>
+            </view>
+            <view class="user-options">
+                <view class="options-items" bindtap="jump" data-url="memberAccount" wx:if="{{userInfo.user_level > 1}}">
+                    <view>{{userInfo.user_money}}</view>
+                    <view>账户</view>
+                </view>
+                <view class="options-items" style="{{userInfo.user_level>1?'':'width:50%'}}" bindtap='jump' data-url='memberFans'>
+                    <view>{{fansInfo.user.direct}}</view>
+                    <view>粉丝</view>
+                </view>
+                <view class="options-items" style="{{userInfo.user_level>1?'':'width:50%'}}" bindtap='jump' data-url='memberOrder'>
+                    <view wx:if="{{isStreamer}}">{{orderInfo.user.direct || 0}}</view>
+                    <view wx:else>{{orderInfo.live.total || 0}}</view>
+                    <view>订单</view>
+                </view>
+            </view>
+        </view>
+        <view class="vip-card col" wx:if="{{userInfo.user_level<3}}">
+           <view class="card-item" wx:for="{{advertList}}" wx:key="item">
+               <image src="{{item.layout_image}}" bindtap="jump" data-url="{{item.layout_link_target}}"
+                      data-params="{{item.layout_link_data}}"/>
+          </view>
+            <!-- <view class="card-left">
+                <view>
+                    <image src="../../static/img/vipicon.jpg"></image>
+                    升级超级会员，解锁九大权益
+                </view>
+                <view>超级会员，省的多、赚的多</view>
+            </view>
+            <view class="card-right">
+                <view bindtap="toMemberVip">点击查看</view>
+            </view> -->
+        </view>
+        <view class="integral" wx:if="{{false}}">
+            <view>积分兑换中心</view>
+            <view bindtap="jump" data-url="memberIntegral">
+                更多<image src="../../static/img/arrow.png"/>
+            </view>
+        </view>
+        <view class="fans-fun" wx:if="{{true}}">
+            <view class="fun-item">
+                <view class="fun-tit">积分分红</view>
+                <view class="fun-desc">积分兑换赚分红</view>
+                <view class="fun-img">
+                    <image mode="aspectFit" src="{{CommonConfig.store_user_integral_icon}}" />
+                </view>
+                <view wx:if="{{CommonConfig.store_integral_switch}}" class="fun-btn" bindtap="jump" data-url="memberIntegral">积分分红</view>
+                <view wx:else class="fun-btn gray">即将开放</view>
+            </view>
+            <view class="fun-item" bindtap='startLive' data-url='liveDetail'>
+                <view class="fun-tit">主播中心</view>
+                <view class="fun-desc">全新舞台只等你来</view>
+                <view class="fun-img">
+                    <image mode="aspectFit" src="{{CommonConfig.store_user_invite_icon}}" />
+                </view>
+                <view class="fun-btn" catchtap='startLive' data-url='liveCreate'>立即开播</view>
+            </view>
+            <view class="fun-item">
+                <view class="fun-tit">开通群助理</view>
+                <view class="fun-desc">自助发品更方便</view>
+                <view class="fun-img">
+                    <image mode="aspectFit" src="{{CommonConfig.store_user_robot_icon}}" />
+                </view>
+                <view class="fun-btn gray">即将开放</view>
+            </view>
+        </view>
+        <view class="message">
+            <view class="income">
+                <view class="income-tit col">
+                    <view class="list-icon">
+                        <image src="../../static/img/invitefans.png" class="message-icon"></image>
+                        <view class="tit-text">邀请粉丝</view>
+                    </view>
+                </view>
+                <view class="invite-content" >
+                    <view class="invite-text">邀请粉丝聚集力量</view>
+                    <view class="invite-fans" bindtap='toInvite'>立即邀请</view>
+                </view>
+            </view>
+            <view class="income">
+                <view class="income-tit col">
+                    <view class="list-icon">
+                        <image src="../../static/img/dingdan.png" class="message-icon"></image>
+                        <view class="tit-text">我的订单</view>
+                    </view>
+                    <view class="all" bindtap="jump" data-url="memberOrder">全部
+                        <image src="../../static/img/arrow.png"/>
+                    </view>
+                </view>
+                <view class="message-content" wx:if="{{userInfo.user_level>1}}">
+                    <block wx:if="{{userInfo.user_level > 1}}" data-type='0'>
+                        <view class="content-left" bindtap="jump" data-url="memberOrder">
+                            今日推广订单:
+                            <text>{{orderInfo.user.today.direct}}单</text>
+                        </view>
+                        <view class="content-right" bindtap="jump" data-url="memberOrder">
+                            今日主播订单:
+                            <text>{{orderInfo.live.today}}单</text>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="content-left" bindtap="jump" data-url="memberOrder">
+                            今日购买订单:
+                            <text>{{orderInfo.user.today.direct}}单</text>
+                        </view>
+                        <view class="content-right" bindtap="jump" data-url="memberOrder">
+                            昨日购买订单:
+                            <text>{{orderInfo.user.yesterday.direct}}单</text>
+                        </view>
+                    </block>
+                </view>
+                <view class="message-content" wx:else>
+                    <view class="content-left" bindtap="jump" data-url="memberOrder">
+                        今日购买订单:
+                        <text>{{orderInfo.user.today.direct}}单</text>
+                    </view>
+                    <view class="content-right" bindtap="jump" data-url="memberOrder">
+                       昨日购买订单:
+                        <text>{{orderInfo.user.yesterday.direct}}单</text>
+                    </view>
+                </view>
+            </view>
+            <view class="income" wx:if="{{userInfo.user_level > 1}}">
+                <view class="income-tit col">
+                    <view class="list-icon">
+                        <image src="../../static/img/incomeicon.png" class="message-icon" ></image>
+                        <view class="tit-text">预估收益</view>
+                    </view>
+                    <view class="all" bindtap="jump" data-url="memberGain">全部
+                        <image src="../../static/img/arrow.png"/>
+                    </view>
+                </view>
+                <view class="message-content" >
+                    <view class="content-left" bindtap='toCommission' data-type='0'>
+                        今日推手收益:
+                        <text>￥{{commissionsInfo.user.today.total}}</text>
+                    </view>
+                    <view class="content-right" bindtap='toCommission' data-type='1'>
+                        今日主播收益:
+                        <text>￥{{commissionsInfo.live.today}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="income">
+                <view class="income-tit col">
+                    <view class="list-icon">
+                        <image src="../../static/img/memberfans.png" class="message-icon" style="width:33rpx;height:31rpx"></image>
+                        <view class="tit-text">我的粉丝</view>
+                    </view>
+                    <view class="all" bindtap="jump" data-url="memberFans" data-stream="{{isStreamer}}">全部
+                        <image src="../../static/img/arrow.png"/>
+                    </view>
+                </view>
+                <view class="message-content" wx:if='{{userInfo.user_level>1}}'>
+                    <view class="content-left" bindtap="toFans" data-type="0">
+                        今日推手粉丝:
+                        <text>{{fansInfo.user.today.direct}}人</text>
+                    </view>
+                    <view class="content-right" bindtap="toFans" data-type="1">
+                        今日主播粉丝:
+                        <text>{{fansInfo.live.today}}人</text>
+                    </view>
+                </view>
+                <view class="message-content" wx:else>
+                    <view class="content-left" bindtap="jump" data-url="memberFans">
+                        今日新增粉丝:
+                        <text>{{fansInfo.user.today.direct}}人</text>
+                    </view>
+                    <view class="content-right" bindtap="jump" data-url="memberFans">
+                        昨日新增粉丝:
+                        <text>{{fansInfo.user.yesterday.direct}}人</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="share-pop" hidden="{{showShare}}" style="top:128rpx" catchtap="toggleShare">
+        <view class="share-body">
+            <view class="close" catchtap="toggleShare" style="display:block;">
+                <image style="width:50rpx;height:50rpx" src="/static/img/haibaocha.png" />
+            </view>
+            <image mode="widthFix" catchtap="previewImagea" src="{{canvasImg}}"></image>
+            <button class="save-btn" catchtap="saveImage">保存到手机相册</button>
+            <button class="share-btn" catchtap='previewImagea'>长按预览并分享</button>
+        </view>
+    </view>
+    <poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+    </poster>
+</view>
+<van-notify id="van-notify" />
+<tabbar check='2'></tabbar>
+<van-popup
+        show="{{ show }}"
+        position="right"
+        custom-style="width:60%;height:100%"
+        closeable='{{true}}'
+        z-index="{{10000}}"
+        bind:close='closePopup'
+>
+    <view class="popup">
+        <view class="tit">更多</view>
+        <view class="more-item">
+            <view wx:for="{{moreList}}" wx:key="item" bindtap="jumpPage" data-type="{{item.layout_link_type}}" data-target="{{item.layout_link_target}}"
+                  data-params="{{item.layout_link_data}}">
+                <image wx:if="{{index==1 || 3 || 5}}" style='width:36rpx;' mode="widthFix" src="{{item.layout_image}}"></image>
+                <image wx:else mode="widthFix" src="{{item.layout_image}}"></image>
+                <text>{{item.layout_title}}</text>
+            </view>
+        </view>
+        <view class="btn" bindtap="logout">退出登录</view>
+    </view>
+</van-popup>
+<van-dialog id="van-dialog" />

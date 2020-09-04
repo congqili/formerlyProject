@@ -1,0 +1,102 @@
+<view class="member-vip">
+    <image mode="widthFix" src="../../static/img/membervipbg.png" />
+    <view class="vip-top">
+        <view wx:if="{{upgrade.now_level < 4}}">距离成为<text>{{upgrade.next_level_title}}</text>还需</view>
+        <view wx:else>您已成为<text>{{upgrade.now_level_title}}</text></view>
+        <view class="need-num" wx:if="{{upgrade.now_level < 4 }}">
+            <view class="num-item" wx:if="{{upgrade.up_fans_num > 0 && showShare}}">
+<!--                <view>{{upgrade.remain_fans_num}}</view>-->
+                <van-circle layer-color='#91e4d0' color='#FFF' value="{{ progress.fans }}" stroke-width='1.5' size="{{size}}" type="2d" text="{{upgrade.remain_fans_num}}" />
+                <view>粉丝数</view>
+            </view>
+            <view class="num-item" wx:if="{{upgrade.up_order_num > 0 && showShare}}">
+<!--                <view>{{upgrade.remain_order_num}}</view>-->
+                <van-circle layer-color='#91e4d0' color='#FFF' type="2d" value="{{progress.order}}" stroke-width='1.5'  size="{{size}}" text="{{ upgrade.remain_order_num }}" />
+                <view>订单数</view>
+            </view>
+        </view>
+    </view>
+    <view class="vip-power">
+        <view class="tit">超级会员九大权益</view>
+        <view class="power-list">
+            <view class="power-item">
+                <view>
+                    <image mode="widthFix" src="../../static/img/vipIcon.png" />
+                </view>
+                <view>省的更多</view>
+                <view>自购有佣金</view>
+            </view>
+            <view class="power-item">
+                <view>
+                    <image mode="widthFix" src="../../static/img/tuiguangzhuanqian.png" />
+                </view>
+                <view>推广赚钱</view>
+                <view>推广赚佣金</view>
+            </view>
+            <view class="power-item">
+                <view>
+                    <image mode="widthFix" src="../../static/img/powerReward.png" />
+                </view>
+                <view>平台奖励</view>
+                <view>额外补贴奖励</view>
+            </view>
+            <view class="power-item">
+                <view>
+                    <image mode="widthFix" src="../../static/img/zhibozhuanqian.png" />
+                </view>
+                <view>直播赚钱</view>
+                <view>开直播更好赚</view>
+            </view>
+            <view class="power-item">
+                <view>
+                    <image mode="widthFix" src="../../static/img/zhinenengzhuli.png" />
+                </view>
+                <view>智能助理</view>
+                <view>帮您轻松赚钱</view>
+            </view>
+            <view class="power-item">
+                <view>
+                    <image mode="widthFix" src="../../static/img/daoshizhidao.png" />
+                </view>
+                <view>导师指导</view>
+                <view>帮您更快上手</view>
+            </view>
+            <view class="power-item">
+                <view>
+                    <image mode="widthFix" src="../../static/img/dakakecheng.png" />
+                </view>
+                <view>大咖课程</view>
+                <view>免费畅听</view>
+            </view>
+            <view class="power-item">
+                <view>
+                    <image mode="widthFix" src="../../static/img/baopin.png" />
+                </view>
+                <view>精选爆品</view>
+                <view>高佣品质商品</view>
+            </view>
+            <view class="power-item">
+                <view>
+                    <image mode="widthFix" src="../../static/img/zhuanshukefu.png" />
+                </view>
+                <view>专属客服</view>
+                <view>1V1解决问题</view>
+            </view>
+        </view>
+    </view>
+    <view class="bottom-btn" bindtap="toInvite">
+        我要邀请
+    </view>
+    <view class="share-pop" hidden="{{showShare}}" catchtap="toggleShare">
+        <view class="share-body">
+            <view class="close" catchtap="toggleShare" style="display:block;">
+                <image style="width:50rpx;height:50rpx" src="/static/img/haibaocha.png" />
+            </view>
+            <image mode="widthFix" catchtap="previewImagea" src="{{canvasImg}}"></image>
+            <button class="save-btn" catchtap="saveImage">保存到手机相册</button>
+            <button class="share-btn" catchtap='previewImagea'>长按预览并分享</button>
+        </view>
+    </view>
+    <poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+    </poster>
+</view>

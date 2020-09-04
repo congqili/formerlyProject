@@ -1,0 +1,166 @@
+@import '../../style/static.less';
+.van-toast--icon{
+    width: 270rpx!important;
+}
+@width:710rpx;
+.history-detail{
+    .content{
+        .info{
+            width: @width;
+            border-radius: 12rpx;
+            margin: 0 auto;
+            overflow: hidden;
+            background: linear-gradient(to right,#5fe4c9,#3eb3c9);
+            view{
+                font-size: 32rpx;
+                color: #FFF;
+                margin: 36rpx 0 30rpx;
+                display: flex;
+                justify-content: flex-start;
+                padding: 0 0 0 44rpx;
+                text:first-child{
+                    width: 140rpx;
+                }
+                text:last-child{
+                    width: 300rpx;
+                    margin-left: 50rpx;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+    .back-look{
+        box-sizing: border-box;
+        width: @width;
+        background: #FFF;
+        position: relative;
+        border-radius: 12rpx;
+        margin: 0 auto;
+        overflow: hidden;
+        padding-bottom: 10rpx;
+        .back-tit{
+            text-align: center;
+            font-size: 36rpx;
+            font-weight: 600;
+            color: #000;
+            margin: 50rpx auto 40rpx;
+            width: 212rpx;
+            background: #FFF;
+            position: relative;
+            z-index: 1;
+        }
+        .line{
+            width: 488rpx;
+            height: 1rpx;
+            background: rgba(0, 0, 0, .2);
+            position: absolute;
+            top: 68rpx;
+            left: calc(50% - 244rpx);
+        }
+        .live-list{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .live-item{
+                width: 350rpx;
+                height: 530rpx;
+                border-radius: 15rpx;
+                background: #c6c3e4;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 10rpx;
+                .main{
+                    width: 350rpx;
+                    height: 530rpx;
+                    video{
+                        width: 350rpx;
+                        height: 530rpx;
+                    }
+                }
+                .live-foot{
+                    position: absolute;
+                    z-index: 10;
+                    bottom: 7rpx;
+                    color: #FFF;
+                    font-size: 24rpx;
+                    image{
+                        float: left;
+                        background: skyblue;
+                        width: 36rpx;
+                        height: 36rpx;
+                        border-radius: 50%;
+                        margin: 0 10rpx 10rpx 10rpx;
+                    }
+                    view{
+                        float: left;
+                        line-height: 36rpx;
+                    }
+                    .live-name{
+                        width: 176rpx;
+                    }
+                }
+                .tit-tag{
+                    z-index: 10;
+                    width: 260rpx;
+                    height: 38rpx;
+                    background: rgba(0, 0, 0, 0.3);
+                    border-radius: 19rpx;
+                    position: absolute;
+                    font-size: 20rpx;
+                    top: 0rpx;
+                    left: 0rpx;
+                    line-height: 38rpx;
+                    color: #FFF;
+                    .tag-left{
+                        width: auto;
+                        height: 38rpx;
+                        float: left;
+                        .blue-purple-btn();
+                        border-top-left-radius: 19rpx;
+                        border-bottom-left-radius: 19rpx;
+                        text-align: center;
+                        line-height: 38rpx;
+                        display: flex;
+                        align-items: center;
+                        box-sizing: border-box;
+                        justify-content: space-between;
+                        padding: 0 14rpx;
+                        image{
+                            width: 12rpx;
+                            height: 15rpx;
+                        }
+                    }
+                    .tall{
+                        width: auto;
+                    }
+                    .tag-right{
+                        float: left;
+                        width: 150rpx;
+                        line-height: 38rpx;
+                        text-align: center;
+                    }
+    
+                }
+                .content-foot{
+                    position: absolute;
+                    bottom: 16rpx;
+                    padding-left: 15rpx;
+                    color: #FFF;
+                    .price{
+                        font-size: 30rpx;
+                        text:nth-child(1){
+                            font-size: 60rpx;
+                        }
+                    }
+                    .shopname{
+                        font-size: 24rpx;
+                    }
+                }
+            }
+        }
+    }
+
+}

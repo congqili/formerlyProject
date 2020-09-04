@@ -1,0 +1,7 @@
+.article rich-text {
+  font-size: 35rpx;
+  width: 650rpx;
+  color: #666;
+  display: block;
+  margin: 20rpx auto;
+}

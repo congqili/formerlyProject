@@ -1,0 +1,45 @@
+<view class="product-container">
+    <view class="advert-image" wx:if="{{advertImage && advertImage != ''}}">
+        <image mode="widthFix" src="{{advertImage}}"></image>
+    </view>
+    <productList list='{{goodsList}}'></productList>
+    <loadFlag loadData="{{loadData}}"></loadFlag>
+    <!-- <view class="product-list">
+        <view class="com-product-item" wx:for="{{goodsList}}" wx:for-item="listItem" wx:for-index="listIndex" wx:key="item"
+              bindtap="toComment" data-code="{{listItem.goods_code}}">
+            <view class="product-img">
+                <image mode="widthFix" src="{{listItem.goods_image}}"></image>
+            </view>
+            <view class="product-content">
+                <view class="product-tit">
+                    {{listItem.goods_title}}
+                </view>
+                <view class="product-txt">
+                    {{listItem.goods_data.commodityInfo.sellingPoint}}
+                </view>
+                <view class="product-coupons">
+                    <view hidden="{{listItem.goods_data.couponInfo.couponValue==''}}">
+                        <image src="../../static/img/pinkcoupon.png"></image>
+                        <text>￥{{listItem.goods_data.couponInfo.couponValue}}元</text>
+                    </view>
+                </view>
+                <view class="product-oldprice">
+                    ￥{{listItem.goods_data.commodityInfo.snPrice}}元
+                </view>
+                <view class="product-price">
+                    <view class="product-priceo">
+                        爆品价￥
+                        <text>{{listItem.goods_data.commission.price}}</text>
+                    </view>
+                    <view class="subsidy" wx:if='{{listItem.goods_data.commission.subsidy >0}}'>
+                        平台额外补贴+{{listItem.goods_data.commission.subsidy}}元
+                    </view>
+                    <view class="product-pricet">
+                        <image src="../../static/img/makemoney.png"></image>
+                        赚￥{{listItem.goods_data.commission.commission}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view> -->
+</view>

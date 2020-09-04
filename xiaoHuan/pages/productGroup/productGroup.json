@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "productList": "../../components/productList/productList"
+  },
+  "enablePullDownRefresh": true,
+  "navigationStyle":"custom"
+}

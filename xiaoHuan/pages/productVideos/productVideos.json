@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "商品讲解",
+  "usingComponents": {
+    "poster": "wxa-plugin-canvas/poster",
+    "live-room-play": "plugin://liveRoomPlugin/live-room-play"
+  }
+}

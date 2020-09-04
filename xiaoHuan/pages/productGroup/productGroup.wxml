@@ -1,0 +1,37 @@
+<view class="page" style="background:{{gcg_main_color}}">
+    <view class="barText" wx:if="{{true}}">
+        <image class="back" bindtap='backPage' src="/static/img/arrleft.png" style="top:{{barTop+10}}rpx"/>
+        <view style="height:{{barTop+110}}rpx;line-height:{{barTop+110+statusBar/2}}rpx">{{gcg_title}}</view>
+        <image class="bg" src="{{gcg_image}}" mode="widthFix" />
+    </view>
+    <scroll-view class="box_scroll"  bindrefresherrefresh="customPullDown" refresher-enabled="{{true}}" refresher-triggered="{{pulldown}}" bindscrolltolower='scrollToBottom' scroll-y="{{true}}">
+        <view class="seleGoods_box">
+            <image class="seleb_img" mode="widthFix" src="{{gcg_image}}"></image>
+            <view class="selebox_section" >
+                <view style="position: sticky;top: {{barTop+110}}rpx;z-index: 50;">
+                    <scroll-view class="seleb_scroll"
+                                 scroll-x="{{true}}"
+                                 scroll-left="{{scrollPlace}}"
+                                 scroll-with-animation="true"
+                                 style="background:{{gcg_minor_color}}"
+                                 wx:if="{{tabList.length>1}}"
+                    >
+                        <view class="content">
+                            <view class="selebs_tab  {{changeIndex==index?'selebs_action':''}}" wx:for="{{tabList}}"
+                                  data-index="{{index}}" wx:key="item" catchtap="changeTab">
+                                <view class="stab_img">
+                                    <image mode="widthFix" src="{{item.gc_image}}"></image>
+                                </view>
+                                <view class="stab_tit">{{item.gc_title}}</view>
+                            </view>
+                        </view>
+                    </scroll-view>
+                </view>
+                <view class="product-list">
+                    <productList list='{{selectGoods}}'></productList>
+                    <loadFlag loadData="{{loadData}}"></loadFlag>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

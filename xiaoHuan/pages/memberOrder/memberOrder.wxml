@@ -1,0 +1,181 @@
+<view class="order">
+    <view class="order-content">
+        <view class="input-item">
+            <view>下单时间</view>
+            <input  type="text" disabled placeholder="请选择下单时间" bindtap="checkTime"  value="{{time}}"/>
+            <!--            <input placeholder="请选择下单时间" placeholder-class="input-placeholder" />-->
+            <view bindtap="cleanIpt">清空</view>
+        </view>
+        <van-tabs active="{{active }}"  bind:change="onChangeTab">
+            <van-tab title="全部">
+                <scroll-view lower-threshold="{{50}}" scroll-y="{{true}}" bindscrolltolower="scrollDown" class="scrolled" >
+                    <view class="order-list">
+                        <view class="order-item" wx:for="{{orderList_all}}" wx:key="item">
+                            <view><view>订单号</view>：{{item.order_line_code}}</view>
+                            <view><view>下单时间</view>：{{item.order_create_time}}</view>
+                            <view class="orderType" hidden="{{true}}">{{orderType.typea(item.order_type)}}</view>
+                            <view class="order-info">
+                                <image src="{{item.order_data.pictureUrl}}" />
+                                <view class="info-text">
+                                    <view class="info-tit">
+                                        <view>苏宁</view>
+                                        <view>{{item.order_goods_title}}</view>
+                                    </view>
+                                    <view class="info-num">
+                                        <view class="{{userInfo.user_level > 1?'':'opcitys'}}">预估佣金：￥{{item.order_gain}}</view>
+                                        <view>数量：x{{item.order_data.saleNum}}</view>
+                                    </view>
+                                    <view>
+                                        <view class="price-subsify {{item.order_goods_data.goods_data.commission.subsidy>0?'':'opcitys'}}" >含推广补贴{{item.order_goods_data.goods_data.commission.subsidy}}元</view>
+                                        <view class="price-subsify" wx:if="{{CommonUserLevel<=1}}">
+                                            升级超级会员再省{{item.order_goods_data.goods_data.commission.gain}}元
+                                            <image src="/static/img/youjiantouzong.png" />
+                                        </view>
+                                    </view>
+                                    <view>订单状态：{{item.order_line_status_title}}</view>
+                                    <view class="bottom-btn">
+                                        <view>{{userInfo.user_level > 1 ? '计佣金额': '订单金额'}}：￥{{item.order_pay_money}}</view>
+                                        <view class="commission" wx:if="{{item.order_goods_data.goods_data.commission.gain}}" bindtap="toGoodsDetail" data-code="{{item.order_goods_code}}"><image src="../../static/img/orderforward.png" />{{CommonUserLevel>1?'赚￥'+item.order_goods_data.goods_data.commission.gain:'再次购买'}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </van-tab>
+            <van-tab title="已付款">
+                <scroll-view lower-threshold="{{50}}" scroll-y="{{true}}" bindscrolltolower="scrollDown" class="scrolled">
+                <view class="order-list">
+                    <view class="order-item" wx:for="{{orderList_pay}}" wx:key="item">
+                        <view><view>订单号</view>：{{item.order_line_code}}</view>
+                        <view><view>下单时间</view>：{{item.order_create_time}}</view>
+                        <view class="orderType" hidden="{{true}}">{{orderType.typea(item.order_type)}}</view>
+                        <view class="order-info">
+                            <image src="{{item.order_data.pictureUrl}}" />
+                            <view class="info-text">
+                                <view class="info-tit">
+                                    <view>苏宁</view>
+                                    <view>{{item.order_goods_title}}</view>
+                                </view>
+                                <view class="info-num">
+                                    <view class="{{userInfo.user_level > 1?'':'opcitys'}}">预估佣金：￥{{item.order_gain}}</view>
+                                    <view>数量：x{{item.order_data.saleNum}}</view>
+                                </view>
+                                <view>
+                                    <view class="price-subsify {{item.order_goods_data.goods_data.commission.subsidy>0?'':'opcitys'}}" >含推广补贴{{item.order_goods_data.goods_data.commission.subsidy}}元</view>
+                                    <view class="price-subsify" wx:if="{{CommonUserLevel<=1}}">
+                                        升级超级会员再省{{item.order_goods_data.goods_data.commission.gain}}元
+                                        <image src="/static/img/youjiantouzong.png" />
+                                    </view>
+                                </view>
+                                <view>订单状态：{{item.order_line_status_title}}</view>
+                                <view class="bottom-btn">
+                                    <view>{{userInfo.user_level > 1 ? '计佣金额': '订单金额'}}：￥{{item.order_pay_money}}</view>
+                                    <view class="commission" wx:if="{{item.order_goods_data.goods_data.commission.gain}}" bindtap="toGoodsDetail" data-code="{{item.order_goods_code}}"><image src="../../static/img/orderforward.png" />{{CommonUserLevel>1?'赚￥'+item.order_goods_data.goods_data.commission.gain:'再次购买'}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                </scroll-view>
+            </van-tab>
+            <van-tab title="已收货">
+                <scroll-view lower-threshold="{{50}}" scroll-y="{{true}}" bindscrolltolower="scrollDown" class="scrolled" >
+                <view class="order-list">
+                    <view class="order-item" wx:for="{{orderList_receipt}}" wx:key="item">
+                        <view><view>订单号</view>：{{item.order_line_code}}</view>
+                        <view><view>下单时间</view>：{{item.order_create_time}}</view>
+                        <view class="orderType" hidden="{{true}}">{{orderType.typea(item.order_type)}}</view>
+                        <view class="order-info">
+                            <image src="{{item.order_data.pictureUrl}}" />
+                            <view class="info-text">
+                                <view class="info-tit">
+                                    <view>苏宁</view>
+                                    <view>{{item.order_goods_title}}</view>
+                                </view>
+                                <view class="info-num">
+                                    <view class="{{userInfo.user_level > 1?'':'opcitys'}}">预估佣金：￥{{item.order_gain}}</view>
+                                    <view>数量：x{{item.order_data.saleNum}}</view>
+                                </view>
+                                <view>
+                                    <view class="price-subsify {{item.order_goods_data.goods_data.commission.subsidy>0?'':'opcitys'}}" >含推广补贴{{item.order_goods_data.goods_data.commission.subsidy}}元</view>
+                                    <view class="price-subsify" wx:if="{{CommonUserLevel<=1}}">
+                                        升级超级会员再省{{item.order_goods_data.goods_data.commission.gain}}元
+                                        <image src="/static/img/youjiantouzong.png" />
+                                    </view>
+                                </view>
+                                <view>订单状态：{{item.order_line_status_title}}</view>
+                                <view class="bottom-btn">
+                                    <view>{{userInfo.user_level > 1 ? '计佣金额': '订单金额'}}：￥{{item.order_pay_money}}</view>
+                                    <view class="commission" wx:if="{{item.order_goods_data.goods_data.commission.gain}}" bindtap="toGoodsDetail" data-code="{{item.order_goods_code}}"><image src="../../static/img/orderforward.png" />{{CommonUserLevel>1?'赚￥'+item.order_goods_data.goods_data.commission.gain:'再次购买'}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                </scroll-view>
+            </van-tab>
+            <van-tab title="无效">
+                <scroll-view lower-threshold="{{50}}" scroll-y="{{true}}"  bindscrolltolower="scrollDown" class="scrolled" >
+                <view class="order-list">
+                    <view class="order-item" wx:for="{{orderList_fail}}" wx:key="item">
+                        <view><view>订单号</view>：{{item.order_line_code}}</view>
+                        <view><view>下单时间</view>：{{item.order_create_time}}</view>
+                        <view class="orderType" hidden="{{true}}">{{orderType.typea(item.order_type)}}</view>
+                        <view class="order-info">
+                            <image src="{{item.order_data.pictureUrl}}" />
+                            <view class="info-text">
+                                <view class="info-tit">
+                                    <view>苏宁</view>
+                                    <view>{{item.order_goods_title}}</view>
+                                </view>
+                                <view class="info-num">
+                                    <view class="{{userInfo.user_level > 1?'':'opcitys'}}" >预估佣金：￥{{item.order_gain}}</view>
+                                    <view>数量：x{{item.order_data.saleNum}}</view>
+                                </view>
+                                <view>
+                                    <view class="price-subsify {{item.order_goods_data.goods_data.commission.subsidy>0?'':'opcitys'}}" >含推广补贴{{item.order_goods_data.goods_data.commission.subsidy}}元</view>
+                                    <view class="price-subsify" wx:if="{{CommonUserLevel<=1}}">
+                                        升级超级会员再省{{item.order_goods_data.goods_data.commission.gain}}元
+                                        <image src="/static/img/youjiantouzong.png" />
+                                    </view>
+                                </view>
+                                <view>订单状态：{{item.order_line_status_title}}</view>
+                                <view class="bottom-btn">
+                                    <view>{{userInfo.user_level > 1 ? '计佣金额': '订单金额'}}：￥{{item.order_pay_money}}</view>
+                                    <view class="commission" wx:if="{{item.order_goods_data.goods_data.commission.gain}}" bindtap="toGoodsDetail" data-code="{{item.order_goods_code}}"><image src="../../static/img/orderforward.png" />{{CommonUserLevel>1?'赚￥'+item.order_goods_data.goods_data.commission.gain:'再次购买'}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                </scroll-view>
+            </van-tab>
+        </van-tabs>
+    </view>
+    <van-datetime-picker
+            type="date"
+            value="{{ setTime }}"
+            max-date="{{ maxTime }}"
+            bind:confirm="onTime"
+            bind:cancel="cancelTime"
+            wx:if="{{showTime}}"
+    />
+</view>
+<van-notify id="van-notify" />
+<wxs module="orderType">
+function typea(a) {
+    if(a=='live'){live
+        return '直播订单'
+    }else if(a=='default'){
+        return '推广订单'
+    }else if(a=='complex'){
+        return '推广+直播订单'
+    }else {
+        return ''
+    }
+}
+    module.exports.typea=typea
+</wxs>
+
+

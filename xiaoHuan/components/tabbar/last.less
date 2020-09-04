@@ -1,0 +1,67 @@
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  height: 124rpx;
+  overflow: hidden;
+  padding-bottom: calc(constant(safe-area-inset-bottom) + 0rpx);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 0rpx);
+}
+.wrapper .bgimg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 188rpx;
+}
+.wrapper .tabbar {
+  width: 100%;
+  height: 188rpx;
+  display: flex;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+.wrapper .tabbar .btn {
+  width: 110rpx;
+  color: #999;
+  font-size: 20rpx;
+  text-align: center;
+}
+.wrapper .tabbar .btn image {
+  height: 37rpx;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+.wrapper .tabbar .btn view {
+  margin-top: 10rpx;
+}
+.wrapper .tabbar .btn .to-st view {
+  margin: 0;
+}
+.wrapper .tabbar .check {
+  color: #54b0bd;
+}
+.wrapper .tabbar .btn:nth-child(2) .tab-wrapper {
+  width: 100rpx;
+  overflow: hidden;
+  height: 78rpx;
+  margin: -5rpx 0 0 6rpx;
+}
+.wrapper .tabbar .btn:nth-child(2) .tab-wrapper .changeImg {
+  margin: 23rpx auto 0;
+  width: 41rpx;
+  height: 31rpx;
+}
+.wrapper .tabbar .btn:nth-child(2) .tab-wrapper image {
+  width: 40rpx;
+  height: 35rpx;
+  margin: 16rpx auto 0;
+}
+.wrapper .tabbar .btn:nth-child(1),
+.wrapper .tabbar .btn:nth-child(3) {
+  margin-top: 38rpx;
+}

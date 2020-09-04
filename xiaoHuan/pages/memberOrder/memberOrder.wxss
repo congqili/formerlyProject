@@ -1,0 +1,200 @@
+page {
+  background: #f9f7f3;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.order .van-picker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding-top: 20rpx;
+}
+.order .van-picker .van-picker__cancel,
+.order .van-picker .van-picker__confirm {
+  line-height: 44rpx;
+}
+.order .order-content .van-tab {
+  color: #000;
+  background: #f9f7f3;
+}
+.order .order-content .van-tab--active {
+  color: #0fa98c;
+}
+.order .order-content .van-tabs__line {
+  background: #0fa98c;
+  width: 142rpx;
+  height: 5rpx;
+}
+.order .order-content .input-item {
+  position: relative;
+  display: flex;
+  width: 604rpx;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  align-items: center;
+}
+.order .order-content .input-item input {
+  width: 387rpx;
+  height: 48rpx;
+  background: #ebebeb;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  font-size: 22rpx;
+}
+.order .order-content .input-item .input-placeholder {
+  color: #b8b8b8;
+  text-align: center;
+  font-size: 22rpx;
+}
+.order .order-content .input-item view:first-child {
+  font-size: 28rpx;
+}
+.order .order-content .input-item view:last-child {
+  width: 69rpx;
+  height: 36rpx;
+  font-size: 22rpx;
+  background: #4da68d;
+  color: #FFF;
+  text-align: center;
+  line-height: 36rpx;
+  border-radius: 8rpx;
+}
+.order .order-content .order-list .order-item {
+  background: #FFF;
+  margin: 22rpx;
+  padding: 18rpx;
+  border-radius: 18rpx;
+  position: relative;
+}
+.order .order-content .order-list .order-item > view:nth-child(1),
+.order .order-content .order-list .order-item > view:nth-child(2) {
+  color: #25594a;
+  font-size: 22rpx;
+  line-height: 34rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+.order .order-content .order-list .order-item > view:nth-child(1) view,
+.order .order-content .order-list .order-item > view:nth-child(2) view {
+  width: 110rpx;
+  text-align-last: justify;
+}
+.order .order-content .order-list .order-item .order-info {
+  display: flex;
+  margin-top: 12rpx;
+}
+.order .order-content .order-list .order-item .order-info image {
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 8rpx;
+}
+.order .order-content .order-list .order-item .order-info .info-text {
+  margin-left: 20rpx;
+}
+.order .order-content .order-list .order-item .order-info .info-text .info-num {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.order .order-content .order-list .order-item .order-info .info-text > view {
+  display: flex;
+  justify-content: space-between;
+}
+.order .order-content .order-list .order-item .order-info .info-text .info-tit {
+  display: flex;
+}
+.order .order-content .order-list .order-item .order-info .info-text .info-tit view:first-child {
+  width: 62rpx;
+  height: 28rpx;
+  font-size: 18rpx;
+  text-align: center;
+  line-height: 28rpx;
+  color: #FFF;
+  border-radius: 14rpx;
+  background: #4da68d;
+}
+.order .order-content .order-list .order-item .order-info .info-text .info-tit view:last-child {
+  font-size: 26rpx;
+  color: #4f4e4e;
+  width: 386rpx;
+  line-height: 32rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.order .order-content .order-list .order-item .order-info .info-text .info-tit view:last-child text {
+  float: right;
+}
+.order .order-content .order-list .order-item .order-info .info-text > view:nth-child(2),
+.order .order-content .order-list .order-item .order-info .info-text > view:nth-child(4) {
+  display: flex;
+  font-size: 22rpx;
+  color: #25594a;
+  /*margin: 20rpx 0 18rpx;*/
+}
+.order .order-content .order-list .order-item .order-info .info-text > view:nth-child(2) text,
+.order .order-content .order-list .order-item .order-info .info-text > view:nth-child(4) text {
+  font-size: 16rpx;
+  color: #353038;
+}
+.order .order-content .order-list .order-item .order-info .info-text .bottom-btn {
+  position: relative;
+}
+.order .order-content .order-list .order-item .order-info .info-text .bottom-btn view:nth-child(1) {
+  font-size: 22rpx;
+  color: #25594a;
+}
+.order .order-content .order-list .order-item .order-info .info-text .bottom-btn .commission {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  color: #FFF;
+  font-size: 22rpx;
+  background: #4da68d;
+}
+.order .order-content .order-list .order-item .order-info .info-text .bottom-btn .commission image {
+  width: 17rpx;
+  height: 17rpx;
+  margin-right: 7rpx;
+}
+.scrolled {
+  height: calc(100vh - 170rpx - env(safe-area-inset-bottom));
+}
+.price-subsify {
+  font-size: 18rpx;
+  color: #9c6e4d;
+  background-color: #fff1d6;
+  height: 30rpx;
+  padding: 0 15rpx 0 15rpx;
+  border-radius: 30rpx;
+  line-height: 30rpx;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.price-subsify image {
+  width: 11rpx!important;
+  height: 18rpx!important;
+  margin-left: 5rpx;
+}
+.opcitys {
+  opacity: 0;
+}
+.orderType {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}

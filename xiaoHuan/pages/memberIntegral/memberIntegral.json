@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "poster": "wxa-plugin-canvas/poster"
+  },
+  "navigationBarTitleText": "兑换中心"
+}

@@ -1,0 +1,43 @@
+<view class="product-list">
+    <view class="com-product-item" wx:for="{{list}}" wx:for-item="listItem" wx:for-index="listIndex" wx:key="item"
+            bindtap="toComment" data-code="{{listItem.goods_code}}">
+        <view class="product-img">
+            <image mode="widthFix" src="{{listItem.goods_image}}"></image>
+        </view>
+        <view class="product-content">
+            <view class="product-tit">
+                {{listItem.goods_title}}
+            </view>
+            <view class="product-txt">
+                {{listItem.goods_data.commodityInfo.sellingPoint}}
+            </view>
+            <view class="product-coupons">
+                <view hidden="{{listItem.goods_data.couponInfo.couponValue==''}}">
+                    <image src="../../static/img/pinkcoupon.png"></image>
+                    <text>￥{{listItem.goods_data.couponInfo.couponValue}}元</text>
+                </view>
+            </view>
+            <view class="product-oldprice">
+                ￥{{listItem.goods_data.commodityInfo.snPrice}}元
+            </view>
+            <view class="product-price">
+                <view class="product-priceo">
+                    爆品价￥
+                    <text>{{listItem.goods_data.commission.price}}</text>
+                </view>
+                <view class="subsidy" wx:if='{{listItem.goods_data.commission.subsidy >0}}'>
+                    平台额外补贴+{{listItem.goods_data.commission.subsidy}}元
+                </view>
+                <view class="subsidy" wx:if='{{CommonUserLevel<=1}}' catchtap='toMemberVip'>
+                    <view>升级超级会员再省{{listItem.goods_data.commission.gain}}元</view>
+                    <image src="/static/img/youjiantouzong.png" />
+                </view>
+                <view class="product-pricet">
+                    <image wx:if='{{CommonUserLevel>1}}' src="../../static/img/makemoney.png"></image>
+                    <image wx:else src="../../static/img/baopin.png"></image>
+                    {{CommonUserLevel>1?'赚￥'+listItem.goods_data.commission.gain:'去购买'}}
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

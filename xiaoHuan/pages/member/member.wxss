@@ -1,0 +1,649 @@
+view,
+text {
+  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.blue-green-btn {
+  background: linear-gradient(to right, #38debf, #12a5bf);
+}
+.blue-purple-btn {
+  background: linear-gradient(to right, #4d8be1, #889cf4);
+}
+view,
+text {
+  line-height: 1;
+}
+button::after {
+  border: none;
+}
+button {
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  line-height: 1;
+}
+button {
+  border-radius: 0;
+}
+.banxin {
+  width: 710rpx;
+  margin: 0 auto;
+  border-radius: 15rpx;
+}
+.col:after {
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  display: block;
+  visibility: hidden;
+}
+.share-pop {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.share-pop .share-body {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: calc(5vh);
+  top: calc(5vh + env(safe-area-inset-bottom));
+}
+.share-pop .share-body .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.share-pop .share-body .close image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.share-pop .share-body image {
+  width: 80vw;
+  height: 77vh;
+  border-radius: 20rpx;
+}
+.share-pop .share-body button {
+  position: relative;
+  width: 80vw;
+  height: 5vh !important;
+  font-size: 25rpx;
+  color: #FFF;
+  line-height: 5vh;
+  border-radius: 5rpx;
+  background: linear-gradient(to right, #39dfbf, #13a6bf);
+  text-align: center;
+  margin-top: 3vh;
+  /*margin-top: 40rpx;*/
+}
+.share-pop .share-body .share-btn {
+  margin-top: 2vh;
+}
+.com-product-item:first-child {
+  border-top: 0!important;
+}
+.com-product-item {
+  padding: 20rpx 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 1rpx dotted #dcdcdc;
+}
+.com-product-item .subsidy {
+  top: 0;
+  height: 34rpx;
+  white-space: nowrap;
+  border-radius: 17rpx;
+  padding: 0 10rpx;
+  color: #957052;
+  font-size: 18rpx;
+  background: #fcf1d8;
+  position: absolute;
+  line-height: 34rpx;
+  right: 0;
+  top: 143rpx;
+}
+.com-product-item .product-img {
+  float: left;
+  width: 221rpx;
+  height: 221rpx;
+  margin-right: 27rpx;
+  overflow: hidden;
+  border: 1rpx solid #f3f2f2;
+  border-radius: 10rpx;
+}
+.com-product-item .product-img image {
+  width: 221rpx;
+  height: 221rpx;
+}
+.com-product-item .product-content .product-tit,
+.com-product-item .product-content .product-txt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.com-product-item .product-content .product-tit {
+  margin-top: 10rpx;
+  line-height: 32rpx;
+  font-size: 28rpx;
+  color: black;
+}
+.com-product-item .product-content .product-txt {
+  margin-top: 14rpx;
+  line-height: 32rpx;
+  font-size: 25rpx;
+  color: #999999;
+}
+.com-product-item .product-content .product-coupons {
+  margin-top: 10rpx;
+  position: relative;
+  font-size: 24rpx;
+  height: 40rpx;
+  color: #FFF;
+  overflow: hidden;
+}
+.com-product-item .product-content .product-coupons > view {
+  width: 100%;
+  height: 40rpx;
+}
+.com-product-item .product-content .product-coupons > view image {
+  height: 40rpx;
+  width: 137rpx;
+  position: absolute;
+  top: 0;
+  left: 0rpx;
+}
+.com-product-item .product-content .product-coupons > view text {
+  left: 50rpx;
+  width: auto;
+  height: 40rpx;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  color: #fff;
+  line-height: 41.5rpx;
+  display: flex;
+  white-space: nowrap;
+  background: #ff7e78;
+  padding-right: 5rpx;
+  border-radius: 5rpx;
+  font-weight: 100;
+}
+.com-product-item .product-content .product-oldprice {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #999999;
+  text-decoration: line-through;
+}
+.com-product-item .product-content .product-price {
+  margin-top: -5rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.com-product-item .product-content .product-price .product-priceo {
+  font-size: 24rpx;
+  color: #4da68d;
+  height: 40rpx;
+}
+.com-product-item .product-content .product-price .product-priceo text {
+  font-size: 38rpx;
+  font-weight: bold;
+}
+.com-product-item .product-content .product-price .product-pricet {
+  font-size: 24rpx;
+  color: white;
+  height: 48rpx;
+  padding: 0 20rpx;
+  background: linear-gradient(to right, #6de2cd, #3cb6ad);
+  border-radius: 48rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.com-product-item .product-content .product-price .product-pricet image {
+  width: 29rpx;
+  height: 29rpx;
+  margin-right: 12rpx;
+}
+page {
+  background: #f3f3f3;
+  position: relative;
+}
+page .bg-img {
+  position: absolute;
+  z-index: 1;
+  top: -160rpx;
+}
+page .bg-img image {
+  width: 750rpx;
+}
+.member {
+  background: #f3f3f3;
+}
+.member .setting {
+  overflow: hidden;
+}
+.member .setting image {
+  width: 36rpx;
+  height: 36rpx;
+  float: right;
+  margin-right: 30rpx;
+}
+.member .user-info {
+  width: 702rpx;
+  margin: 0 auto 0;
+  position: relative;
+}
+.member .user-info .avator {
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 50%;
+  float: left;
+  margin: 0 0 0 24rpx;
+  position: relative;
+}
+.member .user-info .avator image {
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 50%;
+}
+.member .user-info .level {
+  position: absolute;
+  height: 50rpx;
+  width: 106rpx;
+  left: 37rpx;
+  top: 107rpx;
+}
+.member .user-info .info-text {
+  float: left;
+  margin-left: 12rpx;
+  color: #FFF;
+}
+.member .user-info .info-text > view:nth-child(1) {
+  color: #FFF;
+  font-size: 38rpx;
+  margin: 14rpx 0 20rpx;
+  display: flex;
+  width: 514rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.member .user-info .info-text > view:nth-child(1) image {
+  width: 36rpx;
+  height: 36rpx;
+}
+.member .user-info .info-text > view:nth-child(1) .username {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.member .user-info .info-text > view:nth-child(1) .username text {
+  max-width: 200rpx;
+  white-space: nowrap;
+  height: 45rpx;
+  line-height: 45rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 38rpx;
+}
+.member .user-info .info-text > view:nth-child(1) .username image {
+  width: 35rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+}
+.member .user-info .info-text > view:nth-child(1) .username .easter {
+  max-width: 346rpx;
+}
+.member .user-info .info-text > view:nth-child(1) .teacher {
+  padding: 0 17rpx;
+  height: 30rpx;
+  border-radius: 12rpx;
+  color: #FFF;
+  line-height: 30rpx;
+  text-align: center;
+  background: #94cabb;
+  font-size: 18rpx;
+  background: #57b5a1;
+  display: flex;
+  align-items: center;
+}
+.member .user-info .info-text > view:nth-child(1) .teacher image {
+  height: 19rpx;
+  width: 11rpx;
+  margin-left: 10rpx;
+}
+.member .user-info .info-text view:nth-child(2) text {
+  font-size: 20rpx;
+  float: left;
+  margin-top: 6rpx;
+}
+.member .user-info .info-text view:nth-child(2) text:nth-child(1) {
+  font-size: 26rpx;
+  height: 30rpx;
+  margin-top: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200rpx;
+}
+.member .user-info .info-text view:nth-child(2) text:nth-child(2) {
+  width: 83rpx;
+  height: 35rpx;
+  border-radius: 8rpx;
+  color: #59b9a1;
+  line-height: 35rpx;
+  text-align: center;
+  font-size: 22rpx;
+  background: #FFF;
+}
+.member .user-info .info-text .bottom-btn {
+  display: flex;
+  align-items: center;
+}
+.member .user-info .info-text .bottom-btn text {
+  margin-top: 0!important;
+}
+.member .user-info .user-options {
+  display: flex;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+  padding: 0 22rpx;
+  justify-content: space-between;
+}
+.member .user-info .user-options .options-items {
+  width: 134rpx;
+}
+.member .user-info .user-options .options-items view {
+  color: #FFF;
+  text-align: center;
+}
+.member .user-info .user-options .options-items view:nth-child(1) {
+  font-size: 36rpx;
+}
+.member .user-info .user-options .options-items view:nth-child(2) {
+  font-size: 26rpx;
+  margin: 24rpx 0 46rpx 0;
+}
+.member .vip-card {
+  margin: 30rpx auto 0;
+  width: 702rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  background: #2b2b2a;
+}
+.member .vip-card .card-item image {
+  width: 100%;
+  height: 140rpx;
+  margin-bottom: 10rpx;
+}
+.member .vip-card .card-left {
+  float: left;
+}
+.member .vip-card .card-left view:nth-child(1) {
+  color: #dacb9f;
+  font-size: 32rpx;
+  font-weight: 600;
+  font-style: italic;
+}
+.member .vip-card .card-left view:nth-child(1) image {
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+}
+.member .vip-card .card-left view:nth-child(2) {
+  color: #dacb9f;
+  margin-top: 30rpx;
+  font-size: 22rpx;
+}
+.member .vip-card .card-right {
+  float: left;
+}
+.member .vip-card .card-right view {
+  width: 150rpx;
+  height: 46rpx;
+  border-radius: 23rpx;
+  color: #06031c;
+  background: #e6ceaa;
+  text-align: center;
+  line-height: 46rpx;
+  font-size: 26rpx;
+  margin: 14rpx 0 0 40rpx;
+}
+.member .integral {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90rpx;
+  background: #FFF;
+  padding: 0 47rpx;
+  margin: 20rpx 0;
+}
+.member .integral view:first-child {
+  font-size: 36rpx;
+  color: #4da68d;
+}
+.member .integral view:last-child {
+  font-size: 29rpx;
+  display: flex;
+  color: #999999;
+  width: 95rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.member .integral image {
+  width: 16rpx;
+  height: 26rpx;
+}
+.member .fans-fun {
+  margin: 20rpx 0 0;
+  background: #FFF;
+  border-radius: 10rpx;
+  display: flex;
+  padding: 45rpx 0;
+  justify-content: space-between;
+}
+.member .fans-fun .fun-item {
+  width: 235rpx;
+}
+.member .fans-fun .fun-item view {
+  text-align: center;
+}
+.member .fans-fun .fun-item .fun-tit {
+  font-size: 30rpx;
+  margin: 0 0 16rpx;
+}
+.member .fans-fun .fun-item .fun-desc {
+  color: #999999;
+  font-size: 22rpx;
+}
+.member .fans-fun .fun-item .fun-img {
+  margin-top: 10rpx;
+}
+.member .fans-fun .fun-item .fun-img image {
+  width: 100%;
+  height: 126rpx;
+}
+.member .fans-fun .fun-item .fun-btn {
+  width: 150rpx;
+  height: 46rpx;
+  font-size: 24rpx;
+  margin: 0 auto;
+  color: #FFF;
+  border-radius: 23rpx;
+  line-height: 46rpx;
+  background: linear-gradient(to left, #3bb6ad, #6ce2cd);
+}
+.member .fans-fun .fun-item .gray {
+  background: #bfbfbf;
+}
+.member .fans-fun .fun-item:nth-child(2) {
+  border-left: 1rpx solid #e4e4e4;
+  border-right: 1rpx solid #e4e4e4;
+}
+.member .message {
+  margin-top: 20rpx;
+}
+.member .message .income {
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  background: #FFF;
+}
+.member .message .income .invite-content {
+  display: flex;
+  align-items: center;
+  margin: 30rpx 34rpx;
+  justify-content: space-between;
+}
+.member .message .income .invite-content .invite-text {
+  font-size: 24rpx;
+  color: #666666;
+}
+.member .message .income .invite-content .invite-fans {
+  margin-left: 54rpx;
+  width: 150rpx;
+  height: 46rpx;
+  font-size: 24rpx;
+  color: #4da68d;
+  line-height: 46rpx;
+  text-align: center;
+  border: 1rpx solid ;
+  border-radius: 24rpx;
+}
+.member .message .income .income-tit {
+  width: 702rpx;
+  border-bottom: 2rpx solid #e6e6e6;
+  margin: 0 auto;
+}
+.member .message .income .income-tit .list-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 82rpx;
+  width: 160rpx;
+  padding: 0 28rpx;
+}
+.member .message .income .income-tit .list-icon .message-icon {
+  width: 31rpx;
+  height: 35rpx;
+}
+.member .message .income .income-tit .list-icon .tit-text {
+  font-size: 30rpx;
+  color: #000;
+}
+.member .message .income .income-tit view {
+  float: left;
+}
+.member .message .income .income-tit .all {
+  float: right;
+  color: #999999;
+  font-size: 22rpx;
+  margin: 30rpx 22rpx 30rpx 0;
+  display: flex;
+  align-items: center;
+  width: 72rpx;
+  justify-content: space-between;
+}
+.member .message .income .income-tit .all image {
+  width: 12rpx;
+  height: 20rpx;
+}
+.member .message .income .message-content {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 50rpx;
+  height: 105rpx;
+}
+.member .message .income .message-content view {
+  width: 50%;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 105rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.member .message .income .message-content view text {
+  width: 145rpx;
+  font-size: 32rpx;
+  color: #4da68d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.member .message .income .message-content view:last-child {
+  text-align: left;
+  transform: translateX(50rpx);
+}
+.member .nav-bar {
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #FFF;
+  background: linear-gradient(to left, #6ed9c0, #4ca2bd);
+  font-size: 30rpx;
+}
+.member .nav-bar view {
+  height: 140rpx;
+  line-height: 140rpx;
+}
+.member .linear-color {
+  margin-top: 128rpx;
+  height: 124rpx;
+  background: linear-gradient(to right, #4ba1bc, #6ed9c0);
+}
+.member .main {
+  width: 710rpx;
+  margin: 190rpx auto 0;
+  position: relative;
+  z-index: 2;
+}
+.popup {
+  overflow: hidden;
+}
+.popup .tit {
+  font-size: 38rpx;
+  color: #666666;
+  width: 185rpx;
+  font-weight: 600;
+  margin: 200rpx auto 0;
+}
+.popup .more-item view {
+  overflow: hidden;
+  font-size: 32rpx;
+  color: #999999;
+  margin: 90rpx auto 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup .more-item view image {
+  width: 44rpx;
+  float: left;
+}
+.popup .more-item view text {
+  float: left;
+  line-height: 1;
+  margin-left: 22rpx;
+}
+.popup .btn {
+  width: 209rpx;
+  height: 57rpx;
+  border-radius: 40rpx;
+  color: #FFF;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 57rpx;
+  margin: 78rpx auto 0;
+  background: linear-gradient(to left, #6de2cd, #3bb6ae);
+}
